@@ -3,20 +3,22 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: 'Strona główna', href: '/' },
-    { name: 'Aplikacja 1', href: '/app1' },
-    { name: 'Aplikacja 2', href: '/app2' },
-    { name: 'Aplikacja 3', href: '/app3' },
-    { name: 'Kontakt', href: '/kontakt' },
+    { name: 'O nas', href: '#about' },
+    { name: 'Technologie', href: '#technologies' },
+    { name: 'Aplikacje', href: '#apps' },
+    { name: 'Proces', href: '#process' },
+    { name: 'Kontakt', href: '#contact' },
   ];
 
   return (
-    <header className="w-full bg-white dark:bg-gray-900 border-b-2 border-international-orange-500 shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
+    <header className="w-full bg-[#FFE9CF] dark:bg-gray-900 border-b-2 border-international-orange-500 shadow-[0_4px_0_0_rgba(0,0,0,0.1)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -32,21 +34,25 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-800 dark:text-gray-200 hover:text-international-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 rounded hover:bg-international-orange-500/10 hover:scale-105"
+                className="text-gray-800 dark:text-black hover:text-international-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 rounded hover:bg-international-orange-500/10 hover:scale-105"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
 
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-800 dark:text-gray-200 p-2 hover:bg-international-orange-500/10 rounded transition-colors duration-200"
-            aria-label="Otwórz menu"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          {/* Theme Toggle & Mobile Menu Button */}
+          <div className="flex items-center space-x-4">
+            <ThemeToggle />
+            
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-gray-800 dark:text-gray-200 p-2 hover:bg-international-orange-500/10 rounded transition-colors duration-200"
+              aria-label="Otwórz menu"
+            >
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}

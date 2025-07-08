@@ -42,16 +42,16 @@ const Newsletter = () => {
   return (
     <section id="newsletter" className="py-20 bg-international-orange-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-white dark:bg-gray-900 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] p-8 md:p-12">
+        <div className="bg-[#FFE9CF] dark:bg-gray-900 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] p-8 md:p-12">
           <div className="w-16 h-16 bg-international-orange-500 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
             <Mail className="w-8 h-8 text-white" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-black dark:text-white mb-4">
             Bądź na bieżąco
           </h2>
           
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium">
+          <p className="text-xl text-black dark:text-gray-300 mb-8 max-w-2xl mx-auto font-medium">
             Zapisz się do naszego newslettera i otrzymuj najnowsze informacje o aktualizacjach, 
             nowych funkcjach i najlepszych praktykach w branży.
           </p>
@@ -102,7 +102,7 @@ const Newsletter = () => {
             )}
           </form>
 
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-6 font-medium">
+          <p className="text-sm text-black dark:text-gray-400 mt-6 font-medium">
             Możesz zrezygnować z subskrypcji w każdej chwili. 
             <br />
             Szanujemy Twoją prywatność i nie będziemy spamować.

@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center p-4 pt-24 sm:pt-28 relative overflow-hidden bg-white dark:bg-gray-900">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center p-4 pt-24 sm:pt-28 relative overflow-hidden bg-[#FFE9CF] dark:bg-gray-900">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-international-orange-500/10 border-2 border-international-orange-500/20 transform rotate-12"></div>
@@ -29,7 +29,7 @@ const Hero = () => {
             </span>
           </div>
           <div>
-            <span className="bg-white dark:bg-gray-800 text-international-orange-500 px-6 py-4 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] inline-block hover:scale-105 hover:-rotate-1 transition-all duration-300">
+            <span className="bg-[#FFE9CF] dark:bg-gray-800 text-international-orange-500 px-6 py-4 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] inline-block hover:scale-105 hover:-rotate-1 transition-all duration-300">
               CODE
             </span>
           </div>
@@ -41,7 +41,7 @@ const Hero = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-lg sm:text-xl text-gray-800 dark:text-gray-200 mb-12 max-w-3xl mx-auto animate-fadein4 font-medium leading-relaxed">
+        <p className="text-lg sm:text-xl text-black dark:text-gray-200 mb-12 max-w-3xl mx-auto animate-fadein4 font-medium leading-relaxed">
           Tworzymy aplikacje dla miłośników piwa kraftowego, browarów rzemieślniczych i pasjonatów domowego warzenia.
           <br />
           <span className="text-international-orange-500 font-bold">
@@ -57,7 +57,7 @@ const Hero = () => {
             </button>
           </Link>
           <Link href="#newsletter">
-            <button className="bg-white dark:bg-gray-800 text-international-orange-500 px-8 py-4 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#FFE9CF] dark:bg-gray-800 text-international-orange-500 px-8 py-4 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg">
               Dołącz do Newslettera
             </button>
           </Link>
