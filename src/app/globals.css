@@ -3,6 +3,34 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* International Orange Colors */
+  --international-orange-50: #fff5f0;
+  --international-orange-100: #ffe3d6;
+  --international-orange-200: #ffc2ad;
+  --international-orange-300: #ff9a7a;
+  --international-orange-400: #ff6a3d;
+  --international-orange-500: #ff4f19;
+  --international-orange-600: #e63d0a;
+  --international-orange-700: #b82f08;
+  --international-orange-800: #8a2307;
+  --international-orange-900: #5c1604;
+  
+  /* Legacy Brewcode Colors */
+  --french-gray: #bfbdc1;
+  --dim-gray: #6d6a75;
+  --raisin-black: #37323e;
+  --bright-sun-50: #fefce8;
+  --bright-sun-100: #fffac2;
+  --bright-sun-200: #fff188;
+  --bright-sun-300: #ffe144;
+  --bright-sun-400: #fed123;
+  --bright-sun-500: #eeb404;
+  --bright-sun-600: #cd8a01;
+  --bright-sun-700: #a46104;
+  --bright-sun-800: #874c0c;
+  --bright-sun-900: #733f10;
+  --bright-sun-950: #432005;
 }
 
 @theme inline {
@@ -10,6 +38,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* International Orange Colors */
+  --color-international-orange-50: var(--international-orange-50);
+  --color-international-orange-100: var(--international-orange-100);
+  --color-international-orange-200: var(--international-orange-200);
+  --color-international-orange-300: var(--international-orange-300);
+  --color-international-orange-400: var(--international-orange-400);
+  --color-international-orange-500: var(--international-orange-500);
+  --color-international-orange-600: var(--international-orange-600);
+  --color-international-orange-700: var(--international-orange-700);
+  --color-international-orange-800: var(--international-orange-800);
+  --color-international-orange-900: var(--international-orange-900);
+  
+  /* Legacy Brewcode Colors */
+  --color-french-gray: var(--french-gray);
+  --color-dim-gray: var(--dim-gray);
+  --color-raisin-black: var(--raisin-black);
+  --color-bright-sun-50: var(--bright-sun-50);
+  --color-bright-sun-100: var(--bright-sun-100);
+  --color-bright-sun-200: var(--bright-sun-200);
+  --color-bright-sun-300: var(--bright-sun-300);
+  --color-bright-sun-400: var(--bright-sun-400);
+  --color-bright-sun-500: var(--bright-sun-500);
+  --color-bright-sun-600: var(--bright-sun-600);
+  --color-bright-sun-700: var(--bright-sun-700);
+  --color-bright-sun-800: var(--bright-sun-800);
+  --color-bright-sun-900: var(--bright-sun-900);
+  --color-bright-sun-950: var(--bright-sun-950);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +78,23 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--raisin-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bright-sun-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bright-sun-400);
 }
