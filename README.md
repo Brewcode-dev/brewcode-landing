@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Brewcode Landing Page
 
-## Getting Started
+Profesjonalny landing page dla firmy Brewcode, specjalizującej się w aplikacjach dla branży piwa kraftowego i domowego warzenia.
 
-First, run the development server:
+## 🍺 O Projekcie
+
+Brewcode to firma technologiczna skupiająca się na tworzeniu aplikacji dla:
+
+- Browarów rzemieślniczych
+- Domowych warzelników
+- Miłośników piwa kraftowego
+
+## ✨ Funkcjonalności
+
+- **Animowany Hero Section** z GSAP
+- **Trzy aplikacje** z dedykowanymi podstronami
+- **Newsletter** z formularzem zapisu
+- **Strona kontaktowa** z mapą Leaflet
+- **Responsywny design** dla wszystkich urządzeń
+- **Nowoczesny UI** z paletą kolorów Bright Sun
+
+## 🚀 Technologie
+
+- **Next.js 15** - Framework React
+- **TypeScript** - Typowanie statyczne
+- **Tailwind CSS** - Stylowanie
+- **GSAP** - Animacje
+- **Leaflet** - Mapy
+- **Lucide React** - Ikony
+- **Framer Motion** - Animacje komponentów
+
+## 📦 Instalacja
+
+1. **Sklonuj repozytorium**
+
+```bash
+git clone <repository-url>
+cd brewcode-landing
+```
+
+2. **Zainstaluj zależności**
+
+```bash
+npm install
+```
+
+3. **Uruchom serwer deweloperski**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Otwórz przeglądarkę**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Struktura Projektu
 
-## Learn More
+```
+src/
+├── app/
+│   ├── page.tsx              # Strona główna
+│   ├── layout.tsx            # Layout aplikacji
+│   ├── globals.css           # Globalne style
+│   ├── kontakt/
+│   │   └── page.tsx          # Strona kontaktowa
+│   ├── app1/
+│   │   └── page.tsx          # BrewMaster Pro
+│   ├── app2/
+│   │   └── page.tsx          # HomeBrew Helper
+│   └── app3/
+│       └── page.tsx          # BeerCraft Platform
+├── components/
+│   ├── Header.tsx            # Nagłówek z nawigacją
+│   ├── Hero.tsx              # Sekcja hero z animacjami
+│   ├── AppsSection.tsx       # Sekcja aplikacji
+│   ├── Newsletter.tsx        # Newsletter
+│   ├── Footer.tsx            # Stopka
+│   └── MapComponent.tsx      # Komponent mapy
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Kolory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Projekt używa palety kolorów **Bright Sun**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```css
+--bright-sun-50: #fefce8;
+--bright-sun-100: #fffac2;
+--bright-sun-200: #fff188;
+--bright-sun-300: #ffe144;
+--bright-sun-400: #fed123;
+--bright-sun-500: #eeb404;
+--bright-sun-600: #cd8a01;
+--bright-sun-700: #a46104;
+--bright-sun-800: #874c0c;
+--bright-sun-900: #733f10;
+--bright-sun-950: #432005;
+```
 
-## Deploy on Vercel
+## 📱 Aplikacje
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. BrewMaster Pro
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Zaawansowana aplikacja do zarządzania browarem rzemieślniczym
+
+- Monitoring warzenia
+- Zarządzanie recepturami
+- Analiza jakości
+- Raporty produkcji
+
+### 2. HomeBrew Helper
+
+Aplikacja mobilna dla domowych warzelników
+
+- Kalkulatory warzenia
+- Timery procesu
+- Baza receptur
+- Dziennik warzenia
+
+### 3. BeerCraft Platform
+
+Platforma społecznościowa dla miłośników piwa
+
+- Recenzje piwa
+- Mapa browarów
+- Społeczność
+- Personalizowane rekomendacje
+
+## 🔧 Skrypty
+
+```bash
+npm run dev      # Uruchom serwer deweloperski
+npm run build    # Zbuduj aplikację produkcyjną
+npm run start    # Uruchom aplikację produkcyjną
+npm run lint     # Sprawdź kod ESLint
+```
+
+## 🌐 Deployment
+
+Aplikacja jest gotowa do wdrożenia na:
+
+- **Vercel** (zalecane)
+- **Netlify**
+- **AWS Amplify**
+- Dowolny hosting z obsługą Node.js
+
+## 📄 Licencja
+
+Ten projekt jest własnością firmy Brewcode.
+
+## 📞 Kontakt
+
+- **Email**: kontakt@brewcode.pl
+- **Telefon**: +48 123 456 789
+- **Adres**: Warszawa, Polska
+
+---
+
+**Brewcode** - Technologia dla Pasji Piwa 🍺
+# brewcode-landing
