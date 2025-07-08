@@ -140,6 +140,15 @@ section {
   background-color: #FFE9CF !important;
 }
 
+/* Warianty beżowego koloru dla lepszego kontrastu */
+.bg-\[#F5E6D3\] {
+  background-color: #F5E6D3 !important;
+}
+
+.bg-\[#FFF2E6\] {
+  background-color: #FFF2E6 !important;
+}
+
 /* Wymuszamy beżowe tło dla wszystkich div'ów z klasami bg-* */
 div[class*="bg-white"],
 div[class*="bg-gray-100"],
@@ -155,6 +164,33 @@ div[class*="bg-gray-900"] {
 [class*="text-gray-200"],
 [class*="text-gray-400"] {
   color: #000000 !important;
+}
+
+/* Wymuszamy czarny tekst dla białych tekstów w light mode */
+.text-white {
+  color: #000000 !important;
+}
+
+/* Wymuszamy beżowe tło dla header */
+header {
+  background-color: #FFE9CF !important;
+}
+
+/* Wymuszamy beżowe tło dla wszystkich elementów */
+*[class*="bg-white"],
+*[class*="bg-gray-100"],
+*[class*="bg-gray-800"],
+*[class*="bg-gray-900"] {
+  background-color: #FFE9CF !important;
+}
+
+/* Wymuszamy odpowiednie warianty beżowego dla nowych klas */
+*[class*="bg-[#F5E6D3]"] {
+  background-color: #F5E6D3 !important;
+}
+
+*[class*="bg-[#FFF2E6]"] {
+  background-color: #FFF2E6 !important;
 }
 
 /* Dark mode overrides - nadpisujemy light mode */
@@ -184,6 +220,17 @@ div[class*="bg-gray-900"] {
 
 .dark .text-white {
   color: #ffffff !important;
+}
+
+.dark header {
+  background-color: #111827 !important;
+}
+
+.dark *[class*="bg-white"],
+.dark *[class*="bg-gray-100"],
+.dark *[class*="bg-gray-800"],
+.dark *[class*="bg-gray-900"] {
+  background-color: #1f2937 !important;
 }
 
 /* Custom scrollbar */

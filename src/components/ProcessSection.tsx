@@ -72,7 +72,7 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
+    <section ref={sectionRef} className="py-20 bg-[#FFF2E6] dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -96,7 +96,7 @@ const ProcessSection = () => {
               return (
                 <div
                   key={index}
-                  className="process-step bg-[#FFE9CF] dark:bg-gray-800 p-6 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 text-center"
+                  className="process-step bg-[#FFF2E6] dark:bg-gray-800 p-6 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 text-center"
                 >
                   {/* Step Number */}
                   <div className="w-12 h-12 bg-international-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]">

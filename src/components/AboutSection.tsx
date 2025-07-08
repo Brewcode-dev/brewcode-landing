@@ -62,7 +62,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
+    <section ref={sectionRef} className="py-20 bg-[#F5E6D3] dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -122,10 +122,10 @@ const AboutSection = () => {
             </div>
             
             {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#FFE9CF] dark:bg-gray-800 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-[#FFF2E6] dark:bg-gray-800 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
               <span className="text-international-orange-500 font-black text-xl">💻</span>
             </div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#FFE9CF] dark:bg-gray-800 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
+            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-[#FFF2E6] dark:bg-gray-800 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
               <span className="text-international-orange-500 font-black text-lg">🚀</span>
             </div>
           </div>
@@ -138,7 +138,7 @@ const AboutSection = () => {
             return (
               <div
                 key={index}
-                className="about-card bg-[#FFE9CF] dark:bg-gray-800 p-6 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105"
+                className="about-card bg-[#FFF2E6] dark:bg-gray-800 p-6 border-2 border-international-orange-500 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105"
               >
                 <div className="w-12 h-12 bg-international-orange-500 rounded-lg flex items-center justify-center mb-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
                   <IconComponent className="w-6 h-6 text-white" />

@@ -42,7 +42,7 @@ const Newsletter = () => {
   return (
     <section id="newsletter" className="py-20 bg-international-orange-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="bg-[#FFE9CF] dark:bg-gray-900 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] p-8 md:p-12">
+        <div className="bg-[#FFF2E6] dark:bg-gray-900 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] p-8 md:p-12">
           <div className="w-16 h-16 bg-international-orange-500 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
             <Mail className="w-8 h-8 text-white" />
           </div>

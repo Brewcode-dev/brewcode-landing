@@ -52,7 +52,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-[#FFE9CF] dark:bg-gray-800">
+    <section id="contact" className="py-20 bg-[#F5E6D3] dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -66,7 +66,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="bg-[#FFE9CF] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)]">
+          <div className="bg-[#FFF2E6] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)]">
                             <h3 className="text-2xl font-black text-black dark:text-white mb-6">
                   Wyślij wiadomość
                 </h3>

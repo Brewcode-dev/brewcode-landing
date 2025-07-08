@@ -88,7 +88,7 @@ const TechnologiesSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#FFE9CF] dark:bg-gray-800">
+    <section ref={sectionRef} className="py-20 bg-[#FFF2E6] dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -105,7 +105,7 @@ const TechnologiesSection = () => {
           {techCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}
-              className="tech-card bg-[#FFE9CF] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300"
+              className="tech-card bg-[#FFF2E6] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300"
             >
                               <h3 className="text-2xl font-black text-black dark:text-white mb-6 text-center">
                 {category.category}
@@ -137,7 +137,7 @@ const TechnologiesSection = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="bg-[#FFE9CF] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
+          <div className="bg-[#FFF2E6] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
                           <h3 className="text-2xl font-black text-black dark:text-white mb-4">
               Ciągle się rozwijamy
             </h3>

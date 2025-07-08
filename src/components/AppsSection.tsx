@@ -104,7 +104,7 @@ const AppsSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="apps" className="py-20 bg-[#FFE9CF] dark:bg-gray-800">
+    <section ref={sectionRef} id="apps" className="py-20 bg-[#F5E6D3] dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
