@@ -135,85 +135,54 @@ body {
   color: #000000 !important;
 }
 
-.bg-white {
+/* Wymuszamy beżowe tło dla wszystkich sekcji */
+section {
   background-color: #FFE9CF !important;
 }
 
-.bg-gray-100 {
+/* Wymuszamy beżowe tło dla wszystkich div'ów z klasami bg-* */
+div[class*="bg-white"],
+div[class*="bg-gray-100"],
+div[class*="bg-gray-800"],
+div[class*="bg-gray-900"] {
   background-color: #FFE9CF !important;
 }
 
-.bg-gray-800 {
-  background-color: #FFE9CF !important;
-}
-
-.bg-gray-900 {
-  background-color: #FFE9CF !important;
-}
-
-.text-gray-800 {
+/* Wymuszamy czarny tekst dla wszystkich elementów z klasami text-* */
+[class*="text-gray-800"],
+[class*="text-gray-600"],
+[class*="text-gray-300"],
+[class*="text-gray-200"],
+[class*="text-gray-400"] {
   color: #000000 !important;
 }
 
-.text-gray-600 {
-  color: #000000 !important;
-}
-
-.text-gray-300 {
-  color: #000000 !important;
-}
-
-.text-gray-200 {
-  color: #000000 !important;
-}
-
-.text-gray-400 {
-  color: #000000 !important;
-}
-
-/* Dark mode overrides */
-.dark .bg-white {
-  background-color: #1f2937 !important;
-}
-
-.dark .text-gray-800 {
-  color: #f9fafb !important;
-}
-
-.dark .text-gray-600 {
-  color: #d1d5db !important;
-}
-
-.dark .text-gray-300 {
-  color: #9ca3af !important;
-}
-
-.dark .bg-gray-100 {
-  background-color: #374151 !important;
-}
-
-.dark .bg-gray-800 {
-  background-color: #1f2937 !important;
-}
-
-.dark .bg-gray-900 {
-  background-color: #111827 !important;
-}
-
-.dark .text-white {
+/* Dark mode overrides - nadpisujemy light mode */
+.dark body {
+  background: #0a0a0a !important;
   color: #ffffff !important;
 }
 
-.dark .text-gray-200 {
-  color: #e5e7eb !important;
+.dark section {
+  background-color: #111827 !important;
 }
 
-.dark .text-gray-400 {
-  color: #9ca3af !important;
+.dark div[class*="bg-white"],
+.dark div[class*="bg-gray-100"],
+.dark div[class*="bg-gray-800"],
+.dark div[class*="bg-gray-900"] {
+  background-color: #1f2937 !important;
 }
 
-.dark body {
-  background: #0a0a0a !important;
+.dark [class*="text-gray-800"],
+.dark [class*="text-gray-600"],
+.dark [class*="text-gray-300"],
+.dark [class*="text-gray-200"],
+.dark [class*="text-gray-400"] {
+  color: #f9fafb !important;
+}
+
+.dark .text-white {
   color: #ffffff !important;
 }
 

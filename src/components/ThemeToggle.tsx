@@ -25,15 +25,26 @@ const ThemeToggle = () => {
     const newTheme = !isDark;
     setIsDark(newTheme);
     
+    console.log('Przełączanie motywu:', newTheme ? 'dark' : 'light');
+    
     if (newTheme) {
       document.documentElement.classList.add('dark');
       document.body.classList.add('dark');
       setCookie('theme', 'dark', 365);
+      console.log('Dodano klasę dark do html i body');
     } else {
       document.documentElement.classList.remove('dark');
       document.body.classList.remove('dark');
       setCookie('theme', 'light', 365);
+      console.log('Usunięto klasę dark z html i body');
     }
+    
+    // Sprawdź czy klasy zostały dodane/usunięte
+    setTimeout(() => {
+      console.log('HTML ma klasę dark:', document.documentElement.classList.contains('dark'));
+      console.log('Body ma klasę dark:', document.body.classList.contains('dark'));
+      console.log('Aktualny motyw:', getCookie('theme'));
+    }, 100);
   };
 
   // Cookie utility functions
