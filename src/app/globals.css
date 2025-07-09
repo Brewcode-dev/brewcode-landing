@@ -74,179 +74,105 @@
   --color-bright-sun-950: var(--bright-sun-950);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  
-  /* International Orange Colors */
-  --color-international-orange-50: var(--international-orange-50);
-  --color-international-orange-100: var(--international-orange-100);
-  --color-international-orange-200: var(--international-orange-200);
-  --color-international-orange-300: var(--international-orange-300);
-  --color-international-orange-400: var(--international-orange-400);
-  --color-international-orange-500: var(--international-orange-500);
-  --color-international-orange-600: var(--international-orange-600);
-  --color-international-orange-700: var(--international-orange-700);
-  --color-international-orange-800: var(--international-orange-800);
-  --color-international-orange-900: var(--international-orange-900);
-  
-  /* Legacy Brewcode Colors */
-  --color-french-gray: var(--french-gray);
-  --color-dim-gray: var(--dim-gray);
-  --color-raisin-black: var(--raisin-black);
-  --color-bright-sun-50: var(--bright-sun-50);
-  --color-bright-sun-100: var(--bright-sun-100);
-  --color-bright-sun-200: var(--bright-sun-200);
-  --color-bright-sun-300: var(--bright-sun-300);
-  --color-bright-sun-400: var(--bright-sun-400);
-  --color-bright-sun-500: var(--bright-sun-500);
-  --color-bright-sun-600: var(--bright-sun-600);
-  --color-bright-sun-700: var(--bright-sun-700);
-  --color-bright-sun-800: var(--bright-sun-800);
-  --color-bright-sun-900: var(--bright-sun-900);
-  --color-bright-sun-950: var(--bright-sun-950);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
-/* Force dark mode styles */
-.dark body {
-  background: #0a0a0a;
-  color: #ffffff;
-}
-
-/* Light mode styles - wymuszamy beżowe tło */
+/* Light mode - beżowe tło z odcieniami */
 body {
   background: #FFE9CF !important;
   color: #000000 !important;
 }
 
-/* Wymuszamy beżowe tło dla wszystkich sekcji */
+/* Sekcje w light mode - naprzemienne odcienie beżowego */
 section {
   background-color: #FFE9CF !important;
 }
 
-/* Warianty beżowego koloru dla lepszego kontrastu */
-.bg-\[#F5E6D3\] {
+section:nth-child(even) {
   background-color: #F5E6D3 !important;
 }
 
-.bg-\[#FFF2E6\] {
+/* Karty i kontenery w light mode */
+.bg-white, .bg-gray-50, .bg-gray-100 {
   background-color: #FFF2E6 !important;
 }
 
-/* Wymuszamy beżowe tło dla wszystkich div'ów z klasami bg-* */
-div[class*="bg-white"],
-div[class*="bg-gray-100"],
-div[class*="bg-gray-800"],
-div[class*="bg-gray-900"] {
-  background-color: #FFE9CF !important;
-}
-
-/* Wymuszamy czarny tekst dla wszystkich elementów z klasami text-* */
-[class*="text-gray-800"],
-[class*="text-gray-600"],
-[class*="text-gray-300"],
-[class*="text-gray-200"],
-[class*="text-gray-400"] {
-  color: #000000 !important;
-}
-
-/* Wymuszamy czarny tekst dla białych tekstów w light mode */
-.text-white {
-  color: #000000 !important;
-}
-
-/* Wymuszamy beżowe tło dla header */
-header {
-  background-color: #FFE9CF !important;
-}
-
-/* Wymuszamy beżowe tło dla wszystkich elementów */
-*[class*="bg-white"],
-*[class*="bg-gray-100"],
-*[class*="bg-gray-800"],
-*[class*="bg-gray-900"] {
-  background-color: #FFE9CF !important;
-}
-
-/* Wymuszamy odpowiednie warianty beżowego dla nowych klas */
-*[class*="bg-[#F5E6D3]"] {
-  background-color: #F5E6D3 !important;
-}
-
-*[class*="bg-[#FFF2E6]"] {
-  background-color: #FFF2E6 !important;
-}
-
-/* Dark mode overrides - nadpisujemy light mode */
+/* Dark mode - jednolite granatowe tło */
 .dark body {
   background: #0a0a0a !important;
   color: #ffffff !important;
 }
 
 .dark section {
-  background-color: #111827 !important;
-}
-
-.dark div[class*="bg-white"],
-.dark div[class*="bg-gray-100"],
-.dark div[class*="bg-gray-800"],
-.dark div[class*="bg-gray-900"] {
   background-color: #1f2937 !important;
 }
 
-.dark [class*="text-gray-800"],
-.dark [class*="text-gray-600"],
-.dark [class*="text-gray-300"],
-.dark [class*="text-gray-200"],
-.dark [class*="text-gray-400"] {
-  color: #f9fafb !important;
+.dark section:nth-child(even) {
+  background-color: #1f2937 !important;
 }
 
-.dark .text-white {
+.dark .bg-white, .dark .bg-gray-50, .dark .bg-gray-100 {
+  background-color: #111827 !important;
+}
+
+/* Wymuszamy odpowiednie kolory tekstu */
+.text-gray-800, .text-gray-700, .text-gray-600 {
+  color: #000000 !important;
+}
+
+.dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-600 {
   color: #ffffff !important;
 }
 
+/* Header w obu trybach */
+header {
+  background-color: #FFE9CF !important;
+}
+
 .dark header {
-  background-color: #111827 !important;
+  background-color: #0a0a0a !important;
 }
 
-.dark *[class*="bg-white"],
-.dark *[class*="bg-gray-100"],
-.dark *[class*="bg-gray-800"],
-.dark *[class*="bg-gray-900"] {
-  background-color: #1f2937 !important;
-}
-
-/* Custom scrollbar */
+/* Custom scrollbar - zgodny z designem */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--raisin-black);
+  background: #FFE9CF;
+  border-radius: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--bright-sun-500);
-  border-radius: 4px;
+  background: #ff4f19;
+  border-radius: 6px;
+  border: 2px solid #FFE9CF;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #ff4f19;
+  border: 2px solid #1f2937;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--bright-sun-400);
+  background: #e63d0a;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4f19 #FFE9CF;
+}
+
+.dark * {
+  scrollbar-color: #ff4f19 #1f2937;
 }

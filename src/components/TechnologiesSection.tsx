@@ -1,165 +1,106 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
+import { Code, Database, Cloud, Smartphone, Globe, Shield } from 'lucide-react';
 
 const TechnologiesSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  const techCategories = [
-    {
-      category: "Frontend",
-      technologies: [
-        { name: "React", icon: "⚛️", level: 95 },
-        { name: "Next.js", icon: "⚡", level: 90 },
-        { name: "TypeScript", icon: "📘", level: 85 },
-        { name: "Tailwind CSS", icon: "🎨", level: 90 },
-        { name: "Vue.js", icon: "💚", level: 80 }
-      ]
-    },
-    {
-      category: "Backend",
-      technologies: [
-        { name: "Node.js", icon: "🟢", level: 90 },
-        { name: "Python", icon: "🐍", level: 85 },
-        { name: "PostgreSQL", icon: "🐘", level: 80 },
-        { name: "MongoDB", icon: "🍃", level: 75 },
-        { name: "Redis", icon: "🔴", level: 70 }
-      ]
-    },
-    {
-      category: "DevOps & Tools",
-      technologies: [
-        { name: "Docker", icon: "🐳", level: 85 },
-        { name: "AWS", icon: "☁️", level: 80 },
-        { name: "Git", icon: "📝", level: 95 },
-        { name: "CI/CD", icon: "🔄", level: 85 },
-        { name: "Kubernetes", icon: "⚓", level: 70 }
-      ]
-    }
+  const technologies = [
+    { name: 'React', level: 95, icon: Code },
+    { name: 'Node.js', level: 90, icon: Code },
+    { name: 'TypeScript', level: 88, icon: Code },
+    { name: 'PostgreSQL', level: 85, icon: Database },
+    { name: 'AWS', level: 80, icon: Cloud },
+    { name: 'React Native', level: 75, icon: Smartphone },
   ];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(".tech-card", 
-        { 
-          y: 50, 
-          opacity: 0,
-          scale: 0.95
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 0.8,
-          ease: "power3.out",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Animate skill bars
-      gsap.fromTo(".skill-bar", 
-        { width: 0 },
-        {
-          width: "100%",
-          duration: 1.5,
-          ease: "power2.out",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const categories = [
+    {
+      title: 'Frontend',
+      technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+      icon: Globe,
+    },
+    {
+      title: 'Backend',
+      technologies: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
+      icon: Database,
+    },
+    {
+      title: 'DevOps',
+      technologies: ['AWS', 'Docker', 'GitHub Actions', 'Vercel'],
+      icon: Cloud,
+    },
+  ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-[#FFF2E6] dark:bg-gray-800">
+    <section id="technologies" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-black dark:text-white mb-6">
-            Nasze <span className="text-international-orange-500">Technologie</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
+            Nasze <span className="text-orange-500">Technologie</span>
           </h2>
-          <p className="text-xl text-black dark:text-gray-300 max-w-3xl mx-auto font-medium">
-            Używamy najnowszych technologii i narzędzi, aby tworzyć szybkie, skalowalne i bezpieczne aplikacje.
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Używamy najnowszych technologii, aby tworzyć szybkie, skalowalne i bezpieczne aplikacje.
           </p>
         </div>
 
-        {/* Tech Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {techCategories.map((category, categoryIndex) => (
-            <div
-              key={categoryIndex}
-              className="tech-card bg-[#FFF2E6] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300"
-            >
-                              <h3 className="text-2xl font-black text-black dark:text-white mb-6 text-center">
-                {category.category}
-              </h3>
-              
-              <div className="space-y-4">
-                {category.technologies.map((tech, techIndex) => (
-                  <div key={techIndex} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <span className="text-2xl">{tech.icon}</span>
-                        <span className="font-bold text-black dark:text-white">{tech.name}</span>
-                      </div>
-                      <span className="text-sm font-bold text-international-orange-500">{tech.level}%</span>
-                    </div>
-                    
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 h-3 border-2 border-gray-300 dark:border-gray-600">
-                      <div 
-                        className="skill-bar bg-international-orange-500 h-full"
-                        style={{ width: `${tech.level}%` }}
-                      ></div>
-                    </div>
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {technologies.map((tech, index) => {
+            const IconComponent = tech.icon;
+            return (
+              <div
+                key={index}
+                className="tech-card bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center">
+                    <IconComponent className="w-6 h-6 text-orange-500 mr-3" />
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white">
+                      {tech.name}
+                    </h3>
                   </div>
-                ))}
+                  <span className="text-sm font-bold text-orange-500">{tech.level}%</span>
+                </div>
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                  <div 
+                    className="skill-bar bg-orange-500 h-full"
+                    style={{ width: `${tech.level}%` }}
+                  ></div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Additional Info */}
-        <div className="mt-16 text-center">
-          <div className="bg-[#FFF2E6] dark:bg-gray-900 p-8 border-2 border-international-orange-500 shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
-                          <h3 className="text-2xl font-black text-black dark:text-white mb-4">
-              Ciągle się rozwijamy
-            </h3>
-            <p className="text-lg text-black dark:text-gray-300 font-medium mb-6">
-              Śledzimy najnowsze trendy w technologii i stale poszerzamy nasze umiejętności. 
-              Każdy projekt to okazja do nauki czegoś nowego.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                "Machine Learning", "Blockchain", "IoT", "AR/VR", 
-                "Serverless", "Microservices", "GraphQL", "Web3"
-              ].map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-international-orange-500/10 border-2 border-international-orange-500 text-international-orange-500 font-bold text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+        {/* Technology Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {categories.map((category, index) => {
+            const IconComponent = category.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg"
+              >
+                <div className="flex items-center mb-6">
+                  <IconComponent className="w-8 h-8 text-orange-500 mr-3" />
+                  <h3 className="text-2xl font-black text-gray-800 dark:text-white">
+                    {category.title}
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {category.technologies.map((tech, techIndex) => (
+                    <div
+                      key={techIndex}
+                      className="px-4 py-2 bg-orange-500/10 border-2 border-orange-500 text-orange-500 font-bold text-sm"
+                    >
+                      {tech}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
