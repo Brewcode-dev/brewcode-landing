@@ -102,18 +102,18 @@ section:nth-child(even) {
   background-color: #FFF2E6 !important;
 }
 
-/* Dark mode - jednolite granatowe tło */
+/* Dark mode - subtelne różnice odcieni granatowego */
 .dark body {
   background: #0a0a0a !important;
   color: #ffffff !important;
 }
 
 .dark section {
-  background-color: #1f2937 !important;
+  background-color: #0f172a !important;
 }
 
 .dark section:nth-child(even) {
-  background-color: #1f2937 !important;
+  background-color: #1e293b !important;
 }
 
 .dark .bg-white, .dark .bg-gray-50, .dark .bg-gray-100 {
@@ -149,7 +149,7 @@ header {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -160,7 +160,7 @@ header {
 
 .dark ::-webkit-scrollbar-thumb {
   background: #ff4f19;
-  border: 2px solid #1f2937;
+  border: 2px solid #0f172a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -174,5 +174,5 @@ header {
 }
 
 .dark * {
-  scrollbar-color: #ff4f19 #1f2937;
+  scrollbar-color: #ff4f19 #0f172a;
 }
