@@ -66,15 +66,15 @@ const ProcessSection = () => {
               return (
                 <div
                   key={index}
-                  className="process-step bg-white dark:bg-gray-800 p-6 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center"
+                  className="process-step bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] text-center"
                 >
                   {/* Step Number */}
-                  <div className={`w-12 h-12 ${step.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                  <div className={`w-12 h-12 ${step.color} rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#ff4f19]`}>
                     <span className="text-white font-black text-lg">{step.number}</span>
                   </div>
 
                   {/* Icon */}
-                  <div className={`w-16 h-16 ${step.color}/10 border-2 border-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                  <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 border-4 border-[#ff4f19] rounded-lg flex items-center justify-center mx-auto mb-4 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-orange-500" />
                   </div>
 
@@ -93,13 +93,15 @@ const ProcessSection = () => {
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Dlaczego wybrać nasz proces?
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div className="text-center">
-                <Users className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#ff4f19]">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
                 <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Współpraca
                 </h4>
@@ -108,7 +110,9 @@ const ProcessSection = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Zap className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#ff4f19]">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
                 <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Szybkość
                 </h4>
@@ -117,7 +121,9 @@ const ProcessSection = () => {
                 </p>
               </div>
               <div className="text-center">
-                <Rocket className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#ff4f19]">
+                  <Rocket className="w-6 h-6 text-white" />
+                </div>
                 <h4 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Jakość
                 </h4>

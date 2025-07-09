@@ -39,7 +39,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg">
+          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
               Wyślij wiadomość
             </h3>
@@ -56,7 +56,7 @@ const ContactSection = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-orange-500 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-[#ff4f19] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
                   placeholder="Twoje imię i nazwisko"
                 />
               </div>
@@ -72,7 +72,7 @@ const ContactSection = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-orange-500 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-[#ff4f19] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
                   placeholder="twoj@email.com"
                 />
               </div>
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-orange-500 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-[#ff4f19] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
                   placeholder="+48 123 456 789"
                 />
               </div>
@@ -103,14 +103,14 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-orange-500 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium resize-none"
+                  className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-[#ff4f19] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium resize-none"
                   placeholder="Opisz swój projekt lub pytanie..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg disabled:opacity-50"
+                className="w-full bg-[#ff4f19] text-white px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg disabled:opacity-50 hover:translate-x-[-2px] hover:translate-y-[-2px]"
               >
                 Wyślij wiadomość
                 <Send className="w-5 h-5 ml-2 inline" />
@@ -123,7 +123,7 @@ const ContactSection = () => {
             {/* Contact Methods */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -133,7 +133,7 @@ const ContactSection = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -143,7 +143,7 @@ const ContactSection = () => {
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -154,7 +154,7 @@ const ContactSection = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="bg-white dark:bg-gray-900 p-6 border-2 border-orange-500 shadow-lg">
+            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
               <div className="flex items-center mb-4">
                 <Clock className="w-6 h-6 text-orange-500 mr-3" />
                 <h4 className="text-lg font-bold text-gray-800 dark:text-white">Godziny pracy</h4>
@@ -167,7 +167,7 @@ const ContactSection = () => {
             </div>
 
             {/* Quick Contact */}
-            <div className="bg-white dark:bg-gray-900 p-6 border-2 border-orange-500 shadow-lg">
+            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
               <div className="flex items-center mb-4">
                 <MessageSquare className="w-6 h-6 text-orange-500 mr-3" />
                 <h4 className="text-lg font-bold text-gray-800 dark:text-white">Szybki kontakt</h4>
@@ -176,10 +176,10 @@ const ContactSection = () => {
                 Potrzebujesz szybkiej odpowiedzi? Napisz do nas na WhatsApp lub Messenger.
               </p>
               <div className="flex space-x-4">
-                <button className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold hover:scale-105 transition-transform duration-300">
+                <button className="bg-green-500 text-white px-4 py-2 rounded-lg font-bold border-2 border-[#ff4f19] shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all duration-300">
                   WhatsApp
                 </button>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold hover:scale-105 transition-transform duration-300">
+                <button className="bg-blue-500 text-white px-4 py-2 rounded-lg font-bold border-2 border-[#ff4f19] shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] hover:translate-x-[-1px] hover:translate-y-[-1px] transition-all duration-300">
                   Messenger
                 </button>
               </div>

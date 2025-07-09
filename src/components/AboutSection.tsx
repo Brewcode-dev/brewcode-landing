@@ -59,11 +59,11 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Mission */}
           <div className="relative">
-            <div className="bg-orange-500 p-8 border-2 border-orange-500 shadow-lg">
-              <h3 className="text-2xl font-black text-white mb-4">
+            <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
+              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
                 Nasza Misja
               </h3>
-              <p className="text-white/90 text-lg leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                 Chcemy zrewolucjonizować sposób, w jaki branża piwowarska korzysta z technologii. 
                 Od prostych aplikacji do zarządzania recepturami, po zaawansowane systemy analityczne 
                 - tworzymy narzędzia, które naprawdę pomagają.
@@ -71,10 +71,10 @@ const AboutSection = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg flex items-center justify-center">
+            <div className="absolute -top-4 -right-4 w-16 h-16 bg-white dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
               <span className="text-orange-500 font-black text-xl">💻</span>
             </div>
-            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg flex items-center justify-center">
+            <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
               <span className="text-orange-500 font-black text-lg">🚀</span>
             </div>
           </div>
@@ -86,9 +86,9 @@ const AboutSection = () => {
               return (
                 <div
                   key={index}
-                  className="about-card bg-white dark:bg-gray-800 p-6 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="about-card bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px]"
                 >
-                  <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4 shadow-lg">
+                  <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4 shadow-lg border-2 border-[#ff4f19]">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-xl font-black text-gray-800 dark:text-white mb-2">

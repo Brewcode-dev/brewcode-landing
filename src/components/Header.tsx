@@ -18,7 +18,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b-2 border-orange-500 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b-4 border-[#ff4f19] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -57,7 +57,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t-2 border-orange-500 shadow-lg">
+          <div className="md:hidden bg-white dark:bg-gray-900 border-t-4 border-[#ff4f19] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)]">
             <nav className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link

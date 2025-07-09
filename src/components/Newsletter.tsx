@@ -30,8 +30,8 @@ const Newsletter = () => {
   return (
     <section id="newsletter" className="py-20 bg-orange-500">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-gray-900 border-2 border-orange-500 shadow-lg p-8 md:p-12">
-          <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg">
+        <div className="bg-white dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] p-8 md:p-12">
+          <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-[#ff4f19]">
             <Mail className="w-8 h-8 text-white" />
           </div>
           
@@ -53,13 +53,13 @@ const Newsletter = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="twoj@email.com"
                 required
-                className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-orange-500 text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
+                className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-[#ff4f19] text-gray-800 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500/20 transition-all duration-300 font-medium"
                 disabled={status === 'loading'}
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="bg-orange-500 text-white px-6 py-3 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold disabled:opacity-50"
+                className="bg-[#ff4f19] text-white px-6 py-3 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold disabled:opacity-50 hover:translate-x-[-2px] hover:translate-y-[-2px]"
               >
                 {status === 'loading' ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

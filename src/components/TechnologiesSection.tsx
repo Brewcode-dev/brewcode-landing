@@ -51,7 +51,7 @@ const TechnologiesSection = () => {
             return (
               <div
                 key={index}
-                className="tech-card bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="tech-card bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px]"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
@@ -80,7 +80,7 @@ const TechnologiesSection = () => {
             return (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-900 p-8 border-2 border-orange-500 shadow-lg"
+                className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]"
               >
                 <div className="flex items-center mb-6">
                   <IconComponent className="w-8 h-8 text-orange-500 mr-3" />
@@ -92,7 +92,7 @@ const TechnologiesSection = () => {
                   {category.technologies.map((tech, techIndex) => (
                     <div
                       key={techIndex}
-                      className="px-4 py-2 bg-orange-500/10 border-2 border-orange-500 text-orange-500 font-bold text-sm"
+                      className="px-4 py-2 bg-gray-100 dark:bg-gray-700 border-2 border-[#ff4f19] text-gray-800 dark:text-gray-200 font-bold text-sm shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]"
                     >
                       {tech}
                     </div>

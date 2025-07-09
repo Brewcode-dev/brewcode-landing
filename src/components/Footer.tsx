@@ -47,13 +47,13 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-900 text-white border-t-2 border-orange-500">
+      <footer className="bg-gray-900 text-white border-t-4 border-[#ff4f19]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg">
+                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <span className="text-white font-black text-sm">B</span>
                 </div>
                 <span className="text-2xl font-black text-white">Brewcode</span>
@@ -133,7 +133,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Section */}
-          <div className="border-t-2 border-orange-500 mt-12 pt-8">
+          <div className="border-t-4 border-[#ff4f19] mt-12 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
               <div className="text-center md:text-left">
@@ -152,7 +152,7 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-800 border-2 border-orange-500 rounded-lg flex items-center justify-center text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-all duration-200 shadow-lg"
+                      className="w-10 h-10 bg-gray-800 border-2 border-[#ff4f19] rounded-lg flex items-center justify-center text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]"
                     >
                       <IconComponent className="w-4 h-4" />
                     </Link>

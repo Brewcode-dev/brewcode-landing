@@ -97,7 +97,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Badge */}
         <div className="mb-12 hero-badge">
-          <div className="inline-block bg-orange-500 text-white px-6 py-3 border-2 border-orange-500 shadow-lg font-bold text-sm hover:scale-105 hover:rotate-1 transition-all duration-300 relative overflow-hidden">
+          <div className="inline-block bg-[#ff4f19] text-white px-6 py-3 border-2 border-[#ff4f19] shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)] font-bold text-sm hover:scale-105 hover:rotate-1 transition-all duration-300 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
             🍺 CRAFT BEER APPS
           </div>
@@ -106,13 +106,13 @@ const Hero = () => {
         {/* Main Title */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight hero-title">
           <div className="mb-4">
-            <span className="bg-orange-500 text-white px-6 py-4 border-2 border-orange-500 shadow-lg inline-block hover:scale-105 hover:rotate-1 transition-all duration-300 relative overflow-hidden">
+            <span className="bg-[#ff4f19] text-white px-6 py-4 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] inline-block hover:scale-105 hover:rotate-1 transition-all duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               BREW
             </span>
           </div>
           <div>
-            <span className="bg-white dark:bg-gray-800 text-orange-500 px-6 py-4 border-2 border-orange-500 shadow-lg inline-block hover:scale-105 hover:-rotate-1 transition-all duration-300 relative overflow-hidden">
+            <span className="bg-white dark:bg-gray-800 text-orange-500 px-6 py-4 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] inline-block hover:scale-105 hover:-rotate-1 transition-all duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               CODE
             </span>
@@ -136,13 +136,13 @@ const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center hero-buttons">
           <Link href="#apps">
-            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg relative overflow-hidden">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px]">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Zobacz Aplikacje
             </button>
           </Link>
           <Link href="#newsletter">
-            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg relative overflow-hidden">
+            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px]">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Dołącz do Newslettera
             </button>
