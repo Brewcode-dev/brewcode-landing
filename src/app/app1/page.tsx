@@ -3,8 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, BarChart3, TrendingUp, Zap, Shield, Users, Database } from 'lucide-react';
+import { ArrowLeft, BarChart3, TrendingUp, Zap, Shield, Users, Database, Beer } from 'lucide-react';
 import Link from 'next/link';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,12 +54,12 @@ const App1Page = () => {
     {
       icon: BarChart3,
       title: "Dashboard w czasie rzeczywistym",
-      description: "Monitoruj kluczowe wskaźniki biznesowe w czasie rzeczywistym z intuicyjnymi wykresami i raportami."
+      description: "Monitoruj kluczowe wskaźniki browaru w czasie rzeczywistym z intuicyjnymi wykresami i raportami."
     },
     {
       icon: TrendingUp,
       title: "Predykcyjna analityka",
-      description: "Wykorzystaj sztuczną inteligencję do przewidywania trendów i podejmowania lepszych decyzji biznesowych."
+      description: "Wykorzystaj sztuczną inteligencję do przewidywania trendów sprzedaży i optymalizacji produkcji."
     },
     {
       icon: Zap,
@@ -67,7 +69,7 @@ const App1Page = () => {
     {
       icon: Shield,
       title: "Bezpieczeństwo danych",
-      description: "Zaawansowane szyfrowanie i kontrola dostępu zapewniają bezpieczeństwo Twoich danych biznesowych."
+      description: "Zaawansowane szyfrowanie i kontrola dostępu zapewniają bezpieczeństwo Twoich receptur."
     },
     {
       icon: Users,
@@ -77,46 +79,48 @@ const App1Page = () => {
     {
       icon: Database,
       title: "Integracje API",
-      description: "Łącz się z popularnymi narzędziami biznesowymi poprzez nasze rozbudowane API."
+      description: "Łącz się z popularnymi narzędziami browarniczymi poprzez nasze rozbudowane API."
     }
   ];
 
   const benefits = [
-    "Zwiększenie efektywności operacyjnej o 40%",
+    "Zwiększenie efektywności produkcji o 40%",
     "Redukcja czasu analizy danych o 60%",
     "Poprawa dokładności prognoz o 35%",
     "Oszczędność czasu na raportowanie o 80%"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-raisin-black to-dim-gray pt-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header />
+      
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 text-center">
+      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-gold-metallic hover:text-hunyadi-yellow transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow bg-clip-text text-transparent">
-              BrewCode Analytics
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+            <span className="text-orange-500">
+              BrewMaster Pro
             </span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl text-french-gray mb-8 max-w-3xl mx-auto">
-            Zaawansowana platforma analityczna, która przekształca dane w konkretne decyzje biznesowe. 
-            Monitoruj, analizuj i przewiduj z niezwykłą precyzją.
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            Zaawansowany system zarządzania recepturami piwa dla browarów rzemieślniczych. 
+            Monitoruj, analizuj i optymalizuj produkcję z niezwykłą precyzją.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Rozpocznij darmowy trial
             </button>
-            <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
+            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Zobacz demo
             </button>
           </div>
@@ -124,14 +128,14 @@ const App1Page = () => {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20">
+      <section ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
               Kluczowe funkcje
             </h2>
-            <p className="text-xl text-french-gray max-w-3xl mx-auto">
-              Odkryj potężne narzędzia, które pomogą Ci zrozumieć i wykorzystać pełny potencjał Twoich danych.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Odkryj potężne narzędzia, które pomogą Ci zrozumieć i wykorzystać pełny potencjał Twojego browaru.
             </p>
           </div>
 
@@ -139,12 +143,12 @@ const App1Page = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="feature-card bg-gradient-to-br from-dim-gray/50 to-raisin-black/50 p-8 rounded-2xl border border-gold-metallic/20 hover:border-gold-metallic/40 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-raisin-black" />
+                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-french-gray leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -153,46 +157,46 @@ const App1Page = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-r from-raisin-black/50 to-dim-gray/50">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                Dlaczego BrewCode Analytics?
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8">
+                Dlaczego BrewMaster Pro?
               </h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-6 h-6 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-full flex items-center justify-center mr-4">
-                      <div className="w-2 h-2 bg-raisin-black rounded-full"></div>
+                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-french-gray text-lg">{benefit}</span>
+                    <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Rozpocznij już dziś</h3>
-              <p className="text-french-gray mb-6">
-                Dołącz do tysięcy firm, które już korzystają z BrewCode Analytics 
-                do podejmowania lepszych decyzji biznesowych.
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Rozpocznij już dziś</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Dołącz do setek browarów, które już korzystają z BrewMaster Pro 
+                do optymalizacji produkcji i zwiększenia zysków.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Darmowy trial</span>
-                  <span className="text-gold-metallic font-semibold">30 dni</span>
+                  <span className="text-gray-600 dark:text-gray-300">Darmowy trial</span>
+                  <span className="text-orange-500 font-bold">30 dni</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Wsparcie techniczne</span>
-                  <span className="text-gold-metallic font-semibold">24/7</span>
+                  <span className="text-gray-600 dark:text-gray-300">Wsparcie techniczne</span>
+                  <span className="text-orange-500 font-bold">24/7</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Integracje</span>
-                  <span className="text-gold-metallic font-semibold">100+</span>
+                  <span className="text-gray-600 dark:text-gray-300">Integracje</span>
+                  <span className="text-orange-500 font-bold">100+</span>
                 </div>
               </div>
-              <button className="w-full bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black py-3 rounded-lg font-semibold mt-6 hover:shadow-lg transition-all duration-300">
+              <button className="w-full bg-orange-500 text-white py-3 border-2 border-orange-500 shadow-lg rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
                 Rozpocznij darmowy trial
               </button>
             </div>
@@ -201,30 +205,26 @@ const App1Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-orange-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Gotowy na transformację danych?
-            </h2>
-            <p className="text-xl text-french-gray mb-8 max-w-2xl mx-auto">
-              Skontaktuj się z naszym zespołem i dowiedz się, jak BrewCode Analytics 
-              może pomóc Twojej firmie osiągnąć nowe poziomy efektywności.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/kontakt"
-                className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                Skontaktuj się
-              </Link>
-              <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
-                Zobacz demo
-              </button>
-            </div>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+            Gotowy na rewolucję w browarnictwie?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Dołącz do grona innowacyjnych browarów, które już korzystają z naszych rozwiązań.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Rozpocznij darmowy trial
+            </button>
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Skontaktuj się z nami
+            </button>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

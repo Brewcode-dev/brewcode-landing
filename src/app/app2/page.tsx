@@ -3,8 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Smartphone, MapPin, Users, Wifi, Shield, Zap, Clock } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, BarChart3, TrendingUp, Zap, Shield, Users, Database, Store } from 'lucide-react';
 import Link from 'next/link';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,73 +52,75 @@ const App2Page = () => {
 
   const features = [
     {
-      icon: MapPin,
-      title: "GPS Tracking",
-      description: "Śledź lokalizację zespołów w czasie rzeczywistym z dokładnością do kilku metrów."
+      icon: ShoppingCart,
+      title: "Zarządzanie inwentarzem",
+      description: "Śledź stan magazynowy w czasie rzeczywistym i automatycznie generuj zamówienia."
     },
     {
-      icon: Users,
-      title: "Zarządzanie zadaniami",
-      description: "Przydzielaj, monitoruj i zarządzaj zadaniami dla zespołów terenowych."
+      icon: BarChart3,
+      title: "Analityka sprzedaży",
+      description: "Poznaj trendy sprzedaży i optymalizuj asortyment na podstawie danych."
     },
     {
-      icon: Wifi,
-      title: "Komunikacja zespołu",
-      description: "Wbudowany system czatu i powiadomień dla efektywnej komunikacji."
-    },
-    {
-      icon: Zap,
-      title: "Offline mode",
-      description: "Pracuj bez połączenia z internetem - dane synchronizują się automatycznie."
+      icon: TrendingUp,
+      title: "Raporty finansowe",
+      description: "Automatycznie generuj raporty sprzedaży, marży i rentowności."
     },
     {
       icon: Shield,
-      title: "Bezpieczeństwo",
-      description: "Zaawansowane szyfrowanie i kontrola dostępu chroniące dane firmowe."
+      title: "Bezpieczeństwo transakcji",
+      description: "Zaawansowane szyfrowanie i kontrola dostępu dla bezpiecznych transakcji."
     },
     {
-      icon: Clock,
-      title: "Raporty czasowe",
-      description: "Automatyczne raporty o czasie pracy, trasach i wydajności zespołów."
+      icon: Users,
+      title: "Zarządzanie personelem",
+      description: "Planuj grafik pracy i śledź wydajność zespołu."
+    },
+    {
+      icon: Database,
+      title: "Integracje z dostawcami",
+      description: "Łącz się z dostawcami i automatycznie składaj zamówienia."
     }
   ];
 
   const benefits = [
-    "Zwiększenie produktywności zespołów o 45%",
+    "Zwiększenie sprzedaży o 25%",
     "Redukcja kosztów operacyjnych o 30%",
-    "Poprawa komunikacji zespołowej o 60%",
-    "Oszczędność czasu na raportowaniu o 70%"
+    "Poprawa zarządzania inwentarzem o 50%",
+    "Oszczędność czasu na raportowanie o 70%"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-raisin-black to-dim-gray pt-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header />
+      
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 text-center">
+      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-gold-metallic hover:text-hunyadi-yellow transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow bg-clip-text text-transparent">
-              BrewCode Mobile
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+            <span className="text-orange-500">
+              PubTracker
             </span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl text-french-gray mb-8 max-w-3xl mx-auto">
-            Aplikacja mobilna dla zespołów terenowych, która łączy GPS tracking, 
-            zarządzanie zadaniami i komunikację w jednym intuicyjnym rozwiązaniu.
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            Kompleksowe rozwiązanie do zarządzania inwentarzem i sprzedażą w pubach i restauracjach. 
+            Kontroluj, analizuj i zwiększaj zyski.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
-              Pobierz aplikację
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Rozpocznij darmowy trial
             </button>
-            <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
+            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Zobacz demo
             </button>
           </div>
@@ -124,14 +128,14 @@ const App2Page = () => {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20">
+      <section ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
               Kluczowe funkcje
             </h2>
-            <p className="text-xl text-french-gray max-w-3xl mx-auto">
-              Wszystko, czego potrzebujesz do zarządzania zespołami terenowymi w jednej aplikacji.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Odkryj narzędzia, które pomogą Ci zoptymalizować działanie Twojego pubu lub restauracji.
             </p>
           </div>
 
@@ -139,12 +143,12 @@ const App2Page = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="feature-card bg-gradient-to-br from-dim-gray/50 to-raisin-black/50 p-8 rounded-2xl border border-gold-metallic/20 hover:border-gold-metallic/40 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-raisin-black" />
+                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-french-gray leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -152,97 +156,48 @@ const App2Page = () => {
         </div>
       </section>
 
-      {/* Platform Support */}
-      <section className="py-20 bg-gradient-to-r from-raisin-black/50 to-dim-gray/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Dostępne na wszystkich platformach
-            </h2>
-            <p className="text-xl text-french-gray">
-              Pobierz aplikację na swoim ulubionym urządzeniu
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Smartphone className="w-10 h-10 text-raisin-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">iOS</h3>
-              <p className="text-french-gray mb-4">iPhone & iPad</p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200">
-                App Store
-              </button>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Smartphone className="w-10 h-10 text-raisin-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Android</h3>
-              <p className="text-french-gray mb-4">Telefony & Tablety</p>
-              <button className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
-                Google Play
-              </button>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Smartphone className="w-10 h-10 text-raisin-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Web App</h3>
-              <p className="text-french-gray mb-4">Przeglądarka</p>
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
-                Otwórz Web App
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                Dlaczego BrewCode Mobile?
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8">
+                Dlaczego PubTracker?
               </h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-6 h-6 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-full flex items-center justify-center mr-4">
-                      <div className="w-2 h-2 bg-raisin-black rounded-full"></div>
+                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-french-gray text-lg">{benefit}</span>
+                    <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Rozpocznij już dziś</h3>
-              <p className="text-french-gray mb-6">
-                Dołącz do tysięcy firm, które już korzystają z BrewCode Mobile 
-                do zarządzania zespołami terenowymi.
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Rozpocznij już dziś</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Dołącz do setek pubów i restauracji, które już korzystają z PubTracker 
+                do zwiększenia zysków i optymalizacji operacji.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Darmowa wersja</span>
-                  <span className="text-gold-metallic font-semibold">5 użytkowników</span>
+                  <span className="text-gray-600 dark:text-gray-300">Darmowy trial</span>
+                  <span className="text-orange-500 font-bold">30 dni</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Wsparcie techniczne</span>
-                  <span className="text-gold-metallic font-semibold">24/7</span>
+                  <span className="text-gray-600 dark:text-gray-300">Wsparcie techniczne</span>
+                  <span className="text-orange-500 font-bold">24/7</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Aktualizacje</span>
-                  <span className="text-gold-metallic font-semibold">Bezpłatne</span>
+                  <span className="text-gray-600 dark:text-gray-300">Integracje</span>
+                  <span className="text-orange-500 font-bold">50+</span>
                 </div>
               </div>
-              <button className="w-full bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black py-3 rounded-lg font-semibold mt-6 hover:shadow-lg transition-all duration-300">
-                Pobierz darmową wersję
+              <button className="w-full bg-orange-500 text-white py-3 border-2 border-orange-500 shadow-lg rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
+                Rozpocznij darmowy trial
               </button>
             </div>
           </div>
@@ -250,30 +205,26 @@ const App2Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-raisin-black/50 to-dim-gray/50">
+      <section className="py-20 bg-orange-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Gotowy na mobilność?
-            </h2>
-            <p className="text-xl text-french-gray mb-8 max-w-2xl mx-auto">
-              Skontaktuj się z naszym zespołem i dowiedz się, jak BrewCode Mobile 
-              może pomóc Twojej firmie w zarządzaniu zespołami terenowymi.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/kontakt"
-                className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                Skontaktuj się
-              </Link>
-              <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
-                Zobacz demo
-              </button>
-            </div>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+            Gotowy na transformację swojego pubu?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Dołącz do grona innowacyjnych lokali, które już korzystają z naszych rozwiązań.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Rozpocznij darmowy trial
+            </button>
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Skontaktuj się z nami
+            </button>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

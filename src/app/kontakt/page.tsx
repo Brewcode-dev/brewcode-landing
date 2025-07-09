@@ -1,283 +1,292 @@
 'use client';
 
-import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ArrowLeft, Mail, Phone, MapPin, Clock, MessageSquare, Send } from 'lucide-react';
+import Link from 'next/link';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
-// Dynamic import for Leaflet to avoid SSR issues
-const MapComponent = dynamic(() => import('../../components/MapComponent'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-64 bg-dim-gray rounded-lg flex items-center justify-center">
-      <div className="text-french-gray">Ładowanie mapy...</div>
-    </div>
-  ),
-});
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    message: '',
-  });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
+  const heroRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus('error');
-      setMessage('Proszę wypełnić wszystkie wymagane pola.');
-      return;
-    }
-
-    if (!formData.email.includes('@')) {
-      setStatus('error');
-      setMessage('Proszę wprowadzić poprawny adres email.');
-      return;
-    }
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Hero animations
+      gsap.fromTo('.hero-title', 
+        { y: 100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
+      );
       
-      // Here you would typically make an API call to your backend
-      // await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
+      gsap.fromTo('.hero-subtitle',
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", delay: 0.3 }
+      );
 
-      setStatus('success');
-      setMessage('Dziękujemy za wiadomość! Skontaktujemy się z Tobą wkrótce.');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: '',
-      });
-    } catch (error) {
-      setStatus('error');
-      setMessage('Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.');
-    }
-  };
+      // Form animation
+      gsap.fromTo('.contact-form',
+        { x: 50, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
-      value: 'kontakt@brewcode.pl',
-      description: 'Odpowiemy w ciągu 24 godzin'
+      title: "Email",
+      value: "kontakt@brewcode.pl",
+      description: "Napisz do nas w dowolnym momencie"
     },
     {
       icon: Phone,
-      title: 'Telefon',
-      value: '+48 123 456 789',
-      description: 'Pon-Pt 9:00-17:00'
+      title: "Telefon",
+      value: "+48 123 456 789",
+      description: "Dostępny w godzinach 9:00-17:00"
     },
     {
       icon: MapPin,
-      title: 'Adres',
-      value: 'Warszawa, Polska',
-      description: 'ul. Przykładowa 123, 00-000'
+      title: "Adres",
+      value: "ul. Browarowa 1, 00-000 Warszawa",
+      description: "Nasze biuro w centrum miasta"
     },
     {
       icon: Clock,
-      title: 'Godziny pracy',
-      value: 'Pon-Pt 9:00-17:00',
-      description: 'Weekendy: na życzenie'
-    },
+      title: "Godziny pracy",
+      value: "Pon-Pt: 9:00-17:00",
+      description: "Weekendy: 10:00-14:00"
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-raisin-black to-dim-gray pt-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header />
+      
       {/* Hero Section */}
-      <section className="py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Skontaktuj się z <span className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow bg-clip-text text-transparent">nami</span>
+      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Link 
+            href="/"
+            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Powrót do strony głównej
+          </Link>
+          
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+            <span className="text-orange-500">
+              Skontaktuj się z nami
+            </span>
           </h1>
-          <p className="text-xl text-french-gray max-w-2xl mx-auto">
+          
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Jesteśmy tutaj, aby pomóc Ci w realizacji Twoich projektów. 
-            Skontaktuj się z nami i omówmy, jak możemy wspólnie osiągnąć sukces.
+            Skontaktuj się z nami i dowiedz się, jak możemy Ci pomóc.
           </p>
         </div>
       </section>
 
-      {/* Contact Info & Form */}
-      <section className="py-20">
+      {/* Contact Info Section */}
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contactInfo.map((info, index) => {
+              const IconComponent = info.icon;
+              return (
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 border-2 border-orange-500 shadow-lg rounded-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">{info.title}</h3>
+                  <p className="text-orange-500 font-semibold mb-2">{info.value}</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm">{info.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section ref={formRef} className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl font-bold text-white mb-8">Informacje kontaktowe</h2>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
+                Napisz do nas
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                Opowiedz nam o swoim projekcie, a my pomożemy Ci go zrealizować. 
+                Nasz zespół ekspertów jest gotowy, aby Ci pomóc.
+              </p>
               
               <div className="space-y-6">
-                {contactInfo.map((info, index) => {
-                  const IconComponent = info.icon;
-                  return (
-                    <div key={index} className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-lg flex items-center justify-center flex-shrink-0">
-                        <IconComponent className="w-6 h-6 text-raisin-black" />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold text-white mb-1">{info.title}</h3>
-                        <p className="text-gold-metallic font-medium">{info.value}</p>
-                        <p className="text-french-gray text-sm">{info.description}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Map */}
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold text-white mb-4">Nasza lokalizacja</h3>
-                <MapComponent />
+                <div className="flex items-center">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-600 dark:text-gray-300">Bezpłatna konsultacja</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-600 dark:text-gray-300">Szybka odpowiedź</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <span className="text-gray-600 dark:text-gray-300">Indywidualne podejście</span>
+                </div>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-white mb-8">Wyślij wiadomość</h2>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <div className="contact-form bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+              <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-white font-medium mb-2">
-                      Imię i nazwisko *
+                    <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                      Imię i nazwisko
                     </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-gold-metallic/30 rounded-lg text-white placeholder-french-gray focus:outline-none focus:border-gold-metallic focus:ring-2 focus:ring-gold-metallic/20 transition-all duration-300"
+                    <input 
+                      type="text" 
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
                       placeholder="Twoje imię i nazwisko"
-                      required
                     />
                   </div>
-                  
                   <div>
-                    <label htmlFor="email" className="block text-white font-medium mb-2">
-                      Email *
+                    <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                      Email
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-gold-metallic/30 rounded-lg text-white placeholder-french-gray focus:outline-none focus:border-gold-metallic focus:ring-2 focus:ring-gold-metallic/20 transition-all duration-300"
-                      placeholder="twoj@email.pl"
-                      required
+                    <input 
+                      type="email" 
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                      placeholder="twoj@email.com"
                     />
                   </div>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="company" className="block text-white font-medium mb-2">
-                      Firma
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-gold-metallic/30 rounded-lg text-white placeholder-french-gray focus:outline-none focus:border-gold-metallic focus:ring-2 focus:ring-gold-metallic/20 transition-all duration-300"
-                      placeholder="Nazwa firmy"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="subject" className="block text-white font-medium mb-2">
-                      Temat
-                    </label>
-                    <select
-                      id="subject"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white/10 border border-gold-metallic/30 rounded-lg text-white focus:outline-none focus:border-gold-metallic focus:ring-2 focus:ring-gold-metallic/20 transition-all duration-300"
-                    >
-                      <option value="">Wybierz temat</option>
-                      <option value="general">Pytanie ogólne</option>
-                      <option value="project">Nowy projekt</option>
-                      <option value="support">Wsparcie techniczne</option>
-                      <option value="partnership">Współpraca</option>
-                      <option value="other">Inne</option>
-                    </select>
-                  </div>
-                </div>
-
+                
                 <div>
-                  <label htmlFor="message" className="block text-white font-medium mb-2">
-                    Wiadomość *
+                  <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                    Temat
                   </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={6}
-                    className="w-full px-4 py-3 bg-white/10 border border-gold-metallic/30 rounded-lg text-white placeholder-french-gray focus:outline-none focus:border-gold-metallic focus:ring-2 focus:ring-gold-metallic/20 transition-all duration-300 resize-none"
-                    placeholder="Opisz swój projekt lub pytanie..."
-                    required
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                    placeholder="O czym chcesz porozmawiać?"
                   />
                 </div>
-
-                {/* Status Message */}
-                {status !== 'idle' && (
-                  <div className={`p-4 rounded-lg flex items-center ${
-                    status === 'success' 
-                      ? 'bg-green-500/20 border border-green-500/30 text-green-300' 
-                      : 'bg-red-500/20 border border-red-500/30 text-red-300'
-                  }`}>
-                    {status === 'success' ? (
-                      <CheckCircle className="w-5 h-5 mr-3" />
-                    ) : (
-                      <AlertCircle className="w-5 h-5 mr-3" />
-                    )}
-                    {message}
-                  </div>
-                )}
-
-                <button
+                
+                <div>
+                  <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                    Wiadomość
+                  </label>
+                  <textarea 
+                    rows={6}
+                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none"
+                    placeholder="Opowiedz nam o swoim projekcie..."
+                  ></textarea>
+                </div>
+                
+                <button 
                   type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center"
+                  className="w-full bg-orange-500 text-white py-4 border-2 border-orange-500 shadow-lg rounded-lg font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
-                  {status === 'loading' ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-raisin-black border-t-transparent rounded-full animate-spin mr-3"></div>
-                      Wysyłanie...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-3" />
-                      Wyślij wiadomość
-                    </>
-                  )}
+                  <Send className="w-5 h-5 mr-2" />
+                  Wyślij wiadomość
                 </button>
               </form>
             </div>
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
+              Często zadawane pytania
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Odpowiedzi na najczęściej zadawane pytania
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+                Jak długo trwa realizacja projektu?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Czas realizacji zależy od złożoności projektu. Proste aplikacje mogą być gotowe w ciągu 2-4 tygodni, 
+                a bardziej złożone projekty mogą trwać 2-6 miesięcy. Dokładny harmonogram ustalamy na etapie konsultacji.
+              </p>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+                Jakie technologie wykorzystujecie?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Wykorzystujemy najnowsze technologie: React, Next.js, Node.js, Python, Django, oraz różne bazy danych. 
+                Wybór technologii zależy od specyfiki projektu i wymagań klienta.
+              </p>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+                Czy oferujecie wsparcie po wdrożeniu?
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Tak, oferujemy pełne wsparcie techniczne po wdrożeniu projektu. Obejmuje to monitoring, 
+                aktualizacje, konserwację oraz pomoc w rozwiązywaniu problemów.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-orange-500">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+            Gotowy na realizację swojego projektu?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Skontaktuj się z nami i rozpocznij swoją przygodę z nowoczesnymi rozwiązaniami.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Rozpocznij projekt
+            </button>
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Zobacz portfolio
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

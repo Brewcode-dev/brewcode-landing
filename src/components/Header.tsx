@@ -10,11 +10,11 @@ const Header = () => {
 
   const navItems = [
     { name: 'Strona główna', href: '/' },
-    { name: 'O nas', href: '#about' },
-    { name: 'Technologie', href: '#technologies' },
-    { name: 'Aplikacje', href: '#apps' },
-    { name: 'Proces', href: '#process' },
-    { name: 'Kontakt', href: '#contact' },
+    { name: 'O nas', href: '/#about' },
+    { name: 'Technologie', href: '/#technologies' },
+    { name: 'Aplikacje', href: '/#apps' },
+    { name: 'Proces', href: '/#process' },
+    { name: 'Kontakt', href: '/kontakt' },
   ];
 
   return (

@@ -3,8 +3,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Code, Server, GitBranch, Shield, Zap, Database, Cloud } from 'lucide-react';
+import { ArrowLeft, Users, Heart, MapPin, MessageCircle, Star, Share2, Globe } from 'lucide-react';
 import Link from 'next/link';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,84 +52,75 @@ const App3Page = () => {
 
   const features = [
     {
-      icon: Code,
-      title: "Mikroserwisy",
-      description: "Buduj skalowalne aplikacje z architekturą mikroserwisową i kontenerami Docker."
+      icon: Users,
+      title: "Społeczność miłośników",
+      description: "Dołącz do społeczności pasjonatów piwa i dziel się swoimi doświadczeniami."
     },
     {
-      icon: GitBranch,
-      title: "CI/CD Pipeline",
-      description: "Automatyzuj procesy budowania, testowania i wdrażania z zaawansowanymi pipeline'ami."
+      icon: MapPin,
+      title: "Mapa browarów",
+      description: "Odkrywaj nowe browary i puby w Twojej okolicy i na całym świecie."
     },
     {
-      icon: Server,
-      title: "Monitoring",
-      description: "Monitoruj wydajność aplikacji w czasie rzeczywistym z zaawansowanymi metrykami."
+      icon: Star,
+      title: "Recenzje i oceny",
+      description: "Oceniaj piwa, dodawaj recenzje i pomagaj innym w wyborze."
     },
     {
-      icon: Cloud,
-      title: "Skalowanie automatyczne",
-      description: "Automatycznie skaluj zasoby w zależności od obciążenia i zapotrzebowania."
+      icon: Heart,
+      title: "Ulubione piwa",
+      description: "Zapisuj swoje ulubione piwa i otrzymuj spersonalizowane rekomendacje."
     },
     {
-      icon: Shield,
-      title: "Bezpieczeństwo",
-      description: "Zaawansowane zabezpieczenia, skanowanie podatności i kontrola dostępu."
+      icon: MessageCircle,
+      title: "Dyskusje i porady",
+      description: "Uczestnicz w dyskusjach o piwie i dziel się swoją wiedzą."
     },
     {
-      icon: Database,
-      title: "Zarządzanie danymi",
-      description: "Kompleksowe narzędzia do zarządzania bazami danych i migracjami."
+      icon: Share2,
+      title: "Udostępnianie",
+      description: "Udostępniaj swoje odkrycia z przyjaciółmi i rodziną."
     }
   ];
 
   const benefits = [
-    "Przyspieszenie wdrażania o 80%",
-    "Redukcja kosztów infrastruktury o 40%",
-    "Poprawa stabilności aplikacji o 95%",
-    "Automatyzacja 90% procesów DevOps"
-  ];
-
-  const techStack = [
-    { name: "Docker", icon: "🐳" },
-    { name: "Kubernetes", icon: "☸️" },
-    { name: "AWS", icon: "☁️" },
-    { name: "Azure", icon: "🔷" },
-    { name: "GCP", icon: "🌐" },
-    { name: "Terraform", icon: "🏗️" },
-    { name: "Jenkins", icon: "🤖" },
-    { name: "GitLab", icon: "🦊" },
+    "Odkryj tysiące nowych piw",
+    "Poznaj lokalne browary",
+    "Dołącz do społeczności pasjonatów",
+    "Ucz się od ekspertów"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-raisin-black to-dim-gray pt-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header />
+      
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 text-center">
+      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-gold-metallic hover:text-hunyadi-yellow transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-bold text-white mb-6">
-            <span className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow bg-clip-text text-transparent">
-              BrewCode Platform
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+            <span className="text-orange-500">
+              BeerCraft Community
             </span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl text-french-gray mb-8 max-w-3xl mx-auto">
-            Kompleksowa platforma deweloperska, która upraszcza proces tworzenia, 
-            wdrażania i zarządzania aplikacjami w chmurze.
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            Platforma społecznościowa dla miłośników piwa kraftowego. Dziel się opiniami, 
+            odkrywaj nowe browary i łącz się z pasjonatami z całego świata.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
-              Rozpocznij darmowy trial
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Dołącz do społeczności
             </button>
-            <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
+            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Zobacz demo
             </button>
           </div>
@@ -135,14 +128,14 @@ const App3Page = () => {
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20">
+      <section ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
               Kluczowe funkcje
             </h2>
-            <p className="text-xl text-french-gray max-w-3xl mx-auto">
-              Wszystko, czego potrzebujesz do profesjonalnego rozwoju i wdrażania aplikacji.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Odkryj narzędzia, które pomogą Ci połączyć się z społecznością miłośników piwa.
             </p>
           </div>
 
@@ -150,12 +143,12 @@ const App3Page = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="feature-card bg-gradient-to-br from-dim-gray/50 to-raisin-black/50 p-8 rounded-2xl border border-gold-metallic/20 hover:border-gold-metallic/40 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-xl flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-raisin-black" />
+                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                    <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-french-gray leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -163,164 +156,48 @@ const App3Page = () => {
         </div>
       </section>
 
-      {/* Tech Stack Section */}
-      <section className="py-20 bg-gradient-to-r from-raisin-black/50 to-dim-gray/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Wspierane technologie
-            </h2>
-            <p className="text-xl text-french-gray">
-              Integruj się z popularnymi narzędziami i platformami
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {techStack.map((tech, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-dim-gray/30 to-raisin-black/30 rounded-xl border border-gold-metallic/20 hover:border-gold-metallic/40 transition-all duration-300">
-                <div className="text-4xl mb-3">{tech.icon}</div>
-                <h3 className="text-lg font-semibold text-white">{tech.name}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                Dlaczego BrewCode Platform?
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8">
+                Dlaczego BeerCraft Community?
               </h2>
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-6 h-6 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow rounded-full flex items-center justify-center mr-4">
-                      <div className="w-2 h-2 bg-raisin-black rounded-full"></div>
+                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
-                    <span className="text-french-gray text-lg">{benefit}</span>
+                    <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Rozpocznij już dziś</h3>
-              <p className="text-french-gray mb-6">
-                Dołącz do tysięcy deweloperów, którzy już korzystają z BrewCode Platform 
-                do budowania i wdrażania aplikacji.
+            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Dołącz już dziś</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6">
+                Dołącz do tysięcy miłośników piwa, którzy już korzystają z BeerCraft Community 
+                do odkrywania nowych smaków i łączenia się z pasjonatami.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Darmowy trial</span>
-                  <span className="text-gold-metallic font-semibold">14 dni</span>
+                  <span className="text-gray-600 dark:text-gray-300">Darmowe konto</span>
+                  <span className="text-orange-500 font-bold">Bezpłatne</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Wsparcie techniczne</span>
-                  <span className="text-gold-metallic font-semibold">24/7</span>
+                  <span className="text-gray-600 dark:text-gray-300">Użytkownicy</span>
+                  <span className="text-orange-500 font-bold">10k+</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-french-gray">Integracje</span>
-                  <span className="text-gold-metallic font-semibold">50+</span>
+                  <span className="text-gray-600 dark:text-gray-300">Browary</span>
+                  <span className="text-orange-500 font-bold">500+</span>
                 </div>
               </div>
-              <button className="w-full bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black py-3 rounded-lg font-semibold mt-6 hover:shadow-lg transition-all duration-300">
-                Rozpocznij darmowy trial
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-gradient-to-r from-raisin-black/50 to-dim-gray/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Wybierz plan dla siebie
-            </h2>
-            <p className="text-xl text-french-gray">
-              Elastyczne plany dostosowane do Twoich potrzeb
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-dim-gray/30 to-raisin-black/30 p-8 rounded-2xl border border-gold-metallic/20">
-              <h3 className="text-2xl font-bold text-white mb-4">Starter</h3>
-              <div className="text-4xl font-bold text-gold-metallic mb-6">$29<span className="text-lg text-french-gray">/miesiąc</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Do 5 projektów
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Podstawowe CI/CD
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Email support
-                </li>
-              </ul>
-              <button className="w-full border-2 border-gold-metallic text-gold-metallic py-3 rounded-lg font-semibold hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
-                Wybierz plan
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-br from-gold-metallic/20 to-hunyadi-yellow/20 p-8 rounded-2xl border-2 border-gold-metallic relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-4 py-1 rounded-full text-sm font-semibold">
-                Najpopularniejszy
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Professional</h3>
-              <div className="text-4xl font-bold text-gold-metallic mb-6">$99<span className="text-lg text-french-gray">/miesiąc</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Do 25 projektów
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Zaawansowane CI/CD
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Priority support
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Monitoring
-                </li>
-              </ul>
-              <button className="w-full bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                Wybierz plan
-              </button>
-            </div>
-
-            <div className="bg-gradient-to-br from-dim-gray/30 to-raisin-black/30 p-8 rounded-2xl border border-gold-metallic/20">
-              <h3 className="text-2xl font-bold text-white mb-4">Enterprise</h3>
-              <div className="text-4xl font-bold text-gold-metallic mb-6">$299<span className="text-lg text-french-gray">/miesiąc</span></div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Nielimitowane projekty
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  Wszystkie funkcje
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  24/7 support
-                </li>
-                <li className="flex items-center text-french-gray">
-                  <div className="w-2 h-2 bg-gold-metallic rounded-full mr-3"></div>
-                  SLA gwarancja
-                </li>
-              </ul>
-              <button className="w-full border-2 border-gold-metallic text-gold-metallic py-3 rounded-lg font-semibold hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
-                Skontaktuj się
+              <button className="w-full bg-orange-500 text-white py-3 border-2 border-orange-500 shadow-lg rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
+                Dołącz do społeczności
               </button>
             </div>
           </div>
@@ -328,30 +205,26 @@ const App3Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-orange-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-gold-metallic/10 to-hunyadi-yellow/10 border border-gold-metallic/20 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Gotowy na profesjonalne DevOps?
-            </h2>
-            <p className="text-xl text-french-gray mb-8 max-w-2xl mx-auto">
-              Skontaktuj się z naszym zespołem i dowiedz się, jak BrewCode Platform 
-              może przyspieszyć rozwój Twoich aplikacji.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/kontakt"
-                className="bg-gradient-to-r from-gold-metallic to-hunyadi-yellow text-raisin-black px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                Skontaktuj się
-              </Link>
-              <button className="border-2 border-gold-metallic text-gold-metallic px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gold-metallic hover:text-raisin-black transition-all duration-300">
-                Zobacz demo
-              </button>
-            </div>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+            Gotowy na przygodę z piwem?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Dołącz do grona pasjonatów, którzy już odkrywają świat piwa kraftowego.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Dołącz do społeczności
+            </button>
+            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+              Skontaktuj się z nami
+            </button>
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };

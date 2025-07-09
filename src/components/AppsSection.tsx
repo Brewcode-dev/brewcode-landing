@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowRight, Zap, BarChart3, Shield, Users, Beer } from 'lucide-react';
 
 const AppsSection = () => {
@@ -11,6 +12,7 @@ const AppsSection = () => {
       description: 'Zaawansowany system zarządzania recepturami piwa dla browarów rzemieślniczych.',
       icon: Beer,
       color: 'bg-orange-500',
+      href: '/app1',
       stats: {
         users: '2.5k+',
         rating: '4.9',
@@ -24,12 +26,27 @@ const AppsSection = () => {
       description: 'Aplikacja do zarządzania inwentarzem i sprzedażą w pubach i restauracjach.',
       icon: Users,
       color: 'bg-orange-500',
+      href: '/app2',
       stats: {
         users: '1.8k+',
         rating: '4.8',
         downloads: '12k+'
       },
       features: ['Inwentarz', 'Sprzedaż', 'Raporty', 'Integracje']
+    },
+    {
+      id: 3,
+      name: 'BeerCraft Community',
+      description: 'Platforma społecznościowa dla miłośników piwa kraftowego.',
+      icon: Users,
+      color: 'bg-orange-500',
+      href: '/app3',
+      stats: {
+        users: '10k+',
+        rating: '4.7',
+        downloads: '25k+'
+      },
+      features: ['Społeczność', 'Recenzje', 'Mapa browarów', 'Dyskusje']
     }
   ];
 
@@ -52,9 +69,10 @@ const AppsSection = () => {
             const IconComponent = app.icon;
             
             return (
-              <div
+              <Link
                 key={app.id}
-                className="app-card group bg-orange-500 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300"
+                href={app.href}
+                className="app-card group bg-orange-500 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 block"
               >
                 {/* App Header */}
                 <div className="flex items-start justify-between mb-6">
@@ -134,10 +152,10 @@ const AppsSection = () => {
                 </div>
 
                 {/* CTA Button */}
-                <button className="w-full py-3 px-6 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold bg-white text-orange-500">
+                <div className="w-full py-3 px-6 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold bg-white text-orange-500 text-center">
                   Dowiedz się więcej
-                </button>
-              </div>
+                </div>
+              </Link>
             );
           })}
         </div>
@@ -151,10 +169,12 @@ const AppsSection = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               Stworzymy dla Ciebie aplikację dopasowaną do Twoich potrzeb.
             </p>
-            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg inline-flex items-center">
-              Skontaktuj się z nami
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
+            <Link href="/kontakt">
+              <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg inline-flex items-center">
+                Skontaktuj się z nami
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
