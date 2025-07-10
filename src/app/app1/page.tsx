@@ -95,18 +95,18 @@ const App1Page = () => {
       <Header />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
+      <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-[#ff4f19] hover:text-orange-600 transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
           
           <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
-            <span className="text-orange-500">
+            <span className="text-[#ff4f19]">
               BrewMaster Pro
             </span>
           </h1>
@@ -117,10 +117,10 @@ const App1Page = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Rozpocznij darmowy trial
             </button>
-            <button className="bg-white dark:bg-gray-800 text-orange-500 px-8 py-4 border-2 border-orange-500 shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white dark:bg-gray-800 text-[#ff4f19] px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Zobacz demo
             </button>
           </div>
@@ -143,8 +143,8 @@ const App1Page = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-orange-500 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mb-6 shadow-lg">
+                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-[#ff4f19] rounded-lg flex items-center justify-center mb-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
@@ -167,7 +167,7 @@ const App1Page = () => {
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                    <div className="w-6 h-6 bg-[#ff4f19] rounded-full flex items-center justify-center mr-4">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
                     <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
@@ -176,7 +176,7 @@ const App1Page = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-2xl p-8">
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Rozpocznij już dziś</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Dołącz do setek browarów, które już korzystają z BrewMaster Pro 
@@ -185,18 +185,18 @@ const App1Page = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600 dark:text-gray-300">Darmowy trial</span>
-                  <span className="text-orange-500 font-bold">30 dni</span>
+                  <span className="text-[#ff4f19] font-bold">30 dni</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600 dark:text-gray-300">Wsparcie techniczne</span>
-                  <span className="text-orange-500 font-bold">24/7</span>
+                  <span className="text-[#ff4f19] font-bold">24/7</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600 dark:text-gray-300">Integracje</span>
-                  <span className="text-orange-500 font-bold">100+</span>
+                  <span className="text-[#ff4f19] font-bold">100+</span>
                 </div>
               </div>
-              <button className="w-full bg-orange-500 text-white py-3 border-2 border-orange-500 shadow-lg rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
+              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
                 Rozpocznij darmowy trial
               </button>
             </div>
@@ -205,7 +205,7 @@ const App1Page = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-500">
+      <section className="py-20 bg-[#ff4f19]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
             Gotowy na rewolucję w browarnictwie?
@@ -214,10 +214,10 @@ const App1Page = () => {
             Dołącz do grona innowacyjnych browarów, które już korzystają z naszych rozwiązań.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Rozpocznij darmowy trial
             </button>
-            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Skontaktuj się z nami
             </button>
           </div>

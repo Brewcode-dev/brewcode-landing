@@ -81,18 +81,18 @@ const ContactPage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section ref={heroRef} className="py-20 text-center bg-white dark:bg-gray-900">
+      <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-orange-500 hover:text-orange-600 transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-[#ff4f19] hover:text-orange-600 transition-colors duration-200 mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
           </Link>
           
           <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
-            <span className="text-orange-500">
+            <span className="text-[#ff4f19]">
               Skontaktuj się z nami
             </span>
           </h1>
@@ -111,12 +111,12 @@ const ContactPage = () => {
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <div key={index} className="bg-white dark:bg-gray-800 p-6 border-2 border-orange-500 shadow-lg rounded-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div key={index} className="bg-white dark:bg-gray-800 p-6 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <div className="w-16 h-16 bg-[#ff4f19] rounded-lg flex items-center justify-center mx-auto mb-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">{info.title}</h3>
-                  <p className="text-orange-500 font-semibold mb-2">{info.value}</p>
+                  <p className="text-[#ff4f19] font-semibold mb-2">{info.value}</p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">{info.description}</p>
                 </div>
               );
@@ -140,19 +140,19 @@ const ContactPage = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] rounded-full flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <span className="text-gray-600 dark:text-gray-300">Bezpłatna konsultacja</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] rounded-full flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <span className="text-gray-600 dark:text-gray-300">Szybka odpowiedź</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] rounded-full flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <span className="text-gray-600 dark:text-gray-300">Indywidualne podejście</span>
@@ -160,7 +160,7 @@ const ContactPage = () => {
               </div>
             </div>
             
-            <div className="contact-form bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-2xl p-8">
+            <div className="contact-form bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-2xl p-8">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -169,7 +169,7 @@ const ContactPage = () => {
                     </label>
                     <input 
                       type="text" 
-                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
                       placeholder="Twoje imię i nazwisko"
                     />
                   </div>
@@ -179,7 +179,7 @@ const ContactPage = () => {
                     </label>
                     <input 
                       type="email" 
-                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
                       placeholder="twoj@email.com"
                     />
                   </div>
@@ -191,7 +191,7 @@ const ContactPage = () => {
                   </label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
                     placeholder="O czym chcesz porozmawiać?"
                   />
                 </div>
@@ -202,14 +202,14 @@ const ContactPage = () => {
                   </label>
                   <textarea 
                     rows={6}
-                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none"
                     placeholder="Opowiedz nam o swoim projekcie..."
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full bg-orange-500 text-white py-4 border-2 border-orange-500 shadow-lg rounded-lg font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                  className="w-full bg-[#ff4f19] text-white py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Wyślij wiadomość
@@ -233,7 +233,7 @@ const ContactPage = () => {
           </div>
           
           <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
                 Jak długo trwa realizacja projektu?
               </h3>
@@ -243,7 +243,7 @@ const ContactPage = () => {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
                 Jakie technologie wykorzystujecie?
               </h3>
@@ -253,7 +253,7 @@ const ContactPage = () => {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-orange-500 shadow-lg rounded-lg p-6">
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
                 Czy oferujecie wsparcie po wdrożeniu?
               </h3>
@@ -267,7 +267,7 @@ const ContactPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-500">
+      <section className="py-20 bg-[#ff4f19]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
             Gotowy na realizację swojego projektu?
@@ -276,10 +276,10 @@ const ContactPage = () => {
             Skontaktuj się z nami i rozpocznij swoją przygodę z nowoczesnymi rozwiązaniami.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-orange-500 px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Rozpocznij projekt
             </button>
-            <button className="bg-orange-500 text-white px-8 py-4 border-2 border-white shadow-lg hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
               Zobacz portfolio
             </button>
           </div>
