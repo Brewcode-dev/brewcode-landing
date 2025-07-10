@@ -74,6 +74,12 @@
   --color-bright-sun-950: var(--bright-sun-950);
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -175,4 +181,86 @@ header {
 
 .dark * {
   scrollbar-color: #ff4f19 #0f172a;
+}
+
+/* Animacje dla preloadera */
+@keyframes fill-up {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes foam {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.2);
+  }
+}
+
+.animate-fill-up {
+  animation: fill-up 2s ease-in-out;
+}
+
+.animate-bubble {
+  animation: bubble 1s ease-in-out infinite;
+}
+
+.animate-foam {
+  animation: foam 0.8s ease-in-out infinite;
+}
+
+/* Animacje fullscreen dla preloadera */
+@keyframes fill-up-full {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes bubble-full {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes foam-full {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleY(1.8);
+    opacity: 1;
+  }
+}
+
+.animate-fill-up-full {
+  animation: fill-up-full 2.5s ease-in-out;
+}
+
+.animate-bubble-full {
+  animation: bubble-full 1.5s ease-in-out infinite;
+}
+
+.animate-foam-full {
+  animation: foam-full 1s ease-in-out infinite;
 }

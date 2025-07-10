@@ -144,7 +144,7 @@ const App1Page = () => {
               const IconComponent = feature.icon;
               return (
                 <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-16 h-16 bg-[#ff4f19] rounded-lg flex items-center justify-center mb-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
+                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
@@ -167,16 +167,16 @@ const App1Page = () => {
               <div className="space-y-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center">
-                    <div className="w-6 h-6 bg-[#ff4f19] rounded-full flex items-center justify-center mr-4">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
-                    </div>
+                                <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
+              <div className="w-2 h-2 bg-white"></div>
+            </div>
                     <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-2xl p-8">
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-8">
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Rozpocznij już dziś</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
                 Dołącz do setek browarów, które już korzystają z BrewMaster Pro 
@@ -196,7 +196,7 @@ const App1Page = () => {
                   <span className="text-[#ff4f19] font-bold">100+</span>
                 </div>
               </div>
-              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
+              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
                 Rozpocznij darmowy trial
               </button>
             </div>

@@ -40,9 +40,13 @@ const Footer = () => {
   ];
 
   const handleCookieSettings = () => {
-    // Usuń zapisane preferencje i pokaż cookie consent ponownie
-    localStorage.removeItem('cookie-consent');
-    setShowCookieSettings(true);
+    // Resetuj cookie consent i pokaż ponownie
+    if (typeof window !== 'undefined' && (window as any).resetCookieConsent) {
+      (window as any).resetCookieConsent();
+    } else {
+      // Fallback - pokaż ustawienia
+      setShowCookieSettings(true);
+    }
   };
 
   return (
@@ -53,7 +57,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
+                <div className="w-8 h-8 bg-[#ff4f19] flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <span className="text-white font-black text-sm">B</span>
                 </div>
                 <span className="text-2xl font-black text-white">Brewcode</span>
@@ -66,15 +70,15 @@ const Footer = () => {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-4 h-4 text-orange-500" />
+                  <Mail className="w-4 h-4 text-[#ff4f19]" />
                   <span className="text-gray-300">kontakt@brewcode.pl</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-4 h-4 text-orange-500" />
+                  <Phone className="w-4 h-4 text-[#ff4f19]" />
                   <span className="text-gray-300">+48 123 456 789</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-4 h-4 text-orange-500" />
+                  <MapPin className="w-4 h-4 text-[#ff4f19]" />
                   <span className="text-gray-300">Warszawa, Polska</span>
                 </div>
               </div>
@@ -82,13 +86,13 @@ const Footer = () => {
 
             {/* Company Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-orange-500">Firma</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Firma</h3>
               <ul className="space-y-2">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
                     >
                       {link.name}
                     </Link>
@@ -99,13 +103,13 @@ const Footer = () => {
 
             {/* Product Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-orange-500">Produkty</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Produkty</h3>
               <ul className="space-y-2">
                 {productLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
                     >
                       {link.name}
                     </Link>
@@ -116,13 +120,13 @@ const Footer = () => {
 
             {/* Support Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-orange-500">Wsparcie</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Wsparcie</h3>
               <ul className="space-y-2">
                 {supportLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
                     >
                       {link.name}
                     </Link>
@@ -152,7 +156,7 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-800 border-2 border-[#ff4f19] rounded-lg flex items-center justify-center text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]"
+                      className="w-10 h-10 bg-gray-800 border-2 border-[#ff4f19] flex items-center justify-center text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]"
                     >
                       <IconComponent className="w-4 h-4" />
                     </Link>
@@ -164,19 +168,19 @@ const Footer = () => {
               <div className="flex space-x-6 text-sm">
                 <Link
                   href="/privacy"
-                  className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
                 >
                   Polityka prywatności
                 </Link>
                 <Link
                   href="/terms"
-                  className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
                 >
                   Regulamin
                 </Link>
                 <button
                   onClick={handleCookieSettings}
-                  className="text-gray-300 hover:text-orange-500 transition-colors duration-200 font-medium flex items-center"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium flex items-center"
                 >
                   <Settings className="w-4 h-4 mr-1" />
                   Cookie
@@ -188,7 +192,15 @@ const Footer = () => {
       </footer>
 
       {/* Cookie Consent - pokaż ponownie jeśli użytkownik kliknął "Cookie" w footerze */}
-      {showCookieSettings && <CookieConsent forceShow={true} />}
+      {showCookieSettings && (
+        <CookieConsent 
+          forceShow={true} 
+          onPreferencesChange={(preferences) => {
+            console.log('Preferencje cookie zmienione z footer:', preferences);
+            setShowCookieSettings(false);
+          }}
+        />
+      )}
     </>
   );
 };

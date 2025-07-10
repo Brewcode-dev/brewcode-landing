@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
+import Preloader from "../components/Preloader";
 
 const roboto = Roboto({
   weight: ["400", "700"], // or any weights you need
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased`}
       >
+        <Preloader />
         {children}
         <CookieConsent />
       </body>

@@ -37,7 +37,7 @@ const TechnologiesSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
-            Nasze <span className="text-orange-500">Technologie</span>
+            Nasze <span className="text-[#ff4f19]">Technologie</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Używamy najnowszych technologii, aby tworzyć szybkie, skalowalne i bezpieczne aplikacje.
@@ -55,16 +55,16 @@ const TechnologiesSection = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <IconComponent className="w-6 h-6 text-orange-500 mr-3" />
+                    <IconComponent className="w-6 h-6 text-[#ff4f19] mr-3" />
                     <h3 className="text-lg font-bold text-gray-800 dark:text-white">
                       {tech.name}
                     </h3>
                   </div>
-                  <span className="text-sm font-bold text-orange-500">{tech.level}%</span>
+                  <span className="text-sm font-bold text-[#ff4f19]">{tech.level}%</span>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                <div className="w-full bg-gray-200 dark:bg-gray-700 h-3">
                   <div 
-                    className="skill-bar bg-orange-500 h-full"
+                    className="skill-bar bg-[#ff4f19] h-full"
                     style={{ width: `${tech.level}%` }}
                   ></div>
                 </div>
@@ -83,7 +83,7 @@ const TechnologiesSection = () => {
                 className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]"
               >
                 <div className="flex items-center mb-6">
-                  <IconComponent className="w-8 h-8 text-orange-500 mr-3" />
+                  <IconComponent className="w-8 h-8 text-[#ff4f19] mr-3" />
                   <h3 className="text-2xl font-black text-gray-800 dark:text-white">
                     {category.title}
                   </h3>

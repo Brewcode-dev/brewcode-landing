@@ -17,13 +17,33 @@ const Header = () => {
     { name: 'Kontakt', href: '/kontakt' },
   ];
 
+  const handleNavClick = (href: string, e: React.MouseEvent) => {
+    // Jeśli to link do sekcji na stronie głównej
+    if (href.startsWith('/#')) {
+      e.preventDefault();
+      const targetId = href.substring(2); // Usuń '/#'
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        // Zamknij menu mobilne jeśli jest otwarte
+        setIsMenuOpen(false);
+        
+        // Smooth scroll do sekcji
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b-4 border-[#ff4f19] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)]">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 select-none">
-            <span className="text-orange-500 font-black text-2xl tracking-tight hover:scale-105 transition-transform duration-200">
+            <span className="text-[#ff4f19] font-black text-2xl tracking-tight hover:scale-105 transition-transform duration-200">
               Brewcode
             </span>
           </Link>
@@ -34,7 +54,8 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-800 dark:text-white hover:text-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 rounded hover:bg-orange-500/10 hover:scale-105"
+                onClick={(e) => handleNavClick(item.href, e)}
+                className="text-gray-800 dark:text-white hover:text-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 hover:bg-orange-500/10 hover:scale-105 cursor-pointer"
               >
                 {item.name}
               </Link>
@@ -47,7 +68,7 @@ const Header = () => {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-800 dark:text-white p-2 hover:bg-orange-500/10 rounded transition-colors duration-200"
+              className="md:hidden text-gray-800 dark:text-white p-2 hover:bg-orange-500/10 transition-colors duration-200"
               aria-label="Otwórz menu"
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -63,8 +84,8 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-3 text-gray-800 dark:text-white hover:text-orange-500 hover:bg-orange-500/10 font-bold text-lg rounded transition-all duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => handleNavClick(item.href, e)}
+                  className="block px-3 py-3 text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-orange-500/10 font-bold text-lg transition-all duration-200 cursor-pointer"
                 >
                   {item.name}
                 </Link>
