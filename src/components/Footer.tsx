@@ -2,12 +2,32 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Github, Settings } from 'lucide-react';
 import CookieConsent from './CookieConsent';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [showCookieSettings, setShowCookieSettings] = useState(false);
+  const pathname = usePathname();
+
+  const isActiveLink = (href: string) => {
+    // Check if it's the current page
+    if (href === '/' && pathname === '/') return true;
+    if (href === '/kontakt' && pathname === '/kontakt') return true;
+    if (href === '/support' && pathname === '/support') return true;
+    if (href === '/wsparcie' && pathname === '/wsparcie') return true;
+    if (href === '/help' && pathname === '/help') return true;
+    if (href === '/faq' && pathname === '/faq') return true;
+    if (href === '/privacy' && pathname === '/privacy') return true;
+    if (href === '/terms' && pathname === '/terms') return true;
+    if (href === '/status' && pathname === '/status') return true;
+    if (href === '/app1' && pathname === '/app1') return true;
+    if (href === '/app2' && pathname === '/app2') return true;
+    if (href === '/app3' && pathname === '/app3') return true;
+    
+    return false;
+  };
 
   const companyLinks = [
     { name: 'O nas', href: '/#about' },
@@ -92,7 +112,11 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
+                      className={`transition-colors duration-200 font-medium font-body-roboto ${
+                        isActiveLink(link.href)
+                          ? 'text-[#ff4f19] font-bold'
+                          : 'text-gray-300 hover:text-[#ff4f19]'
+                      }`}
                     >
                       {link.name}
                     </Link>
@@ -109,7 +133,11 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
+                      className={`transition-colors duration-200 font-medium font-body-roboto ${
+                        isActiveLink(link.href)
+                          ? 'text-[#ff4f19] font-bold'
+                          : 'text-gray-300 hover:text-[#ff4f19]'
+                      }`}
                     >
                       {link.name}
                     </Link>
@@ -126,7 +154,11 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
+                      className={`transition-colors duration-200 font-medium font-body-roboto ${
+                        isActiveLink(link.href)
+                          ? 'text-[#ff4f19] font-bold'
+                          : 'text-gray-300 hover:text-[#ff4f19]'
+                      }`}
                     >
                       {link.name}
                     </Link>
@@ -168,13 +200,21 @@ const Footer = () => {
               <div className="flex space-x-6 text-sm">
                 <Link
                   href="/privacy"
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
+                  className={`transition-colors duration-200 font-medium font-body-roboto ${
+                    isActiveLink('/privacy')
+                      ? 'text-[#ff4f19] font-bold'
+                      : 'text-gray-300 hover:text-[#ff4f19]'
+                  }`}
                 >
                   Polityka prywatności
                 </Link>
                 <Link
                   href="/terms"
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
+                  className={`transition-colors duration-200 font-medium font-body-roboto ${
+                    isActiveLink('/terms')
+                      ? 'text-[#ff4f19] font-bold'
+                      : 'text-gray-300 hover:text-[#ff4f19]'
+                  }`}
                 >
                   Regulamin
                 </Link>

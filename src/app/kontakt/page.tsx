@@ -75,14 +75,14 @@ const ContactPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-[#FFE9CF] dark:bg-gray-900 transition-colors duration-300">
       
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
+      <section ref={heroRef} className="pt-32 pb-20 text-center bg-[#FFE9CF] dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
-            className="inline-flex items-center text-[#ff4f19] hover:text-orange-600 transition-colors duration-200 mb-8"
+            className="inline-flex items-center text-[#ff4f19] hover:text-orange-600 transition-colors duration-200 mb-8 font-heading-poppins"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Powrót do strony głównej
@@ -102,18 +102,18 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => {
               const IconComponent = info.icon;
               return (
-                <div key={index} className="bg-white dark:bg-gray-800 p-6 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] rounded-lg text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
+                <div key={index} className="bg-[#FFF2E6] dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] text-center hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:scale-105 hover:translate-x-[-2px] hover:translate-y-[-2px]">
+                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] border-2 border-[#ff4f19]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 font-heading-poppins">{info.title}</h3>
-                  <p className="text-[#ff4f19] font-semibold mb-2 font-body-roboto">{info.value}</p>
+                  <p className="text-[#ff4f19] font-bold mb-2 font-body-roboto">{info.value}</p>
                   <p className="text-gray-600 dark:text-gray-300 text-sm font-body-roboto">{info.description}</p>
                 </div>
               );
@@ -123,7 +123,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section ref={formRef} className="py-20 bg-white dark:bg-gray-900">
+      <section ref={formRef} className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -137,76 +137,76 @@ const ContactPage = () => {
               
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Bezpłatna konsultacja</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto font-bold">Bezpłatna konsultacja</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Szybka odpowiedź</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto font-bold">Szybka odpowiedź</span>
                 </div>
                 <div className="flex items-center">
-                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
+                  <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Indywidualne podejście</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto font-bold">Indywidualne podejście</span>
                 </div>
               </div>
             </div>
             
-            <div className="contact-form bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-8">
+            <div className="contact-form bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-8">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
+                    <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
                       Imię i nazwisko
                     </label>
                     <input 
                       type="text" 
-                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                      className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
                       placeholder="Twoje imię i nazwisko"
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
+                    <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
                       Email
                     </label>
                     <input 
                       type="email" 
-                      className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                      className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
                       placeholder="twoj@email.com"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
+                  <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
                     Temat
                   </label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
+                    className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
                     placeholder="O czym chcesz porozmawiać?"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
+                  <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
                     Wiadomość
                   </label>
                   <textarea 
                     rows={6}
-                    className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none"
+                    className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none font-body-roboto"
                     placeholder="Opowiedz nam o swoim projekcie..."
                   ></textarea>
                 </div>
                 
                 <button 
                   type="submit"
-                  className="w-full bg-[#ff4f19] text-white py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center font-heading-poppins"
+                  className="w-full bg-[#ff4f19] text-white py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] font-bold hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 flex items-center justify-center font-heading-poppins hover:translate-x-[-2px] hover:translate-y-[-2px]"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Wyślij wiadomość
@@ -218,7 +218,7 @@ const ContactPage = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
@@ -231,7 +231,7 @@ const ContactPage = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Map */}
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] rounded-lg overflow-hidden">
+            <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] overflow-hidden">
               <div className="relative h-96 w-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5!2d21.0122!3d52.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f4be7834e383d5!2sWarszawa%2C%20Polska!5e0!3m2!1spl!2spl!4v1234567890!5m1!1e1"
@@ -248,7 +248,7 @@ const ContactPage = () => {
             
             {/* Location Details */}
             <div className="space-y-6">
-              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+              <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
                   <MapPin className="w-6 h-6 text-[#ff4f19] mr-3" />
                   Adres
@@ -260,7 +260,7 @@ const ContactPage = () => {
                 </p>
               </div>
               
-              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+              <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
                   <Clock className="w-6 h-6 text-[#ff4f19] mr-3" />
                   Godziny otwarcia
@@ -272,7 +272,7 @@ const ContactPage = () => {
                 </div>
               </div>
               
-              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+              <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
                   <MessageSquare className="w-6 h-6 text-[#ff4f19] mr-3" />
                   Dojazd
@@ -290,7 +290,7 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-[#FFE9CF] dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
@@ -302,7 +302,7 @@ const ContactPage = () => {
           </div>
           
           <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
+            <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Jak długo trwa realizacja projektu?
               </h3>
@@ -312,7 +312,7 @@ const ContactPage = () => {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
+            <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Jakie technologie wykorzystujecie?
               </h3>
@@ -322,7 +322,7 @@ const ContactPage = () => {
               </p>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
+            <div className="bg-[#FFF2E6] dark:bg-gray-800 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
               <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Czy oferujecie wsparcie po wdrożeniu?
               </h3>
@@ -344,11 +344,13 @@ const ContactPage = () => {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body-roboto">
             Skontaktuj się z nami i rozpocznij swoją przygodę z nowoczesnymi rozwiązaniami.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <button className="bg-white text-[#ff4f19] px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] animate-button-glow font-heading-poppins">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Rozpocznij projekt
             </button>
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] animate-button-glow font-heading-poppins">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Zobacz portfolio
             </button>
           </div>

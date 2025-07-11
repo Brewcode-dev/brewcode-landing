@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const pathname = usePathname();
 
   const navItems = [
     { name: 'Strona główna', href: '/' },
@@ -16,6 +19,62 @@ const Header = () => {
     { name: 'Proces', href: '/#process' },
     { name: 'Kontakt', href: '/kontakt' },
   ];
+
+  // Detect active section on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (pathname === '/') {
+        const sections = ['about', 'technologies', 'apps', 'process'];
+        const headerHeight = 80; // Header height in pixels
+        const scrollPosition = window.scrollY + headerHeight + 50; // Offset for header + extra space
+
+        let foundActiveSection = '';
+        
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              foundActiveSection = section;
+              break;
+            }
+          }
+        }
+        
+        setActiveSection(foundActiveSection);
+      }
+    };
+
+    if (pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check initial position
+    } else {
+      setActiveSection(''); // Clear active section on other pages
+    }
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
+
+  const isActiveLink = (href: string) => {
+    // Check if it's the current page
+    if (href === '/' && pathname === '/') return true;
+    if (href === '/kontakt' && pathname === '/kontakt') return true;
+    if (href === '/support' && pathname === '/support') return true;
+    if (href === '/wsparcie' && pathname === '/wsparcie') return true;
+    if (href === '/help' && pathname === '/help') return true;
+    if (href === '/faq' && pathname === '/faq') return true;
+    if (href === '/privacy' && pathname === '/privacy') return true;
+    if (href === '/terms' && pathname === '/terms') return true;
+    if (href === '/status' && pathname === '/status') return true;
+    
+    // Check if it's the active section on homepage
+    if (href.startsWith('/#') && pathname === '/') {
+      const sectionId = href.substring(2);
+      return activeSection === sectionId;
+    }
+    
+    return false;
+  };
 
   const handleNavClick = (href: string, e: React.MouseEvent) => {
     // Jeśli to link do sekcji na stronie głównej
@@ -28,12 +87,18 @@ const Header = () => {
         // Zamknij menu mobilne jeśli jest otwarte
         setIsMenuOpen(false);
         
-        // Smooth scroll do sekcji
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        // Smooth scroll do sekcji z uwzględnieniem wysokości headera
+        const headerHeight = 80; // Header height in pixels
+        const targetPosition = targetElement.offsetTop - headerHeight; // Extra offset for better positioning
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
       }
+    } else {
+      // Close mobile menu for page navigation
+      setIsMenuOpen(false);
     }
   };
 
@@ -49,13 +114,17 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(item.href, e)}
-                className="text-gray-800 dark:text-white hover:text-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 hover:bg-orange-500/10 hover:scale-105 cursor-pointer font-heading-poppins"
+                className={`transition-all duration-200 font-bold text-lg px-3 py-2 cursor-pointer font-heading-poppins border-2 ${
+                  isActiveLink(item.href)
+                    ? 'text-[#ff4f19] bg-[#ff4f19]/10 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]'
+                    : 'text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-[#ff4f19]/10  border-transparent'
+                }`}
               >
                 {item.name}
               </Link>
@@ -68,7 +137,7 @@ const Header = () => {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-gray-800 dark:text-white p-2 hover:bg-orange-500/10 transition-colors duration-200"
+              className="lg:hidden text-gray-800 dark:text-white p-2 hover:bg-orange-500/10 transition-colors duration-150"
               aria-label="Otwórz menu"
             >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -78,14 +147,18 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white dark:bg-gray-900 border-t-4 border-[#ff4f19] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)]">
+          <div className="lg:hidden bg-white dark:bg-gray-900 border-t-4 border-[#ff4f19] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-150">
             <nav className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(item.href, e)}
-                  className="block px-3 py-3 text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-orange-500/10 font-bold text-lg transition-all duration-200 cursor-pointer font-heading-poppins"
+                  className={`block px-3 py-3 font-bold text-lg transition-all duration-150 cursor-pointer font-heading-poppins border-2 ${
+                    isActiveLink(item.href)
+                      ? 'text-[#ff4f19] bg-[#ff4f19]/10 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]'
+                      : 'text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-[#ff4f19]/10 border-transparent'
+                  }`}
                 >
                   {item.name}
                 </Link>
