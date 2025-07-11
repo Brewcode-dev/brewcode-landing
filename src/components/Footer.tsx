@@ -60,10 +60,10 @@ const Footer = () => {
                 <div className="w-8 h-8 bg-[#ff4f19] flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
                   <span className="text-white font-black text-sm">B</span>
                 </div>
-                <span className="text-2xl font-black text-white">Brewcode</span>
+                <span className="text-2xl font-black text-white font-heading-poppins">Brewcode</span>
               </div>
               
-              <p className="text-gray-300 mb-6 max-w-md">
+              <p className="text-gray-300 mb-6 max-w-md font-body-roboto">
                 Tworzymy aplikacje dla miłośników piwa kraftowego. Łączymy tradycję z nowoczesną technologią.
               </p>
 
@@ -71,28 +71,28 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300">kontakt@brewcode.pl</span>
+                  <span className="text-gray-300 font-body-roboto">kontakt@brewcode.pl</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300">+48 123 456 789</span>
+                  <span className="text-gray-300 font-body-roboto">+48 123 456 789</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300">Warszawa, Polska</span>
+                  <span className="text-gray-300 font-body-roboto">Warszawa, Polska</span>
                 </div>
               </div>
             </div>
 
             {/* Company Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Firma</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19] font-heading-poppins">Firma</h3>
               <ul className="space-y-2">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
                     >
                       {link.name}
                     </Link>
@@ -103,13 +103,13 @@ const Footer = () => {
 
             {/* Product Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Produkty</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19] font-heading-poppins">Produkty</h3>
               <ul className="space-y-2">
                 {productLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
                     >
                       {link.name}
                     </Link>
@@ -120,13 +120,13 @@ const Footer = () => {
 
             {/* Support Links */}
             <div>
-              <h3 className="text-lg font-black mb-4 text-[#ff4f19]">Wsparcie</h3>
+              <h3 className="text-lg font-black mb-4 text-[#ff4f19] font-heading-poppins">Wsparcie</h3>
               <ul className="space-y-2">
                 {supportLinks.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
+                      className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
                     >
                       {link.name}
                     </Link>
@@ -141,7 +141,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
               <div className="text-center md:text-left">
-                <p className="text-gray-300 text-sm">
+                <p className="text-gray-300 text-sm font-body-roboto">
                   © {currentYear} Brewcode. Wszystkie prawa zastrzeżone.
                 </p>
               </div>
@@ -168,19 +168,19 @@ const Footer = () => {
               <div className="flex space-x-6 text-sm">
                 <Link
                   href="/privacy"
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
                 >
                   Polityka prywatności
                 </Link>
                 <Link
                   href="/terms"
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium font-body-roboto"
                 >
                   Regulamin
                 </Link>
                 <button
                   onClick={handleCookieSettings}
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium flex items-center"
+                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium flex items-center font-body-roboto"
                 >
                   <Settings className="w-4 h-4 mr-1" />
                   Cookie

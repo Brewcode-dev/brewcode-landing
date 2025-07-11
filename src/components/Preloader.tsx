@@ -28,22 +28,11 @@ const Preloader = () => {
 
   return (
     <div 
-      className={`fixed top-0 left-0 w-full h-screen min-h-screen z-[9999] bg-[#111827] flex items-center justify-center transition-opacity duration-500 ${
+      className={`fixed top-0 left-0 w-full h-screen min-h-screen z-[9999] bg-[#111827] flex items-center justify-center transition-opacity duration-500 overflow-hidden ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`} 
       style={{ height: '100vh', minHeight: '100vh' }}
     >
-      {/* Animacja nalewania na fullscreen */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Animacja nalewania od dołu */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#ff4f19] animate-fill-up-full">
-          <div className="w-full h-full bg-gradient-to-t from-[#ff4f19] to-[#ff6b3d] animate-bubble-full"></div>
-        </div>
-        
-        {/* Piana na górze */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-white animate-foam-full"></div>
-      </div>
-      
       {/* Tekst ładowania */}
       <div className="relative z-10 text-center">
         <div className="text-white text-center">

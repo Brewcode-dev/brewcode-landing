@@ -105,22 +105,22 @@ const App2Page = () => {
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
             <span className="text-[#ff4f19]">
               PubTracker
             </span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto font-body-roboto">
             Kompleksowe rozwiązanie do zarządzania inwentarzem i sprzedażą w pubach i restauracjach. 
             Kontroluj, analizuj i zwiększaj zyski.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Rozpocznij darmowy trial
             </button>
-            <button className="bg-white dark:bg-gray-800 text-[#ff4f19] px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white dark:bg-gray-800 text-[#ff4f19] px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Zobacz demo
             </button>
           </div>
@@ -131,10 +131,10 @@ const App2Page = () => {
       <section ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
               Kluczowe funkcje
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-body-roboto">
               Odkryj narzędzia, które pomogą Ci zoptymalizować działanie Twojego pubu lub restauracji.
             </p>
           </div>
@@ -147,8 +147,8 @@ const App2Page = () => {
                   <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-body-roboto">{feature.description}</p>
                 </div>
               );
             })}
@@ -161,7 +161,7 @@ const App2Page = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8 font-heading-poppins">
                 Dlaczego PubTracker?
               </h2>
               <div className="space-y-4">
@@ -170,15 +170,15 @@ const App2Page = () => {
                                 <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
               <div className="w-2 h-2 bg-white"></div>
             </div>
-                    <span className="text-gray-600 dark:text-gray-300 text-lg">{benefit}</span>
+                    <span className="text-gray-600 dark:text-gray-300 text-lg font-body-roboto">{benefit}</span>
                   </div>
                 ))}
               </div>
             </div>
             
             <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-8">
-              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">Rozpocznij już dziś</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">Rozpocznij już dziś</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-6 font-body-roboto">
                 Dołącz do setek pubów i restauracji, które już korzystają z PubTracker 
                 do zwiększenia zysków i optymalizacji operacji.
               </p>
@@ -196,7 +196,7 @@ const App2Page = () => {
                   <span className="text-[#ff4f19] font-bold">50+</span>
                 </div>
               </div>
-              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300">
+              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-heading-poppins">
                 Rozpocznij darmowy trial
               </button>
             </div>
@@ -207,17 +207,17 @@ const App2Page = () => {
       {/* CTA Section */}
       <section className="py-20 bg-[#ff4f19]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6 font-heading-poppins">
             Gotowy na transformację swojego pubu?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body-roboto">
             Dołącz do grona innowacyjnych lokali, które już korzystają z naszych rozwiązań.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Rozpocznij darmowy trial
             </button>
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Skontaktuj się z nami
             </button>
           </div>

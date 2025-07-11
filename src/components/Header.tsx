@@ -43,7 +43,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 select-none">
-            <span className="text-[#ff4f19] font-black text-2xl tracking-tight hover:scale-105 transition-transform duration-200">
+            <span className="text-[#ff4f19] font-black text-2xl tracking-tight hover:scale-105 transition-transform duration-200 font-heading-poppins">
               Brewcode
             </span>
           </Link>
@@ -55,7 +55,7 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleNavClick(item.href, e)}
-                className="text-gray-800 dark:text-white hover:text-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 hover:bg-orange-500/10 hover:scale-105 cursor-pointer"
+                className="text-gray-800 dark:text-white hover:text-orange-500 transition-all duration-200 font-bold text-lg px-3 py-2 hover:bg-orange-500/10 hover:scale-105 cursor-pointer font-heading-poppins"
               >
                 {item.name}
               </Link>
@@ -85,7 +85,7 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleNavClick(item.href, e)}
-                  className="block px-3 py-3 text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-orange-500/10 font-bold text-lg transition-all duration-200 cursor-pointer"
+                  className="block px-3 py-3 text-gray-800 dark:text-white hover:text-[#ff4f19] hover:bg-orange-500/10 font-bold text-lg transition-all duration-200 cursor-pointer font-heading-poppins"
                 >
                   {item.name}
                 </Link>

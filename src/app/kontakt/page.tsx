@@ -91,13 +91,13 @@ const ContactPage = () => {
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6">
+          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
             <span className="text-[#ff4f19]">
               Skontaktuj się z nami
             </span>
           </h1>
           
-          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto font-body-roboto">
             Jesteśmy tutaj, aby pomóc Ci w realizacji Twoich projektów. 
             Skontaktuj się z nami i dowiedz się, jak możemy Ci pomóc.
           </p>
@@ -115,9 +115,9 @@ const ContactPage = () => {
                   <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-4 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">{info.title}</h3>
-                  <p className="text-[#ff4f19] font-semibold mb-2">{info.value}</p>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">{info.description}</p>
+                  <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 font-heading-poppins">{info.title}</h3>
+                  <p className="text-[#ff4f19] font-semibold mb-2 font-body-roboto">{info.value}</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm font-body-roboto">{info.description}</p>
                 </div>
               );
             })}
@@ -130,10 +130,10 @@ const ContactPage = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
                 Napisz do nas
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 font-body-roboto">
                 Opowiedz nam o swoim projekcie, a my pomożemy Ci go zrealizować. 
                 Nasz zespół ekspertów jest gotowy, aby Ci pomóc.
               </p>
@@ -143,19 +143,19 @@ const ContactPage = () => {
                   <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300">Bezpłatna konsultacja</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Bezpłatna konsultacja</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300">Szybka odpowiedź</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Szybka odpowiedź</span>
                 </div>
                 <div className="flex items-center">
                   <div className="w-6 h-6 bg-[#ff4f19] flex items-center justify-center mr-4">
                     <div className="w-2 h-2 bg-white"></div>
                   </div>
-                  <span className="text-gray-600 dark:text-gray-300">Indywidualne podejście</span>
+                  <span className="text-gray-600 dark:text-gray-300 font-body-roboto">Indywidualne podejście</span>
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@ const ContactPage = () => {
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                    <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
                       Imię i nazwisko
                     </label>
                     <input 
@@ -174,7 +174,7 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                    <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
                       Email
                     </label>
                     <input 
@@ -186,7 +186,7 @@ const ContactPage = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                  <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
                     Temat
                   </label>
                   <input 
@@ -197,7 +197,7 @@ const ContactPage = () => {
                 </div>
                 
                 <div>
-                  <label className="block text-gray-800 dark:text-white font-semibold mb-2">
+                  <label className="block text-gray-800 dark:text-white font-semibold mb-2 font-heading-poppins">
                     Wiadomość
                   </label>
                   <textarea 
@@ -209,7 +209,7 @@ const ContactPage = () => {
                 
                 <button 
                   type="submit"
-                  className="w-full bg-[#ff4f19] text-white py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+                  className="w-full bg-[#ff4f19] text-white py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center font-heading-poppins"
                 >
                   <Send className="w-5 h-5 mr-2" />
                   Wyślij wiadomość
@@ -224,40 +224,40 @@ const ContactPage = () => {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
               Często zadawane pytania
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <p className="text-xl text-gray-600 dark:text-gray-300 font-body-roboto">
               Odpowiedzi na najczęściej zadawane pytania
             </p>
           </div>
           
           <div className="space-y-6">
             <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
-              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Jak długo trwa realizacja projektu?
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 font-body-roboto">
                 Czas realizacji zależy od złożoności projektu. Proste aplikacje mogą być gotowe w ciągu 2-4 tygodni, 
                 a bardziej złożone projekty mogą trwać 2-6 miesięcy. Dokładny harmonogram ustalamy na etapie konsultacji.
               </p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
-              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Jakie technologie wykorzystujecie?
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 font-body-roboto">
                 Wykorzystujemy najnowsze technologie: React, Next.js, Node.js, Python, Django, oraz różne bazy danych. 
                 Wybór technologii zależy od specyfiki projektu i wymagań klienta.
               </p>
             </div>
             
             <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-6">
-              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-3 font-heading-poppins">
                 Czy oferujecie wsparcie po wdrożeniu?
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 dark:text-gray-300 font-body-roboto">
                 Tak, oferujemy pełne wsparcie techniczne po wdrożeniu projektu. Obejmuje to monitoring, 
                 aktualizacje, konserwację oraz pomoc w rozwiązywaniu problemów.
               </p>
@@ -269,17 +269,17 @@ const ContactPage = () => {
       {/* CTA Section */}
       <section className="py-20 bg-[#ff4f19]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6 font-heading-poppins">
             Gotowy na realizację swojego projektu?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto font-body-roboto">
             Skontaktuj się z nami i rozpocznij swoją przygodę z nowoczesnymi rozwiązaniami.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Rozpocznij projekt
             </button>
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg">
+            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
               Zobacz portfolio
             </button>
           </div>

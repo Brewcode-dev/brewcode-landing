@@ -4,6 +4,12 @@
   --background: #FFE9CF;
   --foreground: #000000;
   
+  /* Font variables */
+  --font-roboto: var(--font-roboto);
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+  --font-montserrat: var(--font-montserrat);
+  
   /* International Orange Colors */
   --international-orange-50: #fff5f0;
   --international-orange-100: #ffe3d6;
@@ -83,9 +89,26 @@ html, body {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
+}
+
+/* Font classes */
+.font-heading-inter {
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+.font-heading-poppins {
+  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
+}
+
+.font-heading-montserrat {
+  font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
+}
+
+.font-body-roboto {
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
 }
 
 /* Light mode - beżowe tło z odcieniami */

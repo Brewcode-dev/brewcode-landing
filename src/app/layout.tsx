@@ -1,13 +1,31 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Inter, Poppins, Montserrat } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "../components/CookieConsent";
 import Preloader from "../components/Preloader";
 
 const roboto = Roboto({
-  weight: ["400", "700"], // or any weights you need
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-roboto",
+});
+
+const inter = Inter({
+  weight: ["400", "600", "700", "800"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const poppins = Poppins({
+  weight: ["400", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={`${roboto.variable} antialiased`}
+        className={`${roboto.variable} ${inter.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
         <Preloader />
         {children}

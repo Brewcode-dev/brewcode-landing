@@ -88,10 +88,10 @@ const AppsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white font-heading-poppins">
             Nasze <span className="text-[#ff4f19]">Aplikacje</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-body-roboto">
             Tworzymy aplikacje, które naprawdę pomagają w codziennej pracy browarów i pubów.
           </p>
         </div>
@@ -117,10 +117,10 @@ const AppsSection = () => {
 
                 {/* App Info */}
                 <div className="mb-4">
-                  <h3 className="text-xl font-black mb-2 text-gray-800 dark:text-white">
+                  <h3 className="text-xl font-black mb-2 text-gray-800 dark:text-white font-heading-poppins">
                     {app.name}
                   </h3>
-                  <p className="text-sm font-bold text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm font-bold text-gray-600 dark:text-gray-300 leading-relaxed font-body-roboto">
                     {app.description}
                   </p>
                 </div>
@@ -218,7 +218,7 @@ const AppsSection = () => {
 
                 {/* CTA Button */}
                 <div className="mt-6">
-                  <button className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center group-hover:bg-orange-600 group-hover:border-orange-600 cursor-pointer">
+                  <button className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center group-hover:bg-orange-600 group-hover:border-orange-600 cursor-pointer font-heading-poppins">
                     <span>Dowiedz się więcej</span>
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>
