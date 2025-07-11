@@ -5,8 +5,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, BarChart3, TrendingUp, Zap, Shield, Users, Database, Beer } from 'lucide-react';
 import Link from 'next/link';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +90,6 @@ const App1Page = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
       
       {/* Hero Section */}
       <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
@@ -224,7 +221,6 @@ const App1Page = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

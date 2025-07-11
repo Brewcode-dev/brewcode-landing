@@ -202,7 +202,7 @@ const Hero = () => {
         </div>
 
         {/* Tech Stack */}
-        <div className="mt-16 flex justify-center items-center gap-8 tech-stack">
+        {/* <div className="mt-16 flex justify-center items-center gap-8 tech-stack">
           {[
             { icon: '⚡', name: 'React', animation: 'animate-tech-1' },
             { icon: '🚀', name: 'Next.js', animation: 'animate-tech-2' },
@@ -221,7 +221,7 @@ const Hero = () => {
               <div className="text-sm font-bold text-[#ff4f19] font-heading-poppins">{item.name}</div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Animated dots */}
         <div className="mt-8 flex justify-center items-center gap-2">

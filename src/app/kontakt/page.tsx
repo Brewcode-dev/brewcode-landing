@@ -5,8 +5,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, Mail, Phone, MapPin, Clock, MessageSquare, Send } from 'lucide-react';
 import Link from 'next/link';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,7 +76,6 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
       
       {/* Hero Section */}
       <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
@@ -220,6 +217,78 @@ const ContactPage = () => {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
+              Znajdź nas
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 font-body-roboto">
+              Nasze biuro w centrum Warszawy
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Map */}
+            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] rounded-lg overflow-hidden">
+              <div className="relative h-96 w-full">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.5!2d21.0122!3d52.2297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669a869f01%3A0x72f4be7834e383d5!2sWarszawa%2C%20Polska!5e0!3m2!1spl!2spl!4v1234567890!5m1!1e1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="dark:grayscale dark:invert"
+                ></iframe>
+              </div>
+            </div>
+            
+            {/* Location Details */}
+            <div className="space-y-6">
+              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
+                  <MapPin className="w-6 h-6 text-[#ff4f19] mr-3" />
+                  Adres
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 font-body-roboto text-lg">
+                  ul. Browarowa 1<br />
+                  00-000 Warszawa<br />
+                  Polska
+                </p>
+              </div>
+              
+              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
+                  <Clock className="w-6 h-6 text-[#ff4f19] mr-3" />
+                  Godziny otwarcia
+                </h3>
+                <div className="space-y-2 text-gray-600 dark:text-gray-300 font-body-roboto">
+                  <p><strong>Poniedziałek - Piątek:</strong> 9:00 - 17:00</p>
+                  <p><strong>Sobota:</strong> 10:00 - 14:00</p>
+                  <p><strong>Niedziela:</strong> Zamknięte</p>
+                </div>
+              </div>
+              
+              <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins flex items-center">
+                  <MessageSquare className="w-6 h-6 text-[#ff4f19] mr-3" />
+                  Dojazd
+                </h3>
+                <div className="space-y-2 text-gray-600 dark:text-gray-300 font-body-roboto">
+                  <p><strong>Metro:</strong> Stacja Centrum (linia M1)</p>
+                  <p><strong>Autobus:</strong> Linie 127, 158, 175</p>
+                  <p><strong>Tramwaj:</strong> Linie 4, 15, 18</p>
+                  <p><strong>Samochód:</strong> Parking podziemny dostępny</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -286,7 +355,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
