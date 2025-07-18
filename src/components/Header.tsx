@@ -108,7 +108,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 select-none">
-            <span className="text-[#ff4f19] font-black text-2xl tracking-tight hover:scale-105 transition-transform duration-200 font-heading-poppins">
+            <span className="text-[#ff4f19] font-black text-2xl tracking-tight transition-transform duration-200 font-heading-poppins">
               Brewcode
             </span>
           </Link>

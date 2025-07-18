@@ -68,88 +68,75 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#ff4f19]/5 to-[#ff6b3d]/5 rounded-full blur-2xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
         
         {/* Horizontal moving lines - creating grid effect */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#ff4f19]/30 to-transparent animate-slide-right"></div>
-        <div className="absolute top-1/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/20 to-transparent animate-slide-left" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-2/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/15 to-transparent animate-slide-right" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-3/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/25 to-transparent animate-slide-left" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-4/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/20 to-transparent animate-slide-right" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-5/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/18 to-transparent animate-slide-left" style={{ animationDelay: '2.5s' }}></div>
-        <div className="absolute top-6/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/22 to-transparent animate-slide-right" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-7/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/16 to-transparent animate-slide-left" style={{ animationDelay: '3.5s' }}></div>
-        <div className="absolute top-8/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/19 to-transparent animate-slide-right" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-9/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/17 to-transparent animate-slide-left" style={{ animationDelay: '4.5s' }}></div>
-        <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-transparent via-[#ff4f19]/30 to-transparent animate-slide-left"></div>
+        <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/50 to-transparent animate-slide-right"></div>
+        <div className="absolute top-1/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/40 to-transparent animate-slide-left" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-2/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/35 to-transparent animate-slide-right" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-3/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/45 to-transparent animate-slide-left" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-4/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/40 to-transparent animate-slide-right" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-5/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/38 to-transparent animate-slide-left" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-6/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/42 to-transparent animate-slide-right" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-7/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/36 to-transparent animate-slide-left" style={{ animationDelay: '3.5s' }}></div>
+        <div className="absolute top-8/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/39 to-transparent animate-slide-right" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-9/10 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#ff4f19]/37 to-transparent animate-slide-left" style={{ animationDelay: '4.5s' }}></div>
+        <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-[#ff4f19]/50 to-transparent animate-slide-left"></div>
         
         {/* Vertical moving lines - creating grid effect */}
-        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-slide-down"></div>
-        <div className="absolute top-0 left-1/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/20 to-transparent animate-slide-up" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute top-0 left-2/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/15 to-transparent animate-slide-down" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-0 left-3/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/25 to-transparent animate-slide-up" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-0 left-4/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/20 to-transparent animate-slide-down" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-0 left-5/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/18 to-transparent animate-slide-up" style={{ animationDelay: '2.5s' }}></div>
-        <div className="absolute top-0 left-6/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/22 to-transparent animate-slide-down" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-0 left-7/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/16 to-transparent animate-slide-up" style={{ animationDelay: '3.5s' }}></div>
-        <div className="absolute top-0 left-8/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/19 to-transparent animate-slide-down" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-0 left-9/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/17 to-transparent animate-slide-up" style={{ animationDelay: '4.5s' }}></div>
-        <div className="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-slide-up"></div>
+        <div className="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/50 to-transparent animate-slide-down"></div>
+        <div className="absolute top-0 left-1/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/40 to-transparent animate-slide-up" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute top-0 left-2/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/35 to-transparent animate-slide-down" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-0 left-3/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/45 to-transparent animate-slide-up" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-0 left-4/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/40 to-transparent animate-slide-down" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-0 left-5/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/38 to-transparent animate-slide-up" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute top-0 left-6/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/42 to-transparent animate-slide-down" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-0 left-7/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/36 to-transparent animate-slide-up" style={{ animationDelay: '3.5s' }}></div>
+        <div className="absolute top-0 left-8/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/39 to-transparent animate-slide-down" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-0 left-9/10 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/37 to-transparent animate-slide-up" style={{ animationDelay: '4.5s' }}></div>
+        <div className="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-transparent via-[#ff4f19]/50 to-transparent animate-slide-up"></div>
         
         {/* Diagonal lines for extra effect */}
-        <div className="absolute top-0 left-0 w-1 h-32 bg-gradient-to-b from-transparent via-[#ff4f19]/20 to-transparent animate-diagonal-1"></div>
-        <div className="absolute top-0 right-0 w-1 h-32 bg-gradient-to-b from-transparent via-[#ff4f19]/20 to-transparent animate-diagonal-2"></div>
-        <div className="absolute top-0 left-1/4 w-0.5 h-24 bg-gradient-to-b from-transparent via-[#ff4f19]/15 to-transparent animate-diagonal-3"></div>
-        <div className="absolute top-0 right-1/4 w-0.5 h-24 bg-gradient-to-b from-transparent via-[#ff4f19]/15 to-transparent animate-diagonal-4"></div>
-        <div className="absolute top-0 left-3/4 w-0.5 h-28 bg-gradient-to-b from-transparent via-[#ff4f19]/18 to-transparent animate-diagonal-5"></div>
-        <div className="absolute top-0 right-3/4 w-0.5 h-28 bg-gradient-to-b from-transparent via-[#ff4f19]/18 to-transparent animate-diagonal-6"></div>
-        <div className="absolute top-0 left-1/3 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/12 to-transparent animate-diagonal-7"></div>
-        <div className="absolute top-0 right-1/3 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/12 to-transparent animate-diagonal-8"></div>
-        <div className="absolute top-0 left-2/3 w-0.5 h-26 bg-gradient-to-b from-transparent via-[#ff4f19]/16 to-transparent animate-diagonal-9"></div>
-        <div className="absolute top-0 right-2/3 w-0.5 h-26 bg-gradient-to-b from-transparent via-[#ff4f19]/16 to-transparent animate-diagonal-10"></div>
-        <div className="absolute top-0 left-1/8 w-0.5 h-18 bg-gradient-to-b from-transparent via-[#ff4f19]/10 to-transparent animate-diagonal-11"></div>
-        <div className="absolute top-0 right-1/8 w-0.5 h-18 bg-gradient-to-b from-transparent via-[#ff4f19]/10 to-transparent animate-diagonal-12"></div>
-        <div className="absolute top-0 left-3/8 w-0.5 h-22 bg-gradient-to-b from-transparent via-[#ff4f19]/14 to-transparent animate-diagonal-13"></div>
-        <div className="absolute top-0 right-3/8 w-0.5 h-22 bg-gradient-to-b from-transparent via-[#ff4f19]/14 to-transparent animate-diagonal-14"></div>
-        <div className="absolute top-0 left-5/8 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/13 to-transparent animate-diagonal-15"></div>
-        <div className="absolute top-0 right-5/8 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/13 to-transparent animate-diagonal-16"></div>
-        <div className="absolute top-0 left-7/8 w-0.5 h-24 bg-gradient-to-b from-transparent via-[#ff4f19]/17 to-transparent animate-diagonal-17"></div>
-        <div className="absolute top-0 right-7/8 w-0.5 h-24 bg-gradient-to-b from-transparent via-[#ff4f19]/17 to-transparent animate-diagonal-18"></div>
-        <div className="absolute top-0 left-1/10 w-0.5 h-16 bg-gradient-to-b from-transparent via-[#ff4f19]/8 to-transparent animate-diagonal-19"></div>
-        <div className="absolute top-0 right-1/10 w-0.5 h-16 bg-gradient-to-b from-transparent via-[#ff4f19]/8 to-transparent animate-diagonal-20"></div>
-        <div className="absolute top-0 left-2/10 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/11 to-transparent animate-diagonal-21"></div>
-        <div className="absolute top-0 right-2/10 w-0.5 h-20 bg-gradient-to-b from-transparent via-[#ff4f19]/11 to-transparent animate-diagonal-22"></div>
-        <div className="absolute top-0 left-3/10 w-0.5 h-18 bg-gradient-to-b from-transparent via-[#ff4f19]/9 to-transparent animate-diagonal-23"></div>
-        <div className="absolute top-0 right-3/10 w-0.5 h-18 bg-gradient-to-b from-transparent via-[#ff4f19]/9 to-transparent animate-diagonal-24"></div>
-        <div className="absolute top-0 left-4/10 w-0.5 h-22 bg-gradient-to-b from-transparent via-[#ff4f19]/13 to-transparent animate-diagonal-25"></div>
-        <div className="absolute top-0 right-4/10 w-0.5 h-22 bg-gradient-to-b from-transparent via-[#ff4f19]/13 to-transparent animate-diagonal-26"></div>
-        <div className="absolute top-0 left-5/10 w-0.5 h-19 bg-gradient-to-b from-transparent via-[#ff4f19]/10 to-transparent animate-diagonal-27"></div>
-        <div className="absolute top-0 right-5/10 w-0.5 h-19 bg-gradient-to-b from-transparent via-[#ff4f19]/10 to-transparent animate-diagonal-28"></div>
-        <div className="absolute top-0 left-6/10 w-0.5 h-21 bg-gradient-to-b from-transparent via-[#ff4f19]/12 to-transparent animate-diagonal-29"></div>
-        <div className="absolute top-0 right-6/10 w-0.5 h-21 bg-gradient-to-b from-transparent via-[#ff4f19]/12 to-transparent animate-diagonal-30"></div>
-        <div className="absolute top-0 left-7/10 w-0.5 h-17 bg-gradient-to-b from-transparent via-[#ff4f19]/9 to-transparent animate-diagonal-31"></div>
-        <div className="absolute top-0 right-7/10 w-0.5 h-17 bg-gradient-to-b from-transparent via-[#ff4f19]/9 to-transparent animate-diagonal-32"></div>
-        <div className="absolute top-0 left-8/10 w-0.5 h-23 bg-gradient-to-b from-transparent via-[#ff4f19]/14 to-transparent animate-diagonal-33"></div>
-        <div className="absolute top-0 right-8/10 w-0.5 h-23 bg-gradient-to-b from-transparent via-[#ff4f19]/14 to-transparent animate-diagonal-34"></div>
-        <div className="absolute top-0 left-9/10 w-0.5 h-15 bg-gradient-to-b from-transparent via-[#ff4f19]/7 to-transparent animate-diagonal-35"></div>
-        <div className="absolute top-0 right-9/10 w-0.5 h-15 bg-gradient-to-b from-transparent via-[#ff4f19]/7 to-transparent animate-diagonal-36"></div>
+        <div className="absolute top-0 left-0 w-0.5 h-16 bg-gradient-to-b from-transparent via-[#ff4f19]/40 to-transparent animate-diagonal-1"></div>
+        <div className="absolute top-0 right-0 w-0.5 h-16 bg-gradient-to-b from-transparent via-[#ff4f19]/40 to-transparent animate-diagonal-2"></div>
+        <div className="absolute top-0 left-1/4 w-0.5 h-12 bg-gradient-to-b from-transparent via-[#ff4f19]/35 to-transparent animate-diagonal-3"></div>
+        <div className="absolute top-0 right-1/4 w-0.5 h-12 bg-gradient-to-b from-transparent via-[#ff4f19]/35 to-transparent animate-diagonal-4"></div>
+        <div className="absolute top-0 left-3/4 w-0.5 h-14 bg-gradient-to-b from-transparent via-[#ff4f19]/38 to-transparent animate-diagonal-5"></div>
+        <div className="absolute top-0 right-3/4 w-0.5 h-14 bg-gradient-to-b from-transparent via-[#ff4f19]/38 to-transparent animate-diagonal-6"></div>
+        <div className="absolute top-0 left-1/3 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/32 to-transparent animate-diagonal-7"></div>
+        <div className="absolute top-0 right-1/3 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/32 to-transparent animate-diagonal-8"></div>
+        <div className="absolute top-0 left-2/3 w-0.5 h-13 bg-gradient-to-b from-transparent via-[#ff4f19]/36 to-transparent animate-diagonal-9"></div>
+        <div className="absolute top-0 right-2/3 w-0.5 h-13 bg-gradient-to-b from-transparent via-[#ff4f19]/36 to-transparent animate-diagonal-10"></div>
+        <div className="absolute top-0 left-1/8 w-0.5 h-9 bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-diagonal-11"></div>
+        <div className="absolute top-0 right-1/8 w-0.5 h-9 bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-diagonal-12"></div>
+        <div className="absolute top-0 left-3/8 w-0.5 h-11 bg-gradient-to-b from-transparent via-[#ff4f19]/34 to-transparent animate-diagonal-13"></div>
+        <div className="absolute top-0 right-3/8 w-0.5 h-11 bg-gradient-to-b from-transparent via-[#ff4f19]/34 to-transparent animate-diagonal-14"></div>
+        <div className="absolute top-0 left-5/8 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/33 to-transparent animate-diagonal-15"></div>
+        <div className="absolute top-0 right-5/8 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/33 to-transparent animate-diagonal-16"></div>
+        <div className="absolute top-0 left-7/8 w-0.5 h-12 bg-gradient-to-b from-transparent via-[#ff4f19]/37 to-transparent animate-diagonal-17"></div>
+        <div className="absolute top-0 right-7/8 w-0.5 h-12 bg-gradient-to-b from-transparent via-[#ff4f19]/37 to-transparent animate-diagonal-18"></div>
+        <div className="absolute top-0 left-1/10 w-0.5 h-8 bg-gradient-to-b from-transparent via-[#ff4f19]/28 to-transparent animate-diagonal-19"></div>
+        <div className="absolute top-0 right-1/10 w-0.5 h-8 bg-gradient-to-b from-transparent via-[#ff4f19]/28 to-transparent animate-diagonal-20"></div>
+        <div className="absolute top-0 left-2/10 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/31 to-transparent animate-diagonal-21"></div>
+        <div className="absolute top-0 right-2/10 w-0.5 h-10 bg-gradient-to-b from-transparent via-[#ff4f19]/31 to-transparent animate-diagonal-22"></div>
+        <div className="absolute top-0 left-3/10 w-0.5 h-9 bg-gradient-to-b from-transparent via-[#ff4f19]/29 to-transparent animate-diagonal-23"></div>
+        <div className="absolute top-0 right-3/10 w-0.5 h-9 bg-gradient-to-b from-transparent via-[#ff4f19]/29 to-transparent animate-diagonal-24"></div>
+        <div className="absolute top-0 left-4/10 w-0.5 h-11 bg-gradient-to-b from-transparent via-[#ff4f19]/33 to-transparent animate-diagonal-25"></div>
+        <div className="absolute top-0 right-4/10 w-0.5 h-11 bg-gradient-to-b from-transparent via-[#ff4f19]/33 to-transparent animate-diagonal-26"></div>
+        <div className="absolute top-0 left-5/10 w-0.5 h-9.5 bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-diagonal-27"></div>
+        <div className="absolute top-0 right-5/10 w-0.5 h-9.5 bg-gradient-to-b from-transparent via-[#ff4f19]/30 to-transparent animate-diagonal-28"></div>
+        <div className="absolute top-0 left-6/10 w-0.5 h-10.5 bg-gradient-to-b from-transparent via-[#ff4f19]/32 to-transparent animate-diagonal-29"></div>
+        <div className="absolute top-0 right-6/10 w-0.5 h-10.5 bg-gradient-to-b from-transparent via-[#ff4f19]/32 to-transparent animate-diagonal-30"></div>
+        <div className="absolute top-0 left-7/10 w-0.5 h-8.5 bg-gradient-to-b from-transparent via-[#ff4f19]/29 to-transparent animate-diagonal-31"></div>
+        <div className="absolute top-0 right-7/10 w-0.5 h-8.5 bg-gradient-to-b from-transparent via-[#ff4f19]/29 to-transparent animate-diagonal-32"></div>
+        <div className="absolute top-0 left-8/10 w-0.5 h-11.5 bg-gradient-to-b from-transparent via-[#ff4f19]/34 to-transparent animate-diagonal-33"></div>
+        <div className="absolute top-0 right-8/10 w-0.5 h-11.5 bg-gradient-to-b from-transparent via-[#ff4f19]/34 to-transparent animate-diagonal-34"></div>
+        <div className="absolute top-0 left-9/10 w-0.5 h-7.5 bg-gradient-to-b from-transparent via-[#ff4f19]/27 to-transparent animate-diagonal-35"></div>
+        <div className="absolute top-0 right-9/10 w-0.5 h-7.5 bg-gradient-to-b from-transparent via-[#ff4f19]/27 to-transparent animate-diagonal-36"></div>
         
-        {/* Floating particles */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-[#ff4f19] rounded-full animate-float-1"></div>
-        <div className="absolute top-40 right-20 w-1 h-1 bg-[#ff6b3d] rounded-full animate-float-2"></div>
-        <div className="absolute bottom-40 left-1/3 w-1.5 h-1.5 bg-[#ff4f19] rounded-full animate-float-3"></div>
-        <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-[#ff6b3d] rounded-full animate-float-4"></div>
-        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-[#ff4f19] rounded-full animate-float-5"></div>
-        <div className="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#ff6b3d] rounded-full animate-float-6"></div>
-        <div className="absolute bottom-1/3 left-1/5 w-1 h-1 bg-[#ff4f19] rounded-full animate-float-7"></div>
-        <div className="absolute top-1/4 left-1/6 w-1.5 h-1.5 bg-[#ff6b3d] rounded-full animate-float-8"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-1 h-1 bg-[#ff4f19] rounded-full animate-float-9"></div>
-        <div className="absolute top-3/4 left-2/3 w-1 h-1 bg-[#ff6b3d] rounded-full animate-float-10"></div>
-        <div className="absolute bottom-3/4 right-2/3 w-1.5 h-1.5 bg-[#ff4f19] rounded-full animate-float-11"></div>
-        <div className="absolute top-2/3 left-1/2 w-1 h-1 bg-[#ff6b3d] rounded-full animate-float-12"></div>
         
         {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-3">
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(rgba(255, 79, 25, 0.05) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(255, 79, 25, 0.05) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(255, 79, 25, 0.15) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(255, 79, 25, 0.15) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
             animation: 'grid-move 20s linear infinite'
           }}></div>
@@ -162,7 +149,7 @@ const Hero = () => {
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight hero-title font-heading-poppins">
           <div className="mb-4">
             <span className="bg-[#ff4f19] text-white px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] inline-block transition-all duration-300 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full"></div>
               BREW
             </span>
             <span className="bg-white dark:bg-gray-800 text-[#ff4f19] px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] inline-block transition-all duration-300 relative overflow-hidden" style={{ animationDelay: '0.5s' }}>
