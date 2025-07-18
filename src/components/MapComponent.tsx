@@ -105,7 +105,7 @@ const MapComponent = () => {
   return (
     <div 
       ref={mapRef} 
-      className="w-full h-64 rounded-lg shadow-lg"
+      className="w-full h-64 shadow-lg"
       style={{ minHeight: '256px' }}
     />
   );

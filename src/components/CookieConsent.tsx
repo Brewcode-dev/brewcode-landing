@@ -228,8 +228,8 @@ const CookieConsent = ({ forceShow = false, onPreferencesChange }: CookieConsent
                         <p className="text-sm text-gray-600 dark:text-gray-300">Zawsze aktywne</p>
                       </div>
                     </div>
-                    <div className="w-12 h-6 bg-[#ff4f19] rounded-full flex items-center justify-end border-2 border-[#ff4f19]">
-                      <div className="w-4 h-4 bg-white rounded-full mx-1"></div>
+                    <div className="w-12 h-6 bg-[#ff4f19] flex items-center justify-end border-2 border-[#ff4f19]">
+                      <div className="w-4 h-4 bg-white mx-1"></div>
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -253,13 +253,13 @@ const CookieConsent = ({ forceShow = false, onPreferencesChange }: CookieConsent
                     </div>
                     <button
                       onClick={() => handlePreferenceChange('analytics')}
-                      className={`w-12 h-6 rounded-full flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
+                      className={`w-12 h-6 flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
                         preferences.analytics 
                           ? 'bg-[#ff4f19] justify-end' 
                           : 'bg-gray-300 dark:bg-gray-600 justify-start'
                       }`}
                     >
-                      <div className="w-4 h-4 bg-white rounded-full mx-1 shadow-sm"></div>
+                      <div className="w-4 h-4 bg-white mx-1 shadow-sm"></div>
                     </button>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -284,13 +284,13 @@ const CookieConsent = ({ forceShow = false, onPreferencesChange }: CookieConsent
                     </div>
                     <button
                       onClick={() => handlePreferenceChange('marketing')}
-                      className={`w-12 h-6 rounded-full flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
+                      className={`w-12 h-6 flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
                         preferences.marketing 
                           ? 'bg-[#ff4f19] justify-end' 
                           : 'bg-gray-300 dark:bg-gray-600 justify-start'
                       }`}
                     >
-                      <div className="w-4 h-4 bg-white rounded-full mx-1 shadow-sm"></div>
+                      <div className="w-4 h-4 bg-white mx-1 shadow-sm"></div>
                     </button>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">
@@ -315,13 +315,13 @@ const CookieConsent = ({ forceShow = false, onPreferencesChange }: CookieConsent
                     </div>
                     <button
                       onClick={() => handlePreferenceChange('preferences')}
-                      className={`w-12 h-6 rounded-full flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
+                      className={`w-12 h-6 flex items-center transition-all duration-300 border-2 border-[#ff4f19] ${
                         preferences.preferences 
                           ? 'bg-[#ff4f19] justify-end' 
                           : 'bg-gray-300 dark:bg-gray-600 justify-start'
                       }`}
                     >
-                      <div className="w-4 h-4 bg-white rounded-full mx-1 shadow-sm"></div>
+                      <div className="w-4 h-4 bg-white mx-1 shadow-sm"></div>
                     </button>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">

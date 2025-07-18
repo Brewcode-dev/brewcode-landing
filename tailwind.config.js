@@ -24,6 +24,10 @@ module.exports = {
         'brewcode': {
           primary: '#ff4f19',
           secondary: '#ff6b3d',
+        },
+        'dark': {
+          background: '#1a1a1a',
+          surface: '#2a2a2a',
         }
       },
       fontFamily: {

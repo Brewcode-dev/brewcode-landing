@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import Button from './ui/Button';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -144,12 +145,12 @@ const TestimonialsSection = () => {
               Przetestuj nasze aplikacje przez 30 dni za darmo. Bez zobowiązań, bez ukrytych kosztów.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+              <Button variant="primary" size="md">
                 Rozpocznij darmowy trial
-              </button>
-              <button className="bg-white dark:bg-gray-800 text-[#ff4f19] font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+              </Button>
+              <Button variant="secondary" size="md">
                 Zobacz demo
-              </button>
+              </Button>
             </div>
           </div>
         </div>

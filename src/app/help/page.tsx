@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { HelpCircle, BookOpen, MessageCircle, Video, FileText, Search } from 'lucide-react';
+import Button from '../../components/ui/Button';
 
 export default function HelpPage() {
   return (
-    <div className="min-h-screen bg-[#FFE9CF] dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-[#ff4f19]">
+          <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-6 shadow-[4px_4px_0px_0px_var(--theme-shadow)] border-2 border-[#ff4f19]">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
@@ -26,14 +27,14 @@ export default function HelpPage() {
             <input
               type="text"
               placeholder="Szukaj w pomocy..."
-              className="w-full pl-12 pr-4 py-4 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] text-gray-800 dark:text-white bg-white dark:bg-gray-700 font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300"
+              className="w-full pl-12 pr-4 py-4 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] text-gray-800 dark:text-white bg-white dark:bg-gray-700 font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300"
             />
           </div>
         </div>
 
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <Link href="/help/videos" className="quick-action-card bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
+          <Link href="/help/videos" className="quick-action-card bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
             <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-lg border-2 border-[#ff4f19]">
               <Video className="w-6 h-6 text-white" />
             </div>
@@ -45,7 +46,7 @@ export default function HelpPage() {
             </p>
           </Link>
           
-          <Link href="/help/docs" className="quick-action-card bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
+          <Link href="/help/docs" className="quick-action-card bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
             <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-lg border-2 border-[#ff4f19]">
               <FileText className="w-6 h-6 text-white" />
             </div>
@@ -57,7 +58,7 @@ export default function HelpPage() {
             </p>
           </Link>
           
-          <Link href="/kontakt" className="quick-action-card bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
+          <Link href="/kontakt" className="quick-action-card bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
             <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-lg border-2 border-[#ff4f19]">
               <MessageCircle className="w-6 h-6 text-white" />
             </div>
@@ -76,7 +77,7 @@ export default function HelpPage() {
             Często zadawane pytania
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="bg-theme-surface p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <h3 className="font-black text-gray-800 dark:text-white mb-2">
                 Jak zmienić plan subskrypcji?
               </h3>
@@ -84,7 +85,7 @@ export default function HelpPage() {
                 Przejdź do ustawień konta i wybierz "Zmień plan". Różnica w cenie zostanie rozliczona proporcjonalnie.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="bg-theme-surface p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <h3 className="font-black text-gray-800 dark:text-white mb-2">
                 Czy mogę eksportować moje dane?
               </h3>
@@ -92,7 +93,7 @@ export default function HelpPage() {
                 Tak, w ustawieniach konta znajdziesz opcję eksportu danych w formatach CSV, JSON i PDF.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="bg-theme-surface p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <h3 className="font-black text-gray-800 dark:text-white mb-2">
                 Jak skontaktować się z supportem?
               </h3>
@@ -100,7 +101,7 @@ export default function HelpPage() {
                 Użyj formularza kontaktowego, napisz na support@brewcode.pl lub zadzwoń +48 123 456 789.
               </p>
             </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="bg-theme-surface p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <h3 className="font-black text-gray-800 dark:text-white mb-2">
                 Czy aplikacje działają offline?
               </h3>
@@ -113,7 +114,7 @@ export default function HelpPage() {
 
         {/* Contact Support */}
         <div className="mt-16 text-center">
-          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
+          <div className="bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_var(--theme-shadow)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Nie znalazłeś odpowiedzi?
             </h3>
@@ -122,14 +123,14 @@ export default function HelpPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/kontakt">
-                <button className="bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+                <Button variant="primary" size="md">
                   Skontaktuj się
-                </button>
+                </Button>
               </Link>
               <Link href="/">
-                <button className="bg-white dark:bg-gray-800 text-[#ff4f19] font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+                <Button variant="secondary" size="md">
                   Powrót do strony głównej
-                </button>
+                </Button>
               </Link>
             </div>
           </div>

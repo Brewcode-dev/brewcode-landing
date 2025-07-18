@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, ShoppingCart, BarChart3, TrendingUp, Zap, Shield, Users, Database, Store } from 'lucide-react';
 import Link from 'next/link';
+import Button from '../../components/ui/Button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,9 +90,9 @@ const App2Page = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-theme-background">
       {/* Hero Section */}
-      <section ref={heroRef} className="pt-32 pb-20 text-center bg-white dark:bg-gray-900">
+      <section ref={heroRef} className="pt-32 pb-20 text-center bg-theme-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link 
             href="/"
@@ -113,18 +114,18 @@ const App2Page = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+            <Button variant="primary" size="lg">
               Rozpocznij darmowy trial
-            </button>
-            <button className="bg-white dark:bg-gray-800 text-[#ff4f19] px-8 py-4 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+            </Button>
+            <Button variant="secondary" size="lg">
               Zobacz demo
-            </button>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section ref={featuresRef} className="py-20 bg-white dark:bg-gray-900">
+      <section ref={featuresRef} className="py-20 bg-theme-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
@@ -139,8 +140,8 @@ const App2Page = () => {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="feature-card bg-white dark:bg-gray-800 p-8 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)]">
+                <div key={index} className="feature-card bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:scale-105 hover:translate-x-[-2px] hover:translate-y-[-2px]">
+                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-[4px_4px_0px_0px_var(--theme-shadow)] border-2 border-[#ff4f19]">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 font-heading-poppins">{feature.title}</h3>
@@ -153,7 +154,7 @@ const App2Page = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-theme-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -172,7 +173,7 @@ const App2Page = () => {
               </div>
             </div>
             
-            <div className="bg-white dark:bg-gray-800 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] p-8">
+            <div className="bg-theme-surface border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8">
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">Rozpocznij już dziś</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 font-body-roboto">
                 Dołącz do setek pubów i restauracji, które już korzystają z PubTracker 
@@ -192,9 +193,9 @@ const App2Page = () => {
                   <span className="text-[#ff4f19] font-bold">50+</span>
                 </div>
               </div>
-              <button className="w-full bg-[#ff4f19] text-white py-3 border-2 border-[#ff4f19] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] font-bold mt-6 hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-heading-poppins">
+              <Button variant="primary" size="md" className="w-full mt-6">
                 Rozpocznij darmowy trial
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -210,12 +211,12 @@ const App2Page = () => {
             Dołącz do grona innowacyjnych lokali, które już korzystają z naszych rozwiązań.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-white text-[#ff4f19] px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+            <Button variant="secondary" size="lg">
               Rozpocznij darmowy trial
-            </button>
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-2 border-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.2)] hover:scale-105 hover:-rotate-1 hover:shadow-xl transition-all duration-300 font-bold text-lg font-heading-poppins">
+            </Button>
+            <Button variant="primary" size="lg">
               Skontaktuj się z nami
-            </button>
+            </Button>
           </div>
         </div>
       </section>

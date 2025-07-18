@@ -93,10 +93,10 @@ const PricingSection = () => {
             </span>
             <button
               onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-              className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4f19] focus:ring-offset-2"
+              className="relative inline-flex h-6 w-11 items-center bg-gray-200 dark:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4f19] focus:ring-offset-2"
             >
               <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                className={`inline-block h-4 w-4 transform bg-white transition-transform ${
                   billingCycle === 'yearly' ? 'translate-x-6' : 'translate-x-1'
                 }`}
               />
@@ -105,7 +105,7 @@ const PricingSection = () => {
               Rocznie
             </span>
             {billingCycle === 'yearly' && (
-              <span className="bg-[#ff4f19] text-white px-3 py-1 rounded-full text-xs font-bold">
+              <span className="bg-[#ff4f19] text-white px-3 py-1 text-xs font-bold">
                 {savings}
               </span>
             )}
@@ -126,7 +126,7 @@ const PricingSection = () => {
                 {/* Popular Badge */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-[#ff4f19] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                    <div className="bg-[#ff4f19] text-white px-6 py-2 text-sm font-bold shadow-lg">
                       Najpopularniejszy
                     </div>
                   </div>

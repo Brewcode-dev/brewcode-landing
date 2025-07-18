@@ -5,6 +5,7 @@ import CookieConsent from "../components/CookieConsent";
 import Preloader from "../components/Preloader";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { ThemeProvider } from "../components/ThemeProvider";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -95,13 +96,15 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${inter.variable} ${poppins.variable} ${montserrat.variable} antialiased`}
       >
-        <Preloader />
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
-        <CookieConsent />
+        <ThemeProvider>
+          <Preloader />
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+          <CookieConsent />
+        </ThemeProvider>
       </body>
     </html>
   );

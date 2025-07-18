@@ -84,7 +84,7 @@ const AppsSection = () => {
   ];
 
   return (
-    <section id="apps" className="py-20 bg-white dark:bg-gray-900">
+    <section id="apps" className="py-20 bg-theme-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -105,11 +105,11 @@ const AppsSection = () => {
               <Link
                 key={app.id}
                 href={app.href}
-                className="app-card group bg-gray-100 dark:bg-gray-700 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 block hover:translate-x-[-2px] hover:translate-y-[-2px]"
+                className="app-card group bg-theme-background p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 block hover:translate-x-[-2px] hover:translate-y-[-2px]"
               >
                 {/* App Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center shadow-lg border-2 border-[#ff4f19]">
+                  <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center shadow-[4px_4px_0px_0px_var(--theme-shadow)] border-2 border-[#ff4f19]">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <ArrowRight className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:translate-x-2 transition-all duration-300" />
@@ -153,7 +153,7 @@ const AppsSection = () => {
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
                     {app.benefits.map((benefit, index) => (
-                      <div key={index} className="text-center p-2 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                      <div key={index} className="text-center p-2 bg-theme-surface border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                         <span className="text-xs text-gray-800 dark:text-gray-200 font-medium">{benefit}</span>
                       </div>
                     ))}
@@ -162,7 +162,7 @@ const AppsSection = () => {
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-3 mb-4">
-                  <div className="text-center p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="text-center p-3 bg-theme-surface border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <div className="text-lg font-black mb-1 text-gray-800 dark:text-white">
                       {app.stats.users}
                     </div>
@@ -170,7 +170,7 @@ const AppsSection = () => {
                       Użytkownicy
                     </div>
                   </div>
-                  <div className="text-center p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="text-center p-3 bg-theme-surface border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <div className="text-lg font-black mb-1 text-gray-800 dark:text-white">
                       {app.stats.rating}
                     </div>
@@ -178,7 +178,7 @@ const AppsSection = () => {
                       Ocena
                     </div>
                   </div>
-                  <div className="text-center p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="text-center p-3 bg-theme-surface border-2 border-[#ff4f19] shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <div className="text-lg font-black mb-1 text-gray-800 dark:text-white">
                       {app.stats.downloads}
                     </div>
@@ -190,25 +190,25 @@ const AppsSection = () => {
 
                 {/* Additional Info */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <div className="p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <Database className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
                     <div className="text-xs font-bold text-gray-800 dark:text-white">
                       Integracje
                     </div>
                   </div>
-                  <div className="p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <Shield className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
                     <div className="text-xs font-bold text-gray-800 dark:text-white">
                       Bezpieczeństwo
                     </div>
                   </div>
-                  <div className="p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <Zap className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
                     <div className="text-xs font-bold text-gray-800 dark:text-white">
                       Wydajność
                     </div>
                   </div>
-                  <div className="p-3 bg-white dark:bg-gray-600 border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)]">
+                  <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
                     <Settings className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
                     <div className="text-xs font-bold text-gray-800 dark:text-white">
                       Konfiguracja
@@ -218,7 +218,7 @@ const AppsSection = () => {
 
                 {/* CTA Button */}
                 <div className="mt-6">
-                  <button className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center group-hover:bg-orange-600 group-hover:border-orange-600 cursor-pointer font-heading-poppins">
+                  <button className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] hover:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center group-hover:bg-orange-600 group-hover:border-orange-600 cursor-pointer font-heading-poppins">
                     <span>Dowiedz się więcej</span>
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                   </button>

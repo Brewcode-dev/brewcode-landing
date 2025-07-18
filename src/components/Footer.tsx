@@ -71,7 +71,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-gray-900 text-white border-t-4 border-[#ff4f19]">
+      <footer className="bg-theme-background text-white border-t-4 border-[#ff4f19]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
@@ -83,7 +83,7 @@ const Footer = () => {
                 <span className="text-2xl font-black text-white font-heading-poppins">Brewcode</span>
               </div>
               
-              <p className="text-gray-300 mb-6 max-w-md font-body-roboto">
+              <p className="text-theme-secondary mb-6 max-w-md font-body-roboto">
                 Tworzymy aplikacje dla miłośników piwa kraftowego. Łączymy tradycję z nowoczesną technologią.
               </p>
 
@@ -91,15 +91,15 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300 font-body-roboto">kontakt@brewcode.pl</span>
+                  <span className="text-theme-secondary font-body-roboto">kontakt@brewcode.pl</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300 font-body-roboto">+48 123 456 789</span>
+                  <span className="text-theme-secondary font-body-roboto">+48 123 456 789</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-4 h-4 text-[#ff4f19]" />
-                  <span className="text-gray-300 font-body-roboto">Warszawa, Polska</span>
+                  <span className="text-theme-secondary font-body-roboto">Warszawa, Polska</span>
                 </div>
               </div>
             </div>
@@ -115,7 +115,7 @@ const Footer = () => {
                       className={`transition-colors duration-200 font-medium font-body-roboto ${
                         isActiveLink(link.href)
                           ? 'text-[#ff4f19] font-bold'
-                          : 'text-gray-300 hover:text-[#ff4f19]'
+                          : 'text-theme-secondary hover:text-[#ff4f19]'
                       }`}
                     >
                       {link.name}
@@ -136,7 +136,7 @@ const Footer = () => {
                       className={`transition-colors duration-200 font-medium font-body-roboto ${
                         isActiveLink(link.href)
                           ? 'text-[#ff4f19] font-bold'
-                          : 'text-gray-300 hover:text-[#ff4f19]'
+                          : 'text-theme-secondary hover:text-[#ff4f19]'
                       }`}
                     >
                       {link.name}
@@ -157,7 +157,7 @@ const Footer = () => {
                       className={`transition-colors duration-200 font-medium font-body-roboto ${
                         isActiveLink(link.href)
                           ? 'text-[#ff4f19] font-bold'
-                          : 'text-gray-300 hover:text-[#ff4f19]'
+                          : 'text-theme-secondary hover:text-[#ff4f19]'
                       }`}
                     >
                       {link.name}
@@ -173,7 +173,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               {/* Copyright */}
               <div className="text-center md:text-left">
-                <p className="text-gray-300 text-sm font-body-roboto">
+                <p className="text-theme-secondary text-sm font-body-roboto">
                   © {currentYear} Brewcode. Wszystkie prawa zastrzeżone.
                 </p>
               </div>
@@ -188,7 +188,7 @@ const Footer = () => {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 bg-gray-800 border-2 border-[#ff4f19] flex items-center justify-center text-gray-300 hover:text-orange-500 hover:bg-orange-500/10 transition-all duration-200 shadow-[3px_3px_0px_0px_rgba(0,0,0,0.2)]"
+                      className="w-10 h-10 bg-theme-surface border-2 border-[#ff4f19] flex items-center justify-center text-theme-secondary hover:text-[#ff4f19] transition-all duration-200 shadow-[3px_3px_0px_0px_var(--theme-shadow)]"
                     >
                       <IconComponent className="w-4 h-4" />
                     </Link>
@@ -203,7 +203,7 @@ const Footer = () => {
                   className={`transition-colors duration-200 font-medium font-body-roboto ${
                     isActiveLink('/privacy')
                       ? 'text-[#ff4f19] font-bold'
-                      : 'text-gray-300 hover:text-[#ff4f19]'
+                      : 'text-theme-secondary hover:text-[#ff4f19]'
                   }`}
                 >
                   Polityka prywatności
@@ -213,14 +213,14 @@ const Footer = () => {
                   className={`transition-colors duration-200 font-medium font-body-roboto ${
                     isActiveLink('/terms')
                       ? 'text-[#ff4f19] font-bold'
-                      : 'text-gray-300 hover:text-[#ff4f19]'
+                      : 'text-theme-secondary hover:text-[#ff4f19]'
                   }`}
                 >
                   Regulamin
                 </Link>
                 <button
                   onClick={handleCookieSettings}
-                  className="text-gray-300 hover:text-[#ff4f19] transition-colors duration-200 font-medium flex items-center font-body-roboto"
+                  className="text-theme-secondary hover:text-[#ff4f19] transition-colors duration-200 font-medium flex items-center font-body-roboto"
                 >
                   <Settings className="w-4 h-4 mr-1" />
                   Cookie

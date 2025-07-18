@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Button from './ui/Button';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -58,9 +59,9 @@ const Hero = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-4 pt-32 sm:pt-36 relative overflow-hidden bg-[#111827]" style={{ willChange: 'auto' }}>
+    <section ref={heroRef} className="min-h-screen flex flex-col items-center justify-center text-center p-4 pt-32 sm:pt-36 relative overflow-hidden bg-theme-background" style={{ willChange: 'auto' }}>
       {/* Animated Background */}
-      <div className="absolute inset-0 z-0 bg-[#111827] overflow-hidden">
+      <div className="absolute inset-0 z-0 bg-theme-background overflow-hidden">
         {/* Gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#ff4f19]/10 to-[#ff6b3d]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-[#ff4f19]/8 to-[#ff6b3d]/8 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
@@ -160,11 +161,11 @@ const Hero = () => {
         {/* Main Title */}
         <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight hero-title font-heading-poppins">
           <div className="mb-4">
-            <span className="bg-[#ff4f19] text-white px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] inline-block transition-all duration-300 relative overflow-hidden animate-title-pulse">
+            <span className="bg-[#ff4f19] text-white px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] inline-block transition-all duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               BREW
             </span>
-            <span className="bg-white dark:bg-gray-800 text-[#ff4f19] px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] inline-block transition-all duration-300 relative overflow-hidden animate-title-pulse" style={{ animationDelay: '0.5s' }}>
+            <span className="bg-white dark:bg-gray-800 text-[#ff4f19] px-6 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] inline-block transition-all duration-300 relative overflow-hidden" style={{ animationDelay: '0.5s' }}>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               CODE
             </span>
@@ -188,16 +189,14 @@ const Hero = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center hero-buttons">
           <Link href="#apps">
-            <button className="bg-[#ff4f19] text-white px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] animate-button-glow font-heading-poppins">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+            <Button variant="primary" size="lg" className="animate-button-glow">
               Zobacz Aplikacje
-            </button>
+            </Button>
           </Link>
           <Link href="#newsletter">
-            <button className="bg-white dark:bg-gray-800 text-[#ff4f19] px-8 py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] animate-button-glow font-heading-poppins" style={{ animationDelay: '0.5s' }}>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+            <Button variant="secondary" size="lg" className="animate-button-glow" style={{ animationDelay: '0.5s' }}>
               Dołącz do Newslettera
-            </button>
+            </Button>
           </Link>
         </div>
 
@@ -222,13 +221,6 @@ const Hero = () => {
             </div>
           ))}
         </div> */}
-
-        {/* Animated dots */}
-        <div className="mt-8 flex justify-center items-center gap-2">
-          <div className="w-3 h-3 bg-[#ff4f19] rounded-full animate-dot-bounce"></div>
-          <div className="w-3 h-3 bg-[#ff4f19] rounded-full animate-dot-bounce" style={{ animationDelay: '0.1s' }}></div>
-          <div className="w-3 h-3 bg-[#ff4f19] rounded-full animate-dot-bounce" style={{ animationDelay: '0.2s' }}></div>
-        </div>
       </div>
 
       <style jsx>{`

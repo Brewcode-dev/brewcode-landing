@@ -119,7 +119,7 @@ export default function TermsPage() {
                 <ul className="space-y-3">
                   {section.content.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start">
-                      <div className="w-2 h-2 bg-[#ff4f19] rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-[#ff4f19] mt-2 mr-3 flex-shrink-0"></div>
                       <span className="text-gray-600 dark:text-gray-300">{item}</span>
                     </li>
                   ))}

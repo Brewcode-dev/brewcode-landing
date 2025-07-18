@@ -1,164 +1,175 @@
 # Brewcode Landing Page
 
-Profesjonalny landing page dla firmy Brewcode, specjalizującej się w aplikacjach dla branży piwa kraftowego i domowego warzenia.
+Nowoczesna strona landingowa dla aplikacji Brewcode, specjalizująca się w tworzeniu aplikacji dla branży piwowarskiej.
 
-## 🍺 O Projekcie
+## 🎨 System Motywów
 
-Brewcode to firma technologiczna skupiająca się na tworzeniu aplikacji dla:
+Aplikacja wykorzystuje zaawansowany system zarządzania motywami z następującymi funkcjonalnościami:
 
-- Browarów rzemieślniczych
-- Domowych warzelników
-- Miłośników piwa kraftowego
+### Funkcje
 
-## ✨ Funkcjonalności
+- **3 tryby motywów**: Jasny, Ciemny, Automatyczny
+- **Synchronizacja**: Wszystkie komponenty automatycznie dostosowują się do wybranego motywu
+- **Preferencje systemu**: Automatyczny tryb dostosowuje się do ustawień systemu operacyjnego
+- **Brak migotania**: Zapobieganie migotaniu podczas ładowania strony
+- **Persystencja**: Zapamiętywanie wybranego motywu w localStorage
 
-- **Animowany Hero Section** z GSAP
-- **Trzy aplikacje** z dedykowanymi podstronami
-- **Newsletter** z formularzem zapisu
-- **Strona kontaktowa** z mapą Leaflet
-- **Responsywny design** dla wszystkich urządzeń
-- **Nowoczesny UI** z paletą kolorów Bright Sun
-
-## 🚀 Technologie
-
-- **Next.js 15** - Framework React
-- **TypeScript** - Typowanie statyczne
-- **Tailwind CSS** - Stylowanie
-- **GSAP** - Animacje
-- **Leaflet** - Mapy
-- **Lucide React** - Ikony
-- **Framer Motion** - Animacje komponentów
-
-## 📦 Instalacja
-
-1. **Sklonuj repozytorium**
-
-```bash
-git clone <repository-url>
-cd brewcode-landing
-```
-
-2. **Zainstaluj zależności**
-
-```bash
-npm install
-```
-
-3. **Uruchom serwer deweloperski**
-
-```bash
-npm run dev
-```
-
-4. **Otwórz przeglądarkę**
-
-```
-http://localhost:3000
-```
-
-## 🏗️ Struktura Projektu
+### Architektura
 
 ```
 src/
-├── app/
-│   ├── page.tsx              # Strona główna
-│   ├── layout.tsx            # Layout aplikacji
-│   ├── globals.css           # Globalne style
-│   ├── kontakt/
-│   │   └── page.tsx          # Strona kontaktowa
-│   ├── app1/
-│   │   └── page.tsx          # BrewMaster Pro
-│   ├── app2/
-│   │   └── page.tsx          # HomeBrew Helper
-│   └── app3/
-│       └── page.tsx          # BeerCraft Platform
-├── components/
-│   ├── Header.tsx            # Nagłówek z nawigacją
-│   ├── Hero.tsx              # Sekcja hero z animacjami
-│   ├── AppsSection.tsx       # Sekcja aplikacji
-│   ├── Newsletter.tsx        # Newsletter
-│   ├── Footer.tsx            # Stopka
-│   └── MapComponent.tsx      # Komponent mapy
+├── lib/
+│   ├── theme-config.ts      # Centralna konfiguracja motywów
+│   └── theme-utils.ts       # Narzędzia do pracy z motywami
+├── hooks/
+│   └── useTheme.ts          # Hook do zarządzania motywem
+└── components/
+    ├── ThemeProvider.tsx    # Provider dla motywu
+    ├── ThemeToggle.tsx      # Prosty przełącznik
+    └── ThemeSelector.tsx    # Zaawansowany selektor
 ```
 
-## 🎨 Kolory
+### Użycie
 
-Projekt używa palety kolorów **Bright Sun**:
+#### Podstawowe użycie w komponencie:
 
-```css
---bright-sun-50: #fefce8;
---bright-sun-100: #fffac2;
---bright-sun-200: #fff188;
---bright-sun-300: #ffe144;
---bright-sun-400: #fed123;
---bright-sun-500: #eeb404;
---bright-sun-600: #cd8a01;
---bright-sun-700: #a46104;
---bright-sun-800: #874c0c;
---bright-sun-900: #733f10;
---bright-sun-950: #432005;
+```tsx
+import { useTheme } from "../hooks/useTheme";
+
+const MyComponent = () => {
+  const { theme, isDark, colors, toggleTheme } = useTheme();
+
+  return (
+    <div style={{ backgroundColor: colors.background }}>
+      <button onClick={toggleTheme}>Przełącz motyw</button>
+    </div>
+  );
+};
 ```
 
-## 📱 Aplikacje
+#### Użycie z kontekstem:
 
-### 1. BrewMaster Pro
+```tsx
+import { useThemeContext } from "../components/ThemeProvider";
 
-Zaawansowana aplikacja do zarządzania browarem rzemieślniczym
+const MyComponent = () => {
+  const { theme, setTheme } = useThemeContext();
 
-- Monitoring warzenia
-- Zarządzanie recepturami
-- Analiza jakości
-- Raporty produkcji
+  return (
+    <select value={theme} onChange={(e) => setTheme(e.target.value as Theme)}>
+      <option value="light">Jasny</option>
+      <option value="dark">Ciemny</option>
+      <option value="auto">Automatyczny</option>
+    </select>
+  );
+};
+```
 
-### 2. HomeBrew Helper
+### Konfiguracja motywów
 
-Aplikacja mobilna dla domowych warzelników
+Motywy są konfigurowane w `src/lib/theme-config.ts`:
 
-- Kalkulatory warzenia
-- Timery procesu
-- Baza receptur
-- Dziennik warzenia
+```typescript
+export const themeConfig: ThemeConfig = {
+  light: {
+    primary: "#ff4f19",
+    background: "#FFE9CF",
+    surface: "#FFF2E6",
+    text: {
+      primary: "#000000",
+      secondary: "#6d6a75",
+      accent: "#ff4f19",
+    },
+    // ...
+  },
+  dark: {
+    primary: "#ff4f19",
+    background: "#0a0a0a",
+    surface: "#111827",
+    text: {
+      primary: "#ffffff",
+      secondary: "#9ca3af",
+      accent: "#ff4f19",
+    },
+    // ...
+  },
+};
+```
 
-### 3. BeerCraft Platform
-
-Platforma społecznościowa dla miłośników piwa
-
-- Recenzje piwa
-- Mapa browarów
-- Społeczność
-- Personalizowane rekomendacje
-
-## 🔧 Skrypty
+## 🚀 Uruchomienie
 
 ```bash
-npm run dev      # Uruchom serwer deweloperski
-npm run build    # Zbuduj aplikację produkcyjną
-npm run start    # Uruchom aplikację produkcyjną
-npm run lint     # Sprawdź kod ESLint
+# Instalacja zależności
+npm install
+
+# Uruchomienie w trybie deweloperskim
+npm run dev
+
+# Budowanie produkcyjne
+npm run build
+
+# Uruchomienie produkcyjne
+npm start
 ```
 
-## 🌐 Deployment
+## 🛠️ Technologie
 
-Aplikacja jest gotowa do wdrożenia na:
+- **Next.js 15** - Framework React
+- **TypeScript** - Typowanie statyczne
+- **Tailwind CSS 4** - Stylowanie
+- **GSAP** - Animacje
+- **Lucide React** - Ikony
+- **Framer Motion** - Animacje komponentów
 
-- **Vercel** (zalecane)
-- **Netlify**
-- **AWS Amplify**
-- Dowolny hosting z obsługą Node.js
+## 📁 Struktura projektu
 
-## 📄 Licencja
+```
+src/
+├── app/                    # App Router (Next.js 15)
+│   ├── layout.tsx         # Główny layout z ThemeProvider
+│   ├── page.tsx           # Strona główna
+│   ├── globals.css        # Globalne style z zmiennymi motywu
+│   └── [strony]/          # Pozostałe strony
+├── components/            # Komponenty React
+│   ├── ThemeProvider.tsx  # Provider motywu
+│   ├── ThemeSelector.tsx  # Selektor motywu
+│   ├── Header.tsx         # Nagłówek z nawigacją
+│   ├── Hero.tsx           # Sekcja hero
+│   └── [inne komponenty]  # Pozostałe komponenty
+├── hooks/                 # Custom hooks
+│   └── useTheme.ts        # Hook do zarządzania motywem
+└── lib/                   # Narzędzia i konfiguracja
+    ├── theme-config.ts    # Konfiguracja motywów
+    └── theme-utils.ts     # Narzędzia do motywów
+```
 
-Ten projekt jest własnością firmy Brewcode.
+## 🎯 Funkcjonalności
 
-## 📞 Kontakt
+- **Responsywny design** - Dostosowany do wszystkich urządzeń
+- **Animacje** - Płynne animacje z GSAP i Framer Motion
+- **SEO** - Zoptymalizowane meta tagi i struktura
+- **Dostępność** - Zgodne z WCAG 2.1
+- **Performance** - Optymalizowane ładowanie i renderowanie
 
-- **Email**: kontakt@brewcode.pl
-- **Telefon**: +48 123 456 789
-- **Adres**: Warszawa, Polska
+## 🔧 Konfiguracja
 
----
+### Zmienne środowiskowe
 
-**Brewcode** - Technologia dla Pasji Piwa 🍺
-# brewcode-landing
-# brewcode-landing
-# brewcode-landing
+Skopiuj `env.example` do `.env.local` i dostosuj ustawienia:
+
+```bash
+cp env.example .env.local
+```
+
+### Tailwind CSS
+
+Konfiguracja w `tailwind.config.js` zawiera:
+
+- Custom kolory Brewcode
+- Animacje
+- Fonty
+- Zmienne motywu
+
+## 📝 Licencja
+
+MIT License - zobacz plik LICENSE dla szczegółów.

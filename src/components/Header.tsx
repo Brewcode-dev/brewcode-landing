@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import ThemeSelector from './ThemeSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,9 +131,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Theme Toggle & Mobile Menu Button */}
+          {/* Theme Selector & Mobile Menu Button */}
           <div className="flex items-center space-x-4">
-            <ThemeToggle />
+            <ThemeSelector />
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

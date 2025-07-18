@@ -1,4 +1,5 @@
 import { CheckCircle, AlertCircle, Clock, Server, Database, Globe, Shield } from 'lucide-react'
+import Button from '../../components/ui/Button';
 
 export default function StatusPage() {
   const services = [
@@ -73,7 +74,7 @@ export default function StatusPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FFE9CF] dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -86,7 +87,7 @@ export default function StatusPage() {
         </div>
 
         {/* Overall Status */}
-        <div className="bg-[#FFF2E6] dark:bg-gray-800 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-8 mb-8 border-4 border-[#ff4f19]">
+        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white font-heading-poppins">
               Ogólny Status Systemu
@@ -100,17 +101,17 @@ export default function StatusPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-[#FFE9CF] dark:bg-gray-700 rounded-xl border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="text-center p-6 bg-theme-background border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <Server className="w-8 h-8 text-[#ff4f19] mx-auto mb-2" />
               <div className="text-2xl font-black text-gray-800 dark:text-white font-heading-poppins">99.9%</div>
               <div className="text-sm text-gray-600 dark:text-gray-300 font-body-roboto">Czas Działania</div>
             </div>
-            <div className="text-center p-6 bg-[#FFE9CF] dark:bg-gray-700 rounded-xl border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="text-center p-6 bg-theme-background border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <Clock className="w-8 h-8 text-[#ff4f19] mx-auto mb-2" />
               <div className="text-2xl font-black text-gray-800 dark:text-white font-heading-poppins">72ms</div>
               <div className="text-sm text-gray-600 dark:text-gray-300 font-body-roboto">Średni Czas Odpowiedzi</div>
             </div>
-            <div className="text-center p-6 bg-[#FFE9CF] dark:bg-gray-700 rounded-xl border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
+            <div className="text-center p-6 bg-theme-background border-2 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
               <Shield className="w-8 h-8 text-[#ff4f19] mx-auto mb-2" />
               <div className="text-2xl font-black text-gray-800 dark:text-white font-heading-poppins">0</div>
               <div className="text-sm text-gray-600 dark:text-gray-300 font-body-roboto">Aktywne Problemy</div>
@@ -121,7 +122,7 @@ export default function StatusPage() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-[#FFF2E6] dark:bg-gray-800 rounded-xl shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-6 border-4 border-[#ff4f19]">
+            <div key={index} className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-6 border-4 border-[#ff4f19]">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   {getStatusIcon(service.status)}
@@ -129,7 +130,7 @@ export default function StatusPage() {
                     {service.name}
                   </h3>
                 </div>
-                <span className={`px-3 py-1 rounded-full text-xs font-bold ${getStatusColor(service.status)}`}>
+                <span className={`px-3 py-1 text-xs font-bold ${getStatusColor(service.status)}`}>
                   {service.status}
                 </span>
               </div>
@@ -153,7 +154,7 @@ export default function StatusPage() {
         </div>
 
         {/* Recent Incidents */}
-        <div className="bg-[#FFF2E6] dark:bg-gray-800 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-8 mb-8 border-4 border-[#ff4f19]">
+        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 font-heading-poppins">
             Ostatnie Incydenty
           </h2>
@@ -177,7 +178,7 @@ export default function StatusPage() {
         </div>
 
         {/* Status History */}
-        <div className="bg-[#FFF2E6] dark:bg-gray-800 rounded-2xl shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] p-8 border-4 border-[#ff4f19]">
+        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 border-4 border-[#ff4f19]">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 font-heading-poppins">
             Historia Statusu
           </h2>
@@ -196,7 +197,7 @@ export default function StatusPage() {
                   <td className="py-3 text-gray-800 dark:text-white font-body-roboto">2024-01-15</td>
                   <td className="py-3 text-gray-800 dark:text-white font-body-roboto">API Services</td>
                   <td className="py-3">
-                    <span className="px-2 py-1 rounded-full text-xs font-bold text-yellow-600 bg-yellow-100 dark:bg-yellow-900/20">
+                    <span className="px-2 py-1 text-xs font-bold text-yellow-600 bg-yellow-100 dark:bg-yellow-900/20">
                       Degraded
                     </span>
                   </td>
@@ -206,7 +207,7 @@ export default function StatusPage() {
                   <td className="py-3 text-gray-800 dark:text-white font-body-roboto">2024-01-10</td>
                   <td className="py-3 text-gray-800 dark:text-white font-body-roboto">Database</td>
                   <td className="py-3">
-                    <span className="px-2 py-1 rounded-full text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/20">
+                    <span className="px-2 py-1 text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/20">
                       Rozwiązane
                     </span>
                   </td>
@@ -225,14 +226,14 @@ export default function StatusPage() {
           <div className="flex justify-center space-x-4">
             <a
               href="/support"
-              className="inline-flex items-center px-6 py-3 bg-[#ff4f19] text-white rounded-lg border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] font-heading-poppins"
+              className="inline-flex items-center px-6 py-3 bg-[#ff4f19] text-white border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] font-heading-poppins"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Kontakt Wsparcie
             </a>
             <a
               href="/wsparcie"
-              className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-[#ff4f19] rounded-lg border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] font-heading-poppins"
+              className="inline-flex items-center px-6 py-3 bg-white dark:bg-gray-800 text-[#ff4f19] border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 font-bold text-lg relative overflow-hidden hover:translate-x-[-2px] hover:translate-y-[-2px] font-heading-poppins"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/10 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
               Wsparcie

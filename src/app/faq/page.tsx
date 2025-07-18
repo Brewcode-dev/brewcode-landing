@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import Button from '../../components/ui/Button';
 
 export default function FAQPage() {
   const faqs = [
@@ -39,7 +40,7 @@ export default function FAQPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FFE9CF] dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
         <div className="text-center mb-16">
@@ -59,7 +60,7 @@ export default function FAQPage() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="faq-item bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300"
+              className="faq-item bg-theme-surface p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300"
             >
               <h3 className="text-lg font-black text-gray-800 dark:text-white mb-3">
                 {faq.question}
@@ -73,7 +74,7 @@ export default function FAQPage() {
 
         {/* Contact Section */}
         <div className="text-center">
-          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
+          <div className="bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_var(--theme-shadow)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Nie znalazłeś odpowiedzi?
             </h3>
@@ -82,14 +83,14 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/kontakt">
-                <button className="bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+                <Button variant="primary" size="md">
                   Skontaktuj się
-                </button>
+                </Button>
               </Link>
               <Link href="/">
-                <button className="bg-white dark:bg-gray-800 text-[#ff4f19] font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+                <Button variant="secondary" size="md">
                   Powrót do strony głównej
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
