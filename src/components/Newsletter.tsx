@@ -19,9 +19,9 @@ const Newsletter = () => {
   };
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
   const benefitsRef = useStaggerAnimation(0.2);
-  const formRef = useFadeInUp();
+  const formRef = useFadeInUp(0.3, 0.3);
 
   return (
     <section id="newsletter" className="py-20 bg-white dark:bg-gray-900">

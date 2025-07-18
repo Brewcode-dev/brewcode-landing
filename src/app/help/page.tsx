@@ -1,14 +1,24 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { HelpCircle, BookOpen, MessageCircle, Video, FileText, Search } from 'lucide-react';
 import Button from '../../components/ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 
 export default function HelpPage() {
+  // Animation refs
+  const headerRef = useFadeInUp(0, 0.2);
+  const searchRef = useFadeInUp(0.2, 0.3);
+  const actionsRef = useStaggerAnimation(0.15);
+  const faqRef = useFadeInUp(0.3, 0.4);
+  const contactRef = useFadeInUp(0.4, 0.5);
+
   return (
     <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-6 shadow-[4px_4px_0px_0px_var(--theme-shadow)] border-2 border-[#ff4f19]">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
@@ -21,7 +31,7 @@ export default function HelpPage() {
         </div>
 
         {/* Search */}
-        <div className="max-w-2xl mx-auto mb-16">
+        <div ref={searchRef} className="max-w-2xl mx-auto mb-16">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
@@ -33,7 +43,7 @@ export default function HelpPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div ref={actionsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <Link href="/help/videos" className="quick-action-card bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] block">
             <div className="w-12 h-12 bg-[#ff4f19] flex items-center justify-center mb-6 shadow-lg border-2 border-[#ff4f19]">
               <Video className="w-6 h-6 text-white" />
@@ -72,7 +82,7 @@ export default function HelpPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16">
+        <div ref={faqRef} className="mt-16">
           <h2 className="text-3xl font-black text-gray-800 dark:text-white mb-8 text-center">
             Często zadawane pytania
           </h2>
@@ -113,7 +123,7 @@ export default function HelpPage() {
         </div>
 
         {/* Contact Support */}
-        <div className="mt-16 text-center">
+        <div ref={contactRef} className="mt-16 text-center">
           <div className="bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_var(--theme-shadow)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Nie znalazłeś odpowiedzi?

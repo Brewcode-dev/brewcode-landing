@@ -1,8 +1,21 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { FileText, Scale, AlertTriangle, CheckCircle, XCircle } from 'lucide-react';
+import { useFadeInUp, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 
 export default function TermsPage() {
+  // Animation refs
+  const headerRef = useFadeInUp(0, 0.2);
+  const lastUpdatedRef = useFadeInUp(0.2, 0.3);
+  const introRef = useFadeInUp(0.3, 0.4);
+  const sectionsRef = useStaggerAnimation(0.15);
+  const dosDontsRef = useFadeInUp(0.4, 0.5);
+  const terminationRef = useFadeInUp(0.5, 0.6);
+  const contactRef = useFadeInUp(0.6, 0.7);
+  const backRef = useFadeInUp(0.7, 0.8);
+
   const sections = [
     {
       title: 'Akceptacja regulaminu',
@@ -68,7 +81,7 @@ export default function TermsPage() {
     <div className="min-h-screen bg-[#FFE9CF] dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-[#ff4f19]">
             <FileText className="w-8 h-8 text-white" />
           </div>
@@ -81,14 +94,14 @@ export default function TermsPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] mb-12">
+        <div ref={lastUpdatedRef} className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] mb-12">
           <p className="text-gray-600 dark:text-gray-300 text-center">
             <strong>Ostatnia aktualizacja:</strong> 15 stycznia 2024
           </p>
         </div>
 
         {/* Introduction */}
-        <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
+        <div ref={introRef} className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
           <h2 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
             Wprowadzenie
           </h2>
@@ -102,7 +115,7 @@ export default function TermsPage() {
         </div>
 
         {/* Sections */}
-        <div className="space-y-8 mb-12">
+        <div ref={sectionsRef} className="space-y-8 mb-12">
           {sections.map((section, index) => {
             const IconComponent = section.icon;
             return (
@@ -130,7 +143,7 @@ export default function TermsPage() {
         </div>
 
         {/* Do's and Don'ts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div ref={dosDontsRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Allowed */}
           <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)]">
             <div className="flex items-center mb-6">
@@ -169,7 +182,7 @@ export default function TermsPage() {
         </div>
 
         {/* Termination */}
-        <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
+        <div ref={terminationRef} className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
           <h2 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
             Rozwiązanie umowy
           </h2>
@@ -190,7 +203,7 @@ export default function TermsPage() {
         </div>
 
         {/* Contact */}
-        <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
+        <div ref={contactRef} className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] mb-12">
           <h2 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
             Kontakt
           </h2>

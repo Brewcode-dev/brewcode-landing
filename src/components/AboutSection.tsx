@@ -30,10 +30,10 @@ const AboutSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
   const statsRef = useStaggerAnimation(0.2);
-  const missionRef = useFadeInLeft();
-  const valuesRef = useFadeInRight();
+  const missionRef = useFadeInLeft(0.2);
+  const valuesRef = useFadeInRight(0.4);
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">

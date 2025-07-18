@@ -6,12 +6,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowLeft, BarChart3, TrendingUp, Zap, Shield, Users, Database, Beer } from 'lucide-react';
 import Link from 'next/link';
 import Button from '../../components/ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App1Page = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const featuresRef = useRef<HTMLDivElement>(null);
+  
+  // Animation refs
+  const headerRef = useFadeInUp(0, 0.2);
+  const featuresGridRef = useStaggerAnimation(0.15);
+  const benefitsRef = useFadeInUp(0.2, 0.3);
+  const ctaRef = useFadeInUp(0.3, 0.4);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -103,16 +110,18 @@ const App1Page = () => {
             Powrót do strony głównej
           </Link>
           
-          <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
-            <span className="text-[#ff4f19]">
-              BrewMaster Pro
-            </span>
-          </h1>
-          
-          <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto font-body-roboto">
-            Zaawansowany system zarządzania recepturami piwa dla browarów rzemieślniczych. 
-            Monitoruj, analizuj i optymalizuj produkcję z niezwykłą precyzją.
-          </p>
+          <div ref={headerRef}>
+            <h1 className="hero-title text-4xl md:text-6xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">
+              <span className="text-[#ff4f19]">
+                BrewMaster Pro
+              </span>
+            </h1>
+            
+            <p className="hero-subtitle text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto font-body-roboto">
+              Zaawansowany system zarządzania recepturami piwa dla browarów rzemieślniczych. 
+              Monitoruj, analizuj i optymalizuj produkcję z niezwykłą precyzją.
+            </p>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="primary" size="lg">
@@ -137,7 +146,7 @@ const App1Page = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div ref={featuresGridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
@@ -157,7 +166,7 @@ const App1Page = () => {
       {/* Benefits Section */}
       <section className="py-20 bg-theme-background">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div ref={benefitsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-black text-gray-800 dark:text-white mb-8 font-heading-poppins">
                 Dlaczego BrewMaster Pro?
@@ -174,7 +183,7 @@ const App1Page = () => {
               </div>
             </div>
             
-            <div className="bg-theme-surface border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8">
+            <div ref={ctaRef} className="bg-theme-surface border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8">
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6 font-heading-poppins">Rozpocznij już dziś</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 font-body-roboto">
                 Dołącz do setek browarów, które już korzystają z BrewMaster Pro 

@@ -1,9 +1,17 @@
-import React from 'react';
+'use client';
+
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import Button from '../../components/ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 
 export default function FAQPage() {
+  // Animation refs
+  const headerRef = useFadeInUp(0, 0.2);
+  const faqsRef = useStaggerAnimation(0.15);
+  const contactRef = useFadeInUp(0.3, 0.3);
+
   const faqs = [
     {
       question: 'Jak rozpocząć darmowy trial?',
@@ -43,7 +51,7 @@ export default function FAQPage() {
     <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-6 shadow-lg border-2 border-[#ff4f19]">
             <HelpCircle className="w-8 h-8 text-white" />
           </div>
@@ -56,7 +64,7 @@ export default function FAQPage() {
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-6 mb-16">
+        <div ref={faqsRef} className="space-y-6 mb-16">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -73,7 +81,7 @@ export default function FAQPage() {
         </div>
 
         {/* Contact Section */}
-        <div className="text-center">
+        <div ref={contactRef} className="text-center">
           <div className="bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_var(--theme-shadow)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Nie znalazłeś odpowiedzi?

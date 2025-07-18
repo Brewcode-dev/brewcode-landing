@@ -57,8 +57,8 @@ const PricingSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
-  const toggleRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
+  const toggleRef = useFadeInUp(0.2, 0.3);
   const plansRef = useStaggerAnimation(0.2);
 
   return (

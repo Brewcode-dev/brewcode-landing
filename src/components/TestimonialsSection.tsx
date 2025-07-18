@@ -71,10 +71,10 @@ const TestimonialsSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
   const statsRef = useStaggerAnimation(0.15);
   const testimonialsRef = useStaggerAnimation(0.1);
-  const ctaRef = useFadeInUp();
+  const ctaRef = useFadeInUp(0.3, 0.3);
 
   return (
     <section id="testimonials" className="py-20 bg-white dark:bg-gray-900">

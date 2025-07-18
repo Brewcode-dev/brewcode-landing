@@ -33,7 +33,7 @@ const TechnologiesSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
   const skillsRef = useStaggerAnimation(0.15);
   const categoriesRef = useStaggerAnimation(0.2);
 

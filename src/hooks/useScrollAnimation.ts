@@ -6,6 +6,7 @@ interface ScrollAnimationOptions {
   threshold?: number;
   rootMargin?: string;
   triggerOnce?: boolean;
+  delay?: number;
 }
 
 export const useScrollAnimation = (options: ScrollAnimationOptions = {}): RefObject<any> => {
@@ -34,6 +35,7 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}): RefObj
                 y: 0,
                 scale: 1,
                 duration: 0.8,
+                delay: options.delay || 0,
                 ease: "power2.out"
               });
 
@@ -69,15 +71,16 @@ export const useScrollAnimation = (options: ScrollAnimationOptions = {}): RefObj
 };
 
 // Specific animation hooks
-export const useFadeInUp = (): RefObject<any> => {
+export const useFadeInUp = (delay: number = 0, threshold: number = 0.1): RefObject<any> => {
   return useScrollAnimation({
-    threshold: 0.1,
+    threshold: threshold,
     rootMargin: '0px 0px -50px 0px',
-    triggerOnce: true
+    triggerOnce: true,
+    delay: delay
   });
 };
 
-export const useFadeInLeft = (): RefObject<any> => {
+export const useFadeInLeft = (delay: number = 0): RefObject<any> => {
   const elementRef = useRef<any>(null);
 
   useEffect(() => {
@@ -100,6 +103,7 @@ export const useFadeInLeft = (): RefObject<any> => {
                 x: 0,
                 scale: 1,
                 duration: 0.8,
+                delay: delay,
                 ease: "power2.out"
               });
             }
@@ -117,12 +121,12 @@ export const useFadeInLeft = (): RefObject<any> => {
         observer.unobserve(element);
       };
     });
-  }, []);
+  }, [delay]);
 
   return elementRef;
 };
 
-export const useFadeInRight = (): RefObject<any> => {
+export const useFadeInRight = (delay: number = 0): RefObject<any> => {
   const elementRef = useRef<any>(null);
 
   useEffect(() => {
@@ -145,6 +149,7 @@ export const useFadeInRight = (): RefObject<any> => {
                 x: 0,
                 scale: 1,
                 duration: 0.8,
+                delay: delay,
                 ease: "power2.out"
               });
             }
@@ -162,7 +167,7 @@ export const useFadeInRight = (): RefObject<any> => {
         observer.unobserve(element);
       };
     });
-  }, []);
+  }, [delay]);
 
   return elementRef;
 };

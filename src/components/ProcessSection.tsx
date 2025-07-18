@@ -55,10 +55,10 @@ const ProcessSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.2);
   const stepsRef = useStaggerAnimation(0.2);
   const benefitsRef = useStaggerAnimation(0.15);
-  const ctaRef = useFadeInUp();
+  const ctaRef = useFadeInUp(0.3, 0.3);
 
   return (
     <section id="process" className="py-20 bg-white dark:bg-gray-900">

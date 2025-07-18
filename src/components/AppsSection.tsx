@@ -85,7 +85,7 @@ const AppsSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
+  const headerRef = useFadeInUp(0, 0.15);
   const appsRef = useStaggerAnimation(0.3);
 
   return (

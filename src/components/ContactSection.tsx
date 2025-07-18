@@ -49,9 +49,9 @@ const ContactSection = () => {
   ];
 
   // Animation refs
-  const headerRef = useFadeInUp();
-  const formRef = useFadeInLeft();
-  const infoRef = useFadeInRight();
+  const headerRef = useFadeInUp(0, 0.2);
+  const formRef = useFadeInLeft(0.2);
+  const infoRef = useFadeInRight(0.4);
   const contactCardsRef = useStaggerAnimation(0.15);
 
   return (

@@ -571,7 +571,7 @@ const Hero = () => {
           }
           50% { 
             transform: translateY(20px) translateZ(0);
-            opacity: 0.4;
+            opacity: 0.6;
           }
         }
 
@@ -582,7 +582,7 @@ const Hero = () => {
           }
           50% { 
             transform: translateY(-20px) translateZ(0);
-            opacity: 0.4;
+            opacity: 0.6;
           }
         }
 

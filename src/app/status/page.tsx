@@ -1,7 +1,18 @@
+'use client';
+
 import { CheckCircle, AlertCircle, Clock, Server, Database, Globe, Shield } from 'lucide-react'
 import Button from '../../components/ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../../hooks/useScrollAnimation';
 
 export default function StatusPage() {
+  // Animation refs
+  const headerRef = useFadeInUp(0, 0.2);
+  const overallStatusRef = useFadeInUp(0.2, 0.3);
+  const servicesRef = useStaggerAnimation(0.1);
+  const incidentsRef = useFadeInUp(0.3, 0.4);
+  const historyRef = useFadeInUp(0.4, 0.5);
+  const contactRef = useFadeInUp(0.5, 0.6);
+
   const services = [
     {
       name: 'Web Application',
@@ -77,7 +88,7 @@ export default function StatusPage() {
     <div className="min-h-screen bg-theme-background transition-colors duration-300">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-black text-[#ff4f19] mb-4 font-heading-poppins">
             Status Systemu
           </h1>
@@ -87,7 +98,7 @@ export default function StatusPage() {
         </div>
 
         {/* Overall Status */}
-        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
+        <div ref={overallStatusRef} className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-gray-800 dark:text-white font-heading-poppins">
               Ogólny Status Systemu
@@ -120,7 +131,7 @@ export default function StatusPage() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div ref={servicesRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {services.map((service, index) => (
             <div key={index} className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-6 border-4 border-[#ff4f19]">
               <div className="flex items-center justify-between mb-4">
@@ -154,7 +165,7 @@ export default function StatusPage() {
         </div>
 
         {/* Recent Incidents */}
-        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
+        <div ref={incidentsRef} className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 mb-8 border-4 border-[#ff4f19]">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 font-heading-poppins">
             Ostatnie Incydenty
           </h2>
@@ -178,7 +189,7 @@ export default function StatusPage() {
         </div>
 
         {/* Status History */}
-        <div className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 border-4 border-[#ff4f19]">
+        <div ref={historyRef} className="bg-theme-surface shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8 border-4 border-[#ff4f19]">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 font-heading-poppins">
             Historia Statusu
           </h2>
@@ -219,7 +230,7 @@ export default function StatusPage() {
         </div>
 
         {/* Contact Information */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center py-12" ref={contactRef}>
           <p className="text-gray-600 dark:text-gray-300 mb-4 font-body-roboto">
             Potrzebujesz pomocy? Skontaktuj się z naszym zespołem wsparcia
           </p>
