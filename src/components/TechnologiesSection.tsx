@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Code, Database, Cloud, Smartphone, Globe, Shield } from 'lucide-react';
+import { useFadeInUp, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const TechnologiesSection = () => {
   const technologies = [
@@ -31,11 +32,16 @@ const TechnologiesSection = () => {
     },
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const skillsRef = useStaggerAnimation(0.15);
+  const categoriesRef = useStaggerAnimation(0.2);
+
   return (
     <section id="technologies" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
             Nasze <span className="text-[#ff4f19]">Technologie</span>
           </h2>
@@ -45,7 +51,7 @@ const TechnologiesSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div ref={skillsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {technologies.map((tech, index) => {
             const IconComponent = tech.icon;
             return (
@@ -74,7 +80,7 @@ const TechnologiesSection = () => {
         </div>
 
         {/* Technology Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={categoriesRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category, index) => {
             const IconComponent = category.icon;
             return (

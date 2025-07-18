@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Users, Target, Award, Code, Rocket, Heart } from 'lucide-react';
+import { useFadeInUp, useFadeInLeft, useFadeInRight, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const AboutSection = () => {
   const stats = [
@@ -28,11 +29,17 @@ const AboutSection = () => {
     }
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const statsRef = useStaggerAnimation(0.2);
+  const missionRef = useFadeInLeft();
+  const valuesRef = useFadeInRight();
+
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
             Kim <span className="text-[#ff4f19]">jesteśmy</span>
           </h2>
@@ -43,7 +50,7 @@ const AboutSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div ref={statsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
@@ -58,7 +65,7 @@ const AboutSection = () => {
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Mission */}
-          <div className="relative">
+          <div ref={missionRef} className="relative">
             <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
                 Nasza Misja
@@ -80,7 +87,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Column - Values */}
-          <div className="space-y-6">
+          <div ref={valuesRef} className="space-y-6">
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (

@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Check, X, Star, Zap, Crown, Users } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
+import Button from './ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const PricingSection = () => {
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
@@ -9,257 +11,159 @@ const PricingSection = () => {
   const plans = [
     {
       name: 'Starter',
-      description: 'Dla małych browarów i domowych warzelników',
-      price: billingCycle === 'monthly' ? 99 : 990,
-      originalPrice: billingCycle === 'monthly' ? 129 : 1290,
+      description: 'Idealny dla małych browarów i pubów',
+      monthlyPrice: 99,
+      yearlyPrice: 990,
       features: [
-        'Do 3 użytkowników',
-        'Podstawowe receptury',
-        'Kalkulatory warzenia',
-        'Email support',
+        'Do 5 użytkowników',
+        'Podstawowe funkcje',
+        'Wsparcie email',
         'Aktualizacje',
-        'Mobilna aplikacja'
+        'Backup danych'
       ],
-      notIncluded: [
-        'Zaawansowana analityka',
-        'Integracje API',
-        'Dedykowany support',
-        'Szkolenia'
-      ],
-      icon: Users,
       popular: false
     },
     {
       name: 'Professional',
-      description: 'Dla średnich browarów i pubów',
-      price: billingCycle === 'monthly' ? 299 : 2990,
-      originalPrice: billingCycle === 'monthly' ? 399 : 3990,
+      description: 'Dla średnich i dużych biznesów',
+      monthlyPrice: 199,
+      yearlyPrice: 1990,
       features: [
-        'Do 10 użytkowników',
-        'Zaawansowane receptury',
-        'Analityka w czasie rzeczywistym',
-        'Integracje z systemami',
-        'Priority support',
+        'Do 20 użytkowników',
+        'Wszystkie funkcje',
+        'Wsparcie telefoniczne',
+        'Integracje API',
         'Szkolenia online',
-        'API dostęp',
-        'Raporty customowe'
+        'Dedykowany opiekun'
       ],
-      notIncluded: [
-        'Dedykowany manager',
-        'Szkolenia na miejscu'
-      ],
-      icon: Zap,
       popular: true
     },
     {
       name: 'Enterprise',
-      description: 'Dla dużych browarów i sieci pubów',
-      price: billingCycle === 'monthly' ? 799 : 7990,
-      originalPrice: billingCycle === 'monthly' ? 999 : 9990,
+      description: 'Rozwiązania dla dużych organizacji',
+      monthlyPrice: 399,
+      yearlyPrice: 3990,
       features: [
         'Nielimitowani użytkownicy',
         'Wszystkie funkcje',
-        'Dedykowany manager',
+        'Wsparcie 24/7',
+        'Integracje custom',
         'Szkolenia na miejscu',
-        'Custom integracje',
-        '24/7 support',
-        'SLA gwarancja',
-        'White-label opcje'
+        'Dedykowany zespół',
+        'SLA gwarancja'
       ],
-      notIncluded: [],
-      icon: Crown,
       popular: false
     }
   ];
 
-  const savings = billingCycle === 'yearly' ? 'Oszczędź 20%' : '';
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const toggleRef = useFadeInUp();
+  const plansRef = useStaggerAnimation(0.2);
 
   return (
-    <section id="pricing" className="py-20 bg-white dark:bg-gray-900">
+    <section id="pricing" className="py-20 bg-theme-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
-            Wybierz swój <span className="text-[#ff4f19]">plan</span>
+        <div ref={headerRef} className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-theme-primary">
+            Cennik <span className="text-[#ff4f19]">usług</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Elastyczne plany dostosowane do Twoich potrzeb. Rozpocznij za darmo przez 30 dni.
+          <p className="text-xl text-theme-secondary max-w-3xl mx-auto">
+            Wybierz plan, który najlepiej pasuje do Twoich potrzeb. 
+            Wszystkie plany obejmują 30-dniowy okres próbny.
           </p>
-
-          {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mb-8">
-            <span className={`text-sm font-bold ${billingCycle === 'monthly' ? 'text-gray-800 dark:text-white' : 'text-gray-500'}`}>
-              Miesięcznie
-            </span>
-            <button
-              onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-              className="relative inline-flex h-6 w-11 items-center bg-gray-200 dark:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-[#ff4f19] focus:ring-offset-2"
-            >
-              <span
-                className={`inline-block h-4 w-4 transform bg-white transition-transform ${
-                  billingCycle === 'yearly' ? 'translate-x-6' : 'translate-x-1'
-                }`}
-              />
-            </button>
-            <span className={`text-sm font-bold ${billingCycle === 'yearly' ? 'text-gray-800 dark:text-white' : 'text-gray-500'}`}>
-              Rocznie
-            </span>
-            {billingCycle === 'yearly' && (
-              <span className="bg-[#ff4f19] text-white px-3 py-1 text-xs font-bold">
-                {savings}
-              </span>
-            )}
-          </div>
         </div>
 
-        {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => {
-            const IconComponent = plan.icon;
-            return (
-              <div
-                key={index}
-                className={`relative pricing-card bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] ${
-                  plan.popular ? 'ring-4 ring-[#ff4f19] ring-opacity-50' : ''
-                }`}
-              >
-                {/* Popular Badge */}
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="bg-[#ff4f19] text-white px-6 py-2 text-sm font-bold shadow-lg">
-                      Najpopularniejszy
-                    </div>
-                  </div>
-                )}
+        {/* Billing Toggle */}
+        <div ref={toggleRef} className="flex items-center justify-center space-x-4 mb-8">
+          <span className={`text-sm font-bold ${billingCycle === 'monthly' ? 'text-theme-primary' : 'text-theme-secondary'}`}>
+            Miesięcznie
+          </span>
+          <div 
+            onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
+            className="relative inline-flex h-6 w-11 items-center bg-theme-surface border-2 border-[#ff4f19] rounded-full cursor-pointer"
+          >
+            <div
+              className={`inline-block h-4 w-4 transform bg-white transition-transform border-2 border-[#ff4f19] rounded-full ${
+                billingCycle === 'yearly' ? 'translate-x-5' : 'translate-x-1'
+              }`}
+            />
+          </div>
+          <span className={`text-sm font-bold ${billingCycle === 'yearly' ? 'text-theme-primary' : 'text-theme-secondary'}`}>
+            Rocznie
+            <span className="ml-1 text-[#ff4f19]">(-17%)</span>
+          </span>
+        </div>
 
-                {/* Plan Header */}
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-[#ff4f19] flex items-center justify-center mx-auto mb-4 shadow-lg border-2 border-[#ff4f19]">
-                    <IconComponent className="w-8 h-8 text-white" />
+        {/* Pricing Cards */}
+        <div ref={plansRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`relative bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-2px] hover:translate-y-[-2px] ${
+                plan.popular ? 'ring-4 ring-[#ff4f19]' : ''
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-[#ff4f19] text-white px-4 py-2 text-sm font-bold shadow-[2px_2px_0px_0px_rgba(0,0,0,0.2)] border-2 border-[#ff4f19]">
+                    <Star className="w-4 h-4 inline mr-1" />
+                    Najpopularniejszy
                   </div>
-                  <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-2">
-                    {plan.name}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    {plan.description}
-                  </p>
                 </div>
+              )}
 
-                {/* Price */}
-                <div className="text-center mb-8">
-                  <div className="flex items-center justify-center space-x-2 mb-2">
-                    <span className="text-4xl font-black text-gray-800 dark:text-white">
-                      {plan.price}
-                    </span>
-                    <span className="text-gray-600 dark:text-gray-300">
-                      zł/{billingCycle === 'monthly' ? 'miesiąc' : 'rok'}
-                    </span>
-                  </div>
-                  {plan.originalPrice > plan.price && (
-                    <div className="text-gray-500 line-through text-sm">
-                      {plan.originalPrice} zł
-                    </div>
-                  )}
+              <div className="text-center mb-8">
+                <h3 className="text-2xl font-black text-theme-primary mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-theme-secondary mb-6">
+                  {plan.description}
+                </p>
+                <div className="mb-4">
+                  <span className="text-4xl font-black text-[#ff4f19]">
+                    {billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice}
+                  </span>
+                  <span className="text-theme-secondary"> zł</span>
+                  <span className="text-theme-secondary text-sm">
+                    /{billingCycle === 'monthly' ? 'miesiąc' : 'rok'}
+                  </span>
                 </div>
-
-                {/* Features */}
-                <div className="space-y-4 mb-8">
-                  <h4 className="font-black text-gray-800 dark:text-white mb-4">
-                    Zawiera:
-                  </h4>
-                  {plan.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center">
-                      <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-600 dark:text-gray-300 text-sm">
-                        {feature}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Not Included */}
-                {plan.notIncluded.length > 0 && (
-                  <div className="space-y-4 mb-8">
-                    <h4 className="font-black text-gray-800 dark:text-white mb-4">
-                      Nie zawiera:
-                    </h4>
-                    {plan.notIncluded.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center">
-                        <X className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
-                        <span className="text-gray-500 dark:text-gray-400 text-sm">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* CTA Button */}
-                <button className={`w-full py-4 px-6 font-bold border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] ${
-                  plan.popular
-                    ? 'bg-[#ff4f19] text-white'
-                    : 'bg-white dark:bg-gray-800 text-[#ff4f19]'
-                }`}>
-                  {plan.popular ? 'Rozpocznij trial' : 'Wybierz plan'}
-                </button>
               </div>
-            );
-          })}
+
+              <ul className="space-y-4 mb-8">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center">
+                    <Check className="w-5 h-5 text-[#ff4f19] mr-3 flex-shrink-0" />
+                    <span className="text-theme-secondary">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant={plan.popular ? 'primary' : 'secondary'}
+                size="lg"
+                className="w-full"
+              >
+                Wybierz plan
+              </Button>
+            </div>
+          ))}
         </div>
 
         {/* Additional Info */}
         <div className="mt-16 text-center">
-          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
-            <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
-              Potrzebujesz customowego rozwiązania?
+          <div className="bg-theme-surface p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_var(--theme-shadow)]">
+            <h3 className="text-2xl font-black text-theme-primary mb-4">
+              Potrzebujesz czegoś więcej?
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Skontaktuj się z nami, aby omówić indywidualne potrzeby Twojego biznesu.
+            <p className="text-theme-secondary mb-6">
+              Skontaktuj się z nami, aby omówić indywidualne rozwiązania dla Twojego biznesu.
             </p>
-            <button className="bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,0.2)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px]">
+            <Button variant="primary" size="md">
               Skontaktuj się
-            </button>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-8 text-center">
-            Często zadawane pytania
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <h4 className="font-black text-gray-800 dark:text-white mb-2">
-                Czy mogę zmienić plan w trakcie?
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Tak, możesz zmienić plan w dowolnym momencie. Różnica w cenie zostanie rozliczona proporcjonalnie.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <h4 className="font-black text-gray-800 dark:text-white mb-2">
-                Jak wygląda darmowy trial?
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Przez 30 dni masz pełny dostęp do wszystkich funkcji. Nie wymagamy karty kredytowej.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <h4 className="font-black text-gray-800 dark:text-white mb-2">
-                Czy dane są bezpieczne?
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Tak, używamy najwyższych standardów bezpieczeństwa i szyfrowania danych.
-              </p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 p-6 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)]">
-              <h4 className="font-black text-gray-800 dark:text-white mb-2">
-                Jakie są metody płatności?
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Akceptujemy karty kredytowe, przelewy bankowe i płatności online.
-              </p>
-            </div>
+            </Button>
           </div>
         </div>
       </div>

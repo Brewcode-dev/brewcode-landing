@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import { useFadeInUp, useFadeInLeft, useFadeInRight, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -47,11 +48,17 @@ const ContactSection = () => {
     }
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const formRef = useFadeInLeft();
+  const infoRef = useFadeInRight();
+  const contactCardsRef = useStaggerAnimation(0.15);
+
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
             Skontaktuj się z <span className="text-[#ff4f19]">nami</span>
           </h2>
@@ -63,7 +70,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
+          <div ref={formRef} className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
               Wyślij wiadomość
             </h3>
@@ -151,7 +158,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div ref={infoRef} className="space-y-8">
             <div>
               <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-6">
                 Informacje kontaktowe
@@ -162,7 +169,7 @@ const ContactSection = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div ref={contactCardsRef} className="space-y-6">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 return (

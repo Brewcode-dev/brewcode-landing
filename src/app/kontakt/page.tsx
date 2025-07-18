@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowLeft, Mail, Phone, MapPin, Clock, MessageSquare, Send } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, MapPin, Clock, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import Button from '../../components/ui/Button';
 
@@ -12,6 +12,28 @@ gsap.registerPlugin(ScrollTrigger);
 const ContactPage = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -159,60 +181,90 @@ const ContactPage = () => {
             </div>
             
             <div className="contact-form bg-theme-surface border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] p-8">
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <h3 className="text-2xl font-black text-theme-primary mb-6">
+                Wyślij wiadomość
+              </h3>
+              
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-theme-secondary mb-2">
+                        Imię i nazwisko
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] text-theme-primary bg-theme-surface font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-theme-secondary mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] text-theme-primary bg-theme-surface font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300"
+                      />
+                    </div>
+                  </div>
+                  
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
-                      Imię i nazwisko
+                    <label className="block text-sm font-bold text-theme-secondary mb-2">
+                      Temat
                     </label>
-                    <input 
-                      type="text" 
-                      className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
-                      placeholder="Twoje imię i nazwisko"
+                    <input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] text-theme-primary bg-theme-surface font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300"
                     />
                   </div>
+                  
                   <div>
-                    <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
-                      Email
+                    <label className="block text-sm font-bold text-theme-secondary mb-2">
+                      Wiadomość
                     </label>
-                    <input 
-                      type="email" 
-                      className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
-                      placeholder="twoj@email.com"
-                    />
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={6}
+                      className="w-full px-4 py-3 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] text-theme-primary bg-theme-surface font-bold focus:outline-none focus:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300 resize-none"
+                    ></textarea>
                   </div>
+                  
+                  <button
+                    type="submit"
+                    className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] hover:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center"
+                  >
+                    <span>Wyślij wiadomość</span>
+                    <Send className="w-5 h-5 ml-2" />
+                  </button>
+                </form>
+              ) : (
+                <div className="bg-green-100 dark:bg-green-900 p-6 border-4 border-green-500 shadow-[4px_4px_0px_0px_var(--theme-shadow)]">
+                  <div className="flex items-center justify-center">
+                    <CheckCircle className="w-8 h-8 text-green-500 mr-3" />
+                    <span className="text-green-800 dark:text-green-200 font-bold text-lg">
+                      Wiadomość wysłana!
+                    </span>
+                  </div>
+                  <p className="text-green-700 dark:text-green-300 text-center mt-2">
+                    Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.
+                  </p>
                 </div>
-                
-                <div>
-                  <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
-                    Temat
-                  </label>
-                  <input 
-                    type="text" 
-                    className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-body-roboto"
-                    placeholder="O czym chcesz porozmawiać?"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-gray-800 dark:text-white font-bold mb-2 font-heading-poppins">
-                    Wiadomość
-                  </label>
-                  <textarea 
-                    rows={6}
-                    className="w-full px-4 py-3 border-4 border-gray-300 dark:border-gray-600 focus:border-[#ff4f19] focus:outline-none bg-white dark:bg-gray-700 text-gray-800 dark:text-white resize-none font-body-roboto"
-                    placeholder="Opowiedz nam o swoim projekcie..."
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit"
-                  className="w-full bg-[#ff4f19] text-white py-4 border-4 border-[#ff4f19] shadow-[6px_6px_0px_0px_var(--theme-shadow)] font-bold hover:shadow-[8px_8px_0px_0px_var(--theme-shadow)] transition-all duration-300 flex items-center justify-center font-heading-poppins hover:translate-x-[-2px] hover:translate-y-[-2px]"
-                >
-                  <Send className="w-5 h-5 mr-2" />
-                  Wyślij wiadomość
-                </button>
-              </form>
+              )}
             </div>
           </div>
         </div>

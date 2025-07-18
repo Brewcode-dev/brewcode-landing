@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Zap, BarChart3, Shield, Users, Beer, TrendingUp, Database, MapPin, MessageSquare, Calendar, Settings } from 'lucide-react';
+import { useFadeInUp, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const AppsSection = () => {
   const apps = [
@@ -83,11 +84,15 @@ const AppsSection = () => {
     }
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const appsRef = useStaggerAnimation(0.3);
+
   return (
     <section id="apps" className="py-20 bg-theme-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white font-heading-poppins">
             Nasze <span className="text-[#ff4f19]">Aplikacje</span>
           </h2>
@@ -97,7 +102,7 @@ const AppsSection = () => {
         </div>
 
         {/* Apps Grid - jedna aplikacja na wiersz */}
-        <div className="space-y-8">
+        <div ref={appsRef} className="space-y-8">
           {apps.map((app) => {
             const IconComponent = app.icon;
             
@@ -203,9 +208,9 @@ const AppsSection = () => {
                     </div>
                   </div>
                   <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
-                    <Zap className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
+                    <MessageSquare className="w-5 h-5 mx-auto mb-1 text-[#ff4f19]" />
                     <div className="text-xs font-bold text-gray-800 dark:text-white">
-                      Wydajność
+                      Wsparcie
                     </div>
                   </div>
                   <div className="p-3 bg-theme-surface border-2 border-[#ff4f19] text-center shadow-[2px_2px_0px_0px_var(--theme-shadow)]">
@@ -214,14 +219,6 @@ const AppsSection = () => {
                       Konfiguracja
                     </div>
                   </div>
-                </div>
-
-                {/* CTA Button */}
-                <div className="mt-6">
-                  <button className="w-full bg-[#ff4f19] text-white font-bold py-4 px-8 border-4 border-[#ff4f19] shadow-[4px_4px_0px_0px_var(--theme-shadow)] hover:shadow-[6px_6px_0px_0px_var(--theme-shadow)] transition-all duration-300 hover:translate-x-[-1px] hover:translate-y-[-1px] flex items-center justify-center group-hover:bg-orange-600 group-hover:border-orange-600 cursor-pointer font-heading-poppins">
-                    <span>Dowiedz się więcej</span>
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </button>
                 </div>
               </Link>
             );

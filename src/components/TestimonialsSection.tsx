@@ -3,6 +3,7 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
 import Button from './ui/Button';
+import { useFadeInUp, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -69,11 +70,17 @@ const TestimonialsSection = () => {
     { number: '24/7', label: 'Wsparcie techniczne' }
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const statsRef = useStaggerAnimation(0.15);
+  const testimonialsRef = useStaggerAnimation(0.1);
+  const ctaRef = useFadeInUp();
+
   return (
     <section id="testimonials" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
             Co mówią <span className="text-[#ff4f19]">klienci</span>
           </h2>
@@ -83,7 +90,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl font-black text-[#ff4f19] mb-2">{stat.number}</div>
@@ -93,7 +100,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={testimonialsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -136,7 +143,7 @@ const TestimonialsSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <div ref={ctaRef} className="mt-16 text-center">
           <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Dołącz do zadowolonych klientów

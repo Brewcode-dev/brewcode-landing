@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Lightbulb, Code, TestTube, Rocket, Users, Zap } from 'lucide-react';
+import { useFadeInUp, useStaggerAnimation } from '../hooks/useScrollAnimation';
 
 const ProcessSection = () => {
   const steps = [
@@ -53,11 +54,17 @@ const ProcessSection = () => {
     },
   ];
 
+  // Animation refs
+  const headerRef = useFadeInUp();
+  const stepsRef = useStaggerAnimation(0.2);
+  const benefitsRef = useStaggerAnimation(0.15);
+  const ctaRef = useFadeInUp();
+
   return (
     <section id="process" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-800 dark:text-white">
             Nasz <span className="text-[#ff4f19]">Proces</span>
           </h2>
@@ -67,7 +74,7 @@ const ProcessSection = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div ref={stepsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             return (
@@ -93,7 +100,7 @@ const ProcessSection = () => {
         </div>
 
         {/* Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={benefitsRef} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
             const IconComponent = benefit.icon;
             return (
@@ -116,7 +123,7 @@ const ProcessSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <div ref={ctaRef} className="mt-16 text-center">
           <div className="bg-white dark:bg-gray-800 p-8 border-4 border-[#ff4f19] shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)]">
             <h3 className="text-2xl font-black text-gray-800 dark:text-white mb-4">
               Gotowy na rozpoczęcie projektu?
